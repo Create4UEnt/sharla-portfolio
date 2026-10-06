@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>loved — a lookbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ecdf;
+    --paper-2:#efe3cf;
+    --ink:#2a1f14;
+    --ink-soft:#5a4a36;
+    --gold:#c99a54;
+    --peach:#e9b98a;
+    --terracotta:#b56a4a;
+    --sage:#8a9678;
+    --blush:#e6c4b6;
+    --rule:rgba(42,31,20,.25);
+  }
+  html,body{margin:0;background:#0b0705;color:var(--ink);font-family:"EB Garamond", Georgia, serif;}
+  deck-stage{background:#0b0705;}
+  section{
+    width:1920px;height:1080px;
+    background:var(--paper);
+    color:var(--ink);
+    position:relative;
+    overflow:hidden;
+    box-sizing:border-box;
+  }
+
+  .display{font-family:"Cormorant Garamond", serif;font-weight:400;letter-spacing:-0.01em;line-height:.95;}
+  .italic{font-style:italic;}
+  .eyebrow{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-soft);}
+  .caption{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);}
+  .body{font-family:"EB Garamond", serif;font-size:19px;line-height:1.5;color:var(--ink);}
+  .rule{height:1px;background:var(--rule);border:0;}
+
+  /* Image utility: cover, soft warm treatment */
+  .img{background-size:cover;background-position:center;background-repeat:no-repeat;position:relative;}
+  .img.warm::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg, rgba(255,200,140,.10) 0%, rgba(255,140,60,.08) 60%, rgba(120,60,30,.18) 100%);
+    mix-blend-mode:multiply;
+  }
+  .img .lbl{
+    position:absolute;left:14px;bottom:12px;color:#f7ecd6;
+    font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+    text-shadow:0 1px 6px rgba(0,0,0,.4);
+  }
+
+  /* page chrome */
+  .folio{
+    position:absolute;left:64px;right:64px;bottom:36px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .topbar{
+    position:absolute;left:64px;right:64px;top:40px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-soft);
+  }
+
+  /* ============ COVER ============ */
+  .cover{background:var(--paper);}
+  .cover .hero{position:absolute;inset:0;background-size:cover;background-position:center 30%;}
+  .cover .veil{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(120% 80% at 65% 40%, rgba(255,214,150,.25), transparent 55%),
+      linear-gradient(180deg, rgba(11,7,5,.15) 0%, rgba(11,7,5,0) 30%, rgba(11,7,5,.55) 100%);
+  }
+  .cover h1{
+    position:absolute;left:96px;right:96px;bottom:170px;
+    font-size:300px;line-height:.82;font-weight:300;font-style:italic;
+    color:#f7ecd6;letter-spacing:-0.02em;
+    text-shadow:0 2px 40px rgba(0,0,0,.25);
+  }
+  .cover .sub{
+    position:absolute;left:100px;bottom:110px;color:#f7ecd6;
+    font-family:"Inter",sans-serif;font-size:13px;letter-spacing:.38em;text-transform:uppercase;
+  }
+  .cover .meta{
+    position:absolute;right:100px;bottom:110px;color:#f7ecd6;
+    font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.32em;text-transform:uppercase;text-align:right;
+    line-height:1.9;
+  }
+  .cover .issue{
+    position:absolute;left:100px;top:80px;color:#f7ecd6;
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;
+  }
+  .cover .barcode{
+    position:absolute;right:100px;top:80px;color:#f7ecd6;
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;text-align:right;line-height:1.8;
+  }
+
+  /* ============ MOOD / DIRECTION ============ */
+  .mood{padding:64px 80px 60px;}
+  .mood .head{
+    display:flex;justify-content:space-between;align-items:flex-end;margin:24px 0 28px;
+  }
+  .mood h2{font-size:104px;line-height:.9;font-weight:400;font-style:italic;margin:0;letter-spacing:-0.02em;}
+  .mood .head .quote{max-width:400px;text-align:right;font-family:"EB Garamond",serif;font-style:italic;font-size:20px;color:var(--ink-soft);line-height:1.4;}
+
+  .mood .grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-rows: 260px 260px;
+    gap:14px;
+  }
+  .mood .grid .big{grid-row:1/3;}
+
+  .mood .pillars{
+    margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:44px;
+  }
+  .mood .pillar h4{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:30px;margin:0 0 8px;color:var(--ink);}
+  .mood .pillar p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-soft);}
+  .mood .pillar .num{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:var(--terracotta);text-transform:uppercase;margin-bottom:8px;display:block;}
+  .swatches{display:flex;gap:8px;margin-top:14px;}
+  .swatches i{display:block;width:34px;height:34px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.06);}
+
+  /* ============ LOOK PAGE ============ */
+  .look{
+    display:grid;
+    grid-template-columns: 1.1fr 1fr;
+    height:100%;
+  }
+  .look .left{position:relative;}
+  .look .left .hero{position:absolute;inset:0;background-size:cover;background-position:center;}
+  .look .left::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(180deg, rgba(255,200,140,.08) 0%, rgba(120,60,30,.15) 100%);
+    mix-blend-mode:multiply;
+  }
+  .look .left .tag{
+    position:absolute;left:32px;top:32px;color:#f7ecd6;
+    font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    background:rgba(42,31,20,.4);backdrop-filter:blur(4px);
+    padding:8px 14px;z-index:2;
+  }
+  .look .right{
+    padding:64px 64px 60px;
+    display:flex;flex-direction:column;
+    background:var(--paper);
+    position:relative;
+  }
+  .look .right .num{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:26px;color:var(--terracotta);
+  }
+  .look .right h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:82px;line-height:.9;font-weight:400;
+    margin:4px 0 6px;letter-spacing:-0.02em;
+  }
+  .look .right h3 em{font-style:italic;color:var(--terracotta);}
+  .look .right .tagline{
+    font-family:"EB Garamond",serif;font-style:italic;font-size:20px;color:var(--ink-soft);
+    margin:0 0 22px;line-height:1.4;
+  }
+  .look .right .cols{
+    display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:4px;
+  }
+  .look .right dl{margin:0;}
+  .look .right dt{
+    font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--terracotta);margin-bottom:6px;
+  }
+  .look .right dd{
+    margin:0 0 18px;font-family:"EB Garamond",serif;font-size:16px;line-height:1.5;color:var(--ink);
+  }
+  .look .right .refs{
+    margin-top:auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:8px;height:170px;
+  }
+  .look .right .refs .img{position:relative;}
+  .look .right .refs .img .rlbl{
+    position:absolute;left:8px;bottom:6px;color:#f7ecd6;
+    font-family:"Inter",sans-serif;font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+    text-shadow:0 1px 4px rgba(0,0,0,.5);
+  }
+  .look .right .moodwords{
+    display:flex;flex-wrap:wrap;gap:6px;margin-top:4px;margin-bottom:20px;
+  }
+  .look .right .moodwords span{
+    font-family:"Cormorant Garamond",serif;font-style:italic;font-size:19px;color:var(--ink-soft);
+  }
+  .look .right .moodwords span + span::before{content:"·";margin-right:6px;color:var(--terracotta);}
+
+  /* --- variation B: contact sheet layout --- */
+  body.variant-b .look{grid-template-columns:1fr;}
+  body.variant-b .look .left{display:none;}
+  body.variant-b .look .right{
+    padding:56px 72px 60px;
+    display:grid;
+    grid-template-columns: 1.4fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap:24px 40px;
+  }
+  body.variant-b .look .right .num,
+  body.variant-b .look .right h3,
+  body.variant-b .look .right .tagline{grid-column:1/3;}
+  body.variant-b .look .right .cols{grid-column:2/3;grid-row:2;display:flex;flex-direction:column;gap:0;}
+  body.variant-b .look .right .refs{
+    grid-column:1/2;grid-row:2;
+    display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);
+    height:auto;gap:10px;
+  }
+  body.variant-b .look .right h3{font-size:110px;}
+</style>
+</head>
+<body>
+
+<deck-stage>
+
+  <!-- ============ 1. COVER ============ -->
+  <section data-screen-label="01 Cover" class="cover">
+    <div class="hero" style="background-image:url('assets/bsg_4.jpg')"></div>
+    <div class="veil"></div>
+    <div class="issue">Vol. I &nbsp;·&nbsp; a lookbook</div>
+    <div class="barcode">for<br/>the video</div>
+    <h1>loved.</h1>
+    <div class="sub">Talent styling · Autumn '26</div>
+    <div class="meta">Six looks<br/>Golden hour<br/>Natural landscape</div>
+  </section>
+
+  <!-- ============ 2. MOOD / VISUAL DIRECTION ============ -->
+  <section data-screen-label="02 Direction" class="mood">
+    <div class="topbar">
+      <span>02 &nbsp;/&nbsp; Direction</span>
+      <span>loved — a lookbook</span>
+    </div>
+
+    <div class="head">
+      <h2>the <span class="italic">feeling</span><br/>of being loved.</h2>
+      <div class="quote">
+        She isn't posed against the landscape — she belongs to it. Light rakes through grass, water, fabric, skin. Everything made of the same warm thing.
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="img big warm" style="background-image:url('assets/mitchell_2.jpg')"><span class="lbl">Tyler Mitchell</span></div>
+      <div class="img warm" style="background-image:url('assets/bsg_1.jpg')"><span class="lbl">Brown Skin Girl</span></div>
+      <div class="img warm" style="background-image:url('assets/bsg_3.jpg')"><span class="lbl">Brown Skin Girl</span></div>
+      <div class="img warm" style="background-image:url('assets/mitchell_4.jpg')"><span class="lbl">T. Mitchell</span></div>
+      <div class="img warm" style="background-image:url('assets/bsg_6.jpg')"><span class="lbl">Brown Skin Girl</span></div>
+      <div class="img warm" style="background-image:url('assets/bsg_7.jpg')"><span class="lbl">Black is King</span></div>
+      <div class="img warm" style="background-image:url('assets/mitchell_5.jpg')"><span class="lbl">T. Mitchell</span></div>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="num">01 · Light</span>
+        <h4>Golden-hour backlight.</h4>
+        <p>Warm, low, consistent direction. Last 45 minutes before sundown. No flash, no fill — only what the sky gives.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">02 · Skin</span>
+        <h4>Part of the landscape.</h4>
+        <p>Treat talent as texture among textures — grass, leaves, water, fabric, skin. Not staged against the scene but folded into it.</p>
+      </div>
+      <div class="pillar">
+        <span class="num">03 · Palette</span>
+        <h4>Whatever the field is wearing.</h4>
+        <p>Butter, peach, terracotta, sage, oat, cream. Nothing pulls the eye away from her skin under raking light.</p>
+        <div class="swatches">
+          <i style="background:#f0d9b0"></i>
+          <i style="background:#e9b98a"></i>
+          <i style="background:#b56a4a"></i>
+          <i style="background:#8a9678"></i>
+          <i style="background:#e6c4b6"></i>
+          <i style="background:#efe3cf"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="folio">
+      <span>Tyler Mitchell · Brown Skin Girl · Malick</span>
+      <span>02</span>
+    </div>
+  </section>
+
+  <!-- ============ 3. LOOK 01 — LINEN EARTH TONES ============ -->
+  <section data-screen-label="03 Look 01 — Linen" class="look-page">
+    <div class="look">
+      <div class="left">
+        <div class="hero" style="background-image:url('assets/talent_earthy.jpg')"></div>
+        <div class="tag">Look 01 · Linen</div>
+      </div>
+      <div class="right">
+        <div class="num italic">Look nº 01</div>
+        <h3>Oat &amp; <em>ochre.</em></h3>
+        <p class="tagline">Linen sets in field tones — she disappears into the grass and reappears in the light.</p>
+
+        <div class="cols">
+          <dl>
+            <dt>Outfit</dt>
+            <dd>Cropped linen camisole + wide-leg linen trouser in oat. Unbuttoned overshirt (rust or ochre) draped, half-off shoulder. Barefoot or thin leather sandal.</dd>
+            <dt>Fabric</dt>
+            <dd>Raw, undyed linen; visible weave; slightly wrinkled — never pressed.</dd>
+          </dl>
+          <dl>
+            <dt>Hair &amp; makeup</dt>
+            <dd>Natural coils, loose. Skin glossed with face oil for backlight catch. Bare lash, glossed lip, cheek warmth only.</dd>
+            <dt>Accessories</dt>
+            <dd>Thin gold hoops. One stacked ring. A single stem of wheat or dried grass in hand.</dd>
+          </dl>
+        </div>
+
+        <div>
+          <dt style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px;">Mood</dt>
+          <div class="moodwords">
+            <span>sun-warmed</span><span>quiet</span><span>held</span><span>ochre</span><span>slow breath</span>
+          </div>
+        </div>
+
+        <div class="refs">
+          <div class="img" style="background-image:url('assets/linen_1.jpg')"><span class="rlbl">linen suit</span></div>
+          <div class="img" style="background-image:url('assets/linen_2.jpg')"><span class="rlbl">field tone</span></div>
+          <div class="img" style="background-image:url('assets/mitchell_3.jpg')"><span class="rlbl">talent ref</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio"><span>Look 01 · Linen</span><span>03</span></div>
+  </section>
+
+  <!-- ============ 4. LOOK 02 — SILK SLIP ============ -->
+  <section data-screen-label="04 Look 02 — Silk slip" class="look-page">
+    <div class="look">
+      <div class="left">
+        <div class="hero" style="background-image:url('assets/bsg_2.jpg')"></div>
+        <div class="tag">Look 02 · Silk slip</div>
+      </div>
+      <div class="right">
+        <div class="num italic">Look nº 02</div>
+        <h3>Silk, <em>skin, sun.</em></h3>
+        <p class="tagline">A bias-cut slip so thin the light passes through it — a second skin under golden hour.</p>
+
+        <div class="cols">
+          <dl>
+            <dt>Outfit</dt>
+            <dd>Champagne, olive or blush silk slip. Bias-cut, mid-calf. Delicate spaghetti strap, cowl neck. Optional silk scarf tied loose at wrist or waist.</dd>
+            <dt>Fabric</dt>
+            <dd>100% silk charmeuse — semi-sheer when backlit. Slight cling in the breeze.</dd>
+          </dl>
+          <dl>
+            <dt>Hair &amp; makeup</dt>
+            <dd>Slicked back low bun or damp, air-dry curls. Dewy skin, flushed cheek, tinted balm on lip.</dd>
+            <dt>Accessories</dt>
+            <dd>Thin gold ankle chain. Small pearl studs. Bare feet. No bag.</dd>
+          </dl>
+        </div>
+
+        <div>
+          <dt style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px;">Mood</dt>
+          <div class="moodwords">
+            <span>tender</span><span>translucent</span><span>whispered</span><span>peach</span><span>held breath</span>
+          </div>
+        </div>
+
+        <div class="refs">
+          <div class="img" style="background-image:url('assets/silk_olive.jpg')"><span class="rlbl">olive silk</span></div>
+          <div class="img" style="background-image:url('assets/silk_brown.jpg')"><span class="rlbl">bias cut</span></div>
+          <div class="img" style="background-image:url('assets/silk_blush.jpg')"><span class="rlbl">blush</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio"><span>Look 02 · Silk slip</span><span>04</span></div>
+  </section>
+
+  <!-- ============ 5. LOOK 03 — 70s BOHEMIAN ============ -->
+  <section data-screen-label="05 Look 03 — 70s bohemian" class="look-page">
+    <div class="look">
+      <div class="left">
+        <div class="hero" style="background-image:url('assets/bsg_6.jpg')"></div>
+        <div class="tag">Look 03 · 70s bohemian</div>
+      </div>
+      <div class="right">
+        <div class="num italic">Look nº 03</div>
+        <h3>Seventies, <em>sun-faded.</em></h3>
+        <p class="tagline">Embroidered cotton, a low-slung flare, the smell of dried flowers and warm dust.</p>
+
+        <div class="cols">
+          <dl>
+            <dt>Outfit</dt>
+            <dd>Cream embroidered peasant blouse, bell sleeve, drawstring neckline. Low-rise faded denim flare or amber corduroy flare. Vintage suede belt.</dd>
+            <dt>Fabric</dt>
+            <dd>Sun-bleached cotton with hand-embroidery in rust and sage. Softened denim, faded at the thigh.</dd>
+          </dl>
+          <dl>
+            <dt>Hair &amp; makeup</dt>
+            <dd>Middle part, natural curls loose and full. Sun-kissed cheek, bronzed lid, glossed lip. Nothing that reads "makeup."</dd>
+            <dt>Accessories</dt>
+            <dd>Long silver + turquoise pendant. Silk head scarf tied under the hair. A small bouquet of wildflowers.</dd>
+          </dl>
+        </div>
+
+        <div>
+          <dt style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px;">Mood</dt>
+          <div class="moodwords">
+            <span>free</span><span>sun-faded</span><span>wandering</span><span>rust</span><span>honeyed</span>
+          </div>
+        </div>
+
+        <div class="refs">
+          <div class="img" style="background-image:url('assets/bsg_5.jpg')"><span class="rlbl">boho spirit</span></div>
+          <div class="img" style="background-image:url('assets/mitchell_1.jpg')"><span class="rlbl">talent</span></div>
+          <div class="img" style="background-image:url('assets/bsg_7.jpg')"><span class="rlbl">head scarf</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio"><span>Look 03 · 70s bohemian</span><span>05</span></div>
+  </section>
+
+  <!-- ============ 6. LOOK 04 — PRAIRIE / COTTAGECORE ============ -->
+  <section data-screen-label="06 Look 04 — Prairie" class="look-page">
+    <div class="look">
+      <div class="left">
+        <div class="hero" style="background-image:url('assets/prairie_white.jpg');background-position:center 20%;"></div>
+        <div class="tag">Look 04 · Prairie</div>
+      </div>
+      <div class="right">
+        <div class="num italic">Look nº 04</div>
+        <h3>A dress <em>made of daylight.</em></h3>
+        <p class="tagline">Prairie silhouette, cotton eyelet, the hem catches the wind — cottagecore without the costume.</p>
+
+        <div class="cols">
+          <dl>
+            <dt>Outfit</dt>
+            <dd>Cream cotton eyelet midi or maxi. Puffed short sleeve or off-shoulder tie. Tiered skirt, hem to mid-calf. Optional soft ribbon sash in butter yellow.</dd>
+            <dt>Fabric</dt>
+            <dd>Broderie anglaise / eyelet cotton. Featherweight. Slightly translucent when backlit.</dd>
+          </dl>
+          <dl>
+            <dt>Hair &amp; makeup</dt>
+            <dd>Half-up with a soft ribbon bow. Baby hairs laid gently. Cheek + lip in the same warm peach. Skin sheer, glowing.</dd>
+            <dt>Accessories</dt>
+            <dd>Butter-yellow satin ribbon. Small daisy tucked at the ear. Bare feet in grass.</dd>
+          </dl>
+        </div>
+
+        <div>
+          <dt style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px;">Mood</dt>
+          <div class="moodwords">
+            <span>daylight</span><span>gentle</span><span>spinning</span><span>butter</span><span>first love</span>
+          </div>
+        </div>
+
+        <div class="refs">
+          <div class="img" style="background-image:url('assets/eyelet_1.jpg')"><span class="rlbl">eyelet</span></div>
+          <div class="img" style="background-image:url('assets/cottagecore_1.jpg')"><span class="rlbl">silhouette</span></div>
+          <div class="img" style="background-image:url('assets/prairie_white.jpg')"><span class="rlbl">prairie</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio"><span>Look 04 · Prairie</span><span>06</span></div>
+  </section>
+
+  <!-- ============ 7. LOOK 05 — SHEER WHITE ============ -->
+  <section data-screen-label="07 Look 05 — Sheer white" class="look-page">
+    <div class="look">
+      <div class="left">
+        <div class="hero" style="background-image:url('assets/mitchell_2.jpg')"></div>
+        <div class="tag">Look 05 · Sheer</div>
+      </div>
+      <div class="right">
+        <div class="num italic">Look nº 05</div>
+        <h3>Almost <em>not there.</em></h3>
+        <p class="tagline">Sheer whites, tulle, a slip beneath — she becomes light passing through cloth.</p>
+
+        <div class="cols">
+          <dl>
+            <dt>Outfit</dt>
+            <dd>Sheer white cotton voile blouse over cream silk slip. Long tulle skirt, ivory, layered — moves like water. Or a single sheer white maxi with soft underlayer.</dd>
+            <dt>Fabric</dt>
+            <dd>Cotton voile + tulle + silk. Three weights of translucency. Everything catches the light differently.</dd>
+          </dl>
+          <dl>
+            <dt>Hair &amp; makeup</dt>
+            <dd>Coils pulled back with a wide silk headband, a few pieces loose at the temple. Skin luminous, not glossy. Balm on lip. Nothing on lash.</dd>
+            <dt>Accessories</dt>
+            <dd>Silk ivory headband. Small gold cross or delicate pendant. Bare arms, bare feet.</dd>
+          </dl>
+        </div>
+
+        <div>
+          <dt style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px;">Mood</dt>
+          <div class="moodwords">
+            <span>angelic</span><span>weightless</span><span>softly lit</span><span>ivory</span><span>hushed</span>
+          </div>
+        </div>
+
+        <div class="refs">
+          <div class="img" style="background-image:url('assets/mitchell_4.jpg')"><span class="rlbl">soft light</span></div>
+          <div class="img" style="background-image:url('assets/mitchell_5.jpg')"><span class="rlbl">translucent</span></div>
+          <div class="img" style="background-image:url('assets/bsg_3.jpg')"><span class="rlbl">ethereal</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio"><span>Look 05 · Sheer white</span><span>07</span></div>
+  </section>
+
+  <!-- ============ 8. LOOK 06 — WRAP / WATER ============ -->
+  <section data-screen-label="08 Look 06 — Wrap by water" class="look-page">
+    <div class="look">
+      <div class="left">
+        <div class="hero" style="background-image:url('assets/mitchell_1.jpg')"></div>
+        <div class="tag">Look 06 · Wrap</div>
+      </div>
+      <div class="right">
+        <div class="num italic">Look nº 06</div>
+        <h3>By the <em>water, unhurried.</em></h3>
+        <p class="tagline">A soft wrap in sage or sand — she wades, the hem darkens, the light forgives everything.</p>
+
+        <div class="cols">
+          <dl>
+            <dt>Outfit</dt>
+            <dd>Cotton or lightweight rayon wrap dress in sage green or sun-bleached sand. Deep V, tie at waist, midi length. Or a sarong wrapped over a slip.</dd>
+            <dt>Fabric</dt>
+            <dd>Soft, drapey cotton or rayon. Meant to darken when wet at the hem.</dd>
+          </dl>
+          <dl>
+            <dt>Hair &amp; makeup</dt>
+            <dd>Wet-look damp curls or slicked back. Dewy skin, no product on face beyond balm. Water is the styling.</dd>
+            <dt>Accessories</dt>
+            <dd>Nothing. Maybe a shell on a string. Wet hem allowed. Bare feet in shallow water.</dd>
+          </dl>
+        </div>
+
+        <div>
+          <dt style="font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:6px;">Mood</dt>
+          <div class="moodwords">
+            <span>unhurried</span><span>baptized</span><span>sage</span><span>quiet joy</span><span>held by the day</span>
+          </div>
+        </div>
+
+        <div class="refs">
+          <div class="img" style="background-image:url('assets/wrap_sage_1.jpg')"><span class="rlbl">sage wrap</span></div>
+          <div class="img" style="background-image:url('assets/wrap_sage_2.jpg')"><span class="rlbl">organic cotton</span></div>
+          <div class="img" style="background-image:url('assets/wrap_linen.jpg')"><span class="rlbl">linen wrap</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="folio"><span>Look 06 · Wrap by water</span><span>08</span></div>
+  </section>
+
+</deck-stage>
+
+<div id="tweaks-root"></div>
+
+<script src="deck_stage.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks_panel.jsx"></script>
+<script type="text/babel">
+const LOOKBOOK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "layout": "editorial",
+  "accent": "#b56a4a"
+}/*EDITMODE-END*/;
+
+function LookbookTweaks(){
+  const t = useTweaks(LOOKBOOK_DEFAULTS);
+  React.useEffect(() => {
+    document.body.classList.toggle('variant-b', t.layout === 'contact');
+    document.documentElement.style.setProperty('--terracotta', t.accent);
+  }, [t.layout, t.accent]);
+
+  return (
+    <TweaksPanel title="Tweaks">
+      <TweakSection title="Layout">
+        <TweakRadio
+          label="Style"
+          value={t.layout}
+          options={[
+            {value:'editorial', label:'Editorial'},
+            {value:'contact',   label:'Contact sheet'},
+          ]}
+          onChange={v => t.setTweak('layout', v)}
+        />
+      </TweakSection>
+      <TweakSection title="Accent">
+        <TweakColor
+          label="Accent color"
+          value={t.accent}
+          options={['#b56a4a', '#c99a54', '#8a9678', '#b47265']}
+          onChange={v => t.setTweak('accent', v)}
+        />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('tweaks-root')).render(<LookbookTweaks />);
+</script>
+
+</body>
+</html>

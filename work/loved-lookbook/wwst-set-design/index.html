@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>What Was She Thinking — Set Design</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="deck_stage.js"></script>
+<style>
+  :root{
+    --p1:#FFC0CB; --p2:#FF69B4; --p3:#FF3B62; --p4:#E9333F; --p5:#D90429; --p6:#A4161A;
+    --bg:#F7F2EF; --ink:#2A1A1C; --mute:#7a6668; --line:#e3d8d5;
+    --serif:'DM Serif Display', Georgia, serif;
+    --sans:'Work Sans', system-ui, sans-serif;
+    --mono:'JetBrains Mono', ui-monospace, monospace;
+  }
+  deck-stage section{background:var(--bg);color:var(--ink);font-family:var(--sans);overflow:hidden;position:relative}
+  .pad{position:absolute;inset:0;padding:96px 120px}
+  .eyebrow{font-family:var(--mono);font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--p5)}
+  h1,h2{font-family:var(--serif);font-weight:400;margin:0;line-height:1.02;letter-spacing:-.01em}
+  h2{font-size:88px;margin-top:20px}
+  h2 em{font-style:italic;color:var(--p5)}
+  p{font-size:30px;line-height:1.45;margin:0;text-wrap:pretty}
+  .mute{color:var(--mute)}
+  .ramp{display:flex;height:14px}
+  .ramp i{flex:1}
+  .ramp i:nth-child(1){background:var(--p1)}.ramp i:nth-child(2){background:var(--p2)}.ramp i:nth-child(3){background:var(--p3)}
+  .ramp i:nth-child(4){background:var(--p4)}.ramp i:nth-child(5){background:var(--p5)}.ramp i:nth-child(6){background:var(--p6)}
+  .foot{position:absolute;left:120px;right:120px;bottom:56px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:22px;color:var(--mute);letter-spacing:.08em;text-transform:uppercase}
+
+  /* full-bleed image slides */
+  .bleed img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .bleed .scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,10,0) 55%,rgba(20,8,10,.82) 100%)}
+  .bleed .cap{position:absolute;left:120px;right:120px;bottom:80px;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;gap:80px}
+  .bleed .cap h2{font-size:84px;margin:0}
+  .bleed .cap .eyebrow{color:var(--p1)}
+  .bleed .cap p{font-size:28px;max-width:720px;color:#f3e6e8}
+
+  /* option detail slides */
+  .opt{display:grid;grid-template-columns:1.55fr 1fr;height:100%}
+  .opt .img{position:relative;overflow:hidden}
+  .opt .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .opt .txt{padding:96px 88px 96px 80px;display:flex;flex-direction:column}
+  .opt h2{font-size:76px}
+  .spec{margin-top:44px;border-top:1px solid var(--line)}
+  .spec div{display:grid;grid-template-columns:200px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);font-size:26px;line-height:1.35}
+  .spec b{font-family:var(--mono);font-weight:500;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);padding-top:5px}
+  .verdict{margin-top:auto;font-size:26px;line-height:1.4;padding-top:32px}
+  .verdict span{font-family:var(--mono);font-size:20px;letter-spacing:.12em;text-transform:uppercase;color:var(--p5);display:block;margin-bottom:8px}
+
+  /* palette */
+  .swatches{position:absolute;left:0;right:0;bottom:0;height:560px;display:grid;grid-template-columns:repeat(6,1fr)}
+  .sw{padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink)}
+  .sw .n{font-family:var(--mono);font-size:22px;letter-spacing:.1em}
+  .sw .hex{font-family:var(--mono);font-size:26px}
+  .sw .nm{font-family:var(--serif);font-size:44px;line-height:1.05;margin-top:10px}
+  .sw .use{font-size:23px;line-height:1.35;margin-top:14px;opacity:.85}
+  .sw.dk{color:#fff}
+
+  table{border-collapse:collapse;width:100%;font-size:26px}
+  th,td{text-align:left;padding:20px 22px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.35}
+  th{font-family:var(--mono);font-weight:500;font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+  td:first-child{font-family:var(--mono);font-size:20px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);width:220px;padding-top:24px}
+  tr.hl td{background:#fbe9ec}
+  .dot{display:inline-block;width:18px;height:18px;border-radius:50%;margin-right:4px;vertical-align:-2px}
+
+  /* floor plan */
+  .plan{position:absolute;left:120px;top:250px;width:980px;height:720px;border:3px solid var(--ink);background:
+    repeating-linear-gradient(0deg,transparent 0 59px,#ece3e0 59px 60px),repeating-linear-gradient(90deg,transparent 0 69px,#ece3e0 69px 70px);}
+  .plan .wall{position:absolute;left:-3px;right:-3px;top:-3px;height:28px;background:repeating-linear-gradient(90deg,#fff 0 36px,#d9cfcc 36px 38px);border:3px solid var(--ink)}
+  .pl{position:absolute;font-family:var(--mono);font-size:18px;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;justify-content:center;text-align:center;line-height:1.2}
+  .cam{position:absolute;width:64px;height:64px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:20px;display:flex;align-items:center;justify-content:center;border-radius:6px}
+  .legend{position:absolute;left:1180px;top:250px;right:120px}
+  .legend div{display:grid;grid-template-columns:80px 1fr;gap:16px;font-size:26px;line-height:1.35;padding:16px 0;border-bottom:1px solid var(--line)}
+  .legend b{font-family:var(--mono);font-weight:500;font-size:22px;color:var(--p5)}
+
+  /* elevation */
+  .elev{position:absolute;left:120px;top:260px;width:1100px;height:660px;background:#fff;border:2px solid var(--ink);
+    background-image:repeating-linear-gradient(0deg,transparent 0 31px,#e6dcd9 31px 33px)}
+  .neon{position:absolute;font-family:'DM Serif Display',serif;font-style:italic;color:#fff;text-shadow:0 0 6px var(--p1),0 0 18px var(--p2),0 0 36px var(--p2)}
+  .marq{position:absolute;display:flex;gap:10px}
+  .marq span{width:64px;height:84px;background:var(--p5);color:#fff;font-family:var(--sans);font-weight:600;font-size:56px;display:flex;align-items:center;justify-content:center;border-radius:4px;box-shadow:0 0 22px rgba(255,190,120,.7)}
+  .dim{position:absolute;font-family:var(--mono);font-size:18px;color:var(--mute);letter-spacing:.06em}
+  .dimline{position:absolute;border-color:var(--mute);border-style:solid;border-width:0}
+
+  /* budget */
+  .bud{display:grid;grid-template-columns:1fr 1fr;gap:0 80px;margin-top:56px}
+  .bud div{display:flex;justify-content:space-between;font-size:26px;padding:15px 0;border-bottom:1px solid var(--line)}
+  .bud div span:last-child{font-family:var(--mono);font-size:24px}
+  .total{margin-top:40px;display:flex;align-items:baseline;gap:32px}
+  .total .big{font-family:var(--serif);font-size:120px;color:var(--p5);line-height:1}
+
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;margin-top:64px}
+  .cols3 h3{font-family:var(--serif);font-weight:400;font-size:44px;margin:0 0 16px}
+  .cols3 p{font-size:26px}
+  .cols3 .k{font-family:var(--mono);font-size:20px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-bottom:14px;padding-top:18px;border-top:3px solid var(--ink)}
+</style>
+</head>
+<body>
+<deck-stage>
+
+<!-- 01 Title -->
+<section class="bleed" data-screen-label="01 Title">
+  <img src="renders/option-a-curved-sofa.png" alt="">
+  <div class="scrim"></div>
+  <div class="cap">
+    <div>
+      <div class="eyebrow">Set design concept · v1</div>
+      <h2 style="margin-top:16px">Soft, then strong.</h2>
+    </div>
+    <p>A whitewashed brick living room for <i>What Was She Thinking</i>, where color builds from blush pink to blood red as the conversation heats up.</p>
+  </div>
+</section>
+
+<!-- 02 Concept -->
+<section data-screen-label="02 Concept">
+  <div class="pad">
+    <div class="eyebrow">The big idea</div>
+    <h2 style="max-width:1500px">The set reads <em>left to right,</em> the way a hot take builds.</h2>
+    <p class="mute" style="max-width:1300px;margin-top:36px">The brick stays white, so all the color comes from light, fabric and furniture. The hosts sit in soft pinks on the left. The color gets stronger as you move right and lands on a deep red guest chair: the hot seat.</p>
+  </div>
+  <div class="swatches">
+    <div class="sw" style="background:var(--p1)"><div class="n">01 · START</div><div><div class="hex">#FFC0CB</div><div class="nm">Soft pink</div><div class="use">Sofa, rug, neon script</div></div></div>
+    <div class="sw" style="background:var(--p2)"><div class="n">02</div><div><div class="hex">#FF69B4</div><div class="nm">Hot pink</div><div class="use">Pillows, wall wash glow</div></div></div>
+    <div class="sw" style="background:var(--p3)"><div class="n">03</div><div><div class="hex">#FF3B62</div><div class="nm">Pink‑red</div><div class="use">Knit throw, book spines</div></div></div>
+    <div class="sw dk" style="background:var(--p4)"><div class="n">04</div><div><div class="hex">#E9333F</div><div class="nm">Bright red</div><div class="use">Mugs, VHS, accents</div></div></div>
+    <div class="sw dk" style="background:var(--p5)"><div class="n">05</div><div><div class="hex">#D90429</div><div class="nm">Crimson</div><div class="use">THINKING marquee letters</div></div></div>
+    <div class="sw dk" style="background:var(--p6)"><div class="n">06 · PEAK</div><div><div class="hex">#A4161A</div><div class="nm">Blood red</div><div class="use">Guest chair + its throw</div></div></div>
+  </div>
+</section>
+
+<!-- 03 Sign -->
+<section data-screen-label="03 The Sign">
+  <div class="pad" style="padding-bottom:0">
+    <div class="eyebrow">Hero element · wall elevation</div>
+    <h2>Script whispers. <em>Marquee shouts.</em></h2>
+  </div>
+  <div class="elev">
+    <div class="neon" style="left:300px;top:110px;font-size:110px">What was she</div>
+    <div class="marq" style="left:268px;top:260px">
+      <span>T</span><span>H</span><span>I</span><span>N</span><span>K</span><span>I</span><span>N</span><span>G</span>
+    </div>
+    <!-- dimension: width -->
+    <div class="dimline" style="left:268px;width:582px;top:380px;border-top-width:2px"></div>
+    <div class="dim" style="left:470px;top:392px">≈ 60" OVERALL</div>
+    <!-- mount height -->
+    <div class="dimline" style="left:960px;top:280px;height:380px;border-left-width:2px;border-style:dashed"></div>
+    <div class="dim" style="left:980px;top:450px">↕ 6' 6"<br>TO BASELINE</div>
+    <div class="dim" style="left:24px;top:620px">WHITEWASHED BRICK · 10' × 8'</div>
+  </div>
+  <div class="legend" style="left:1300px;top:260px">
+    <div><b>01</b><span><b style="color:var(--ink);font-family:var(--sans);font-size:26px;font-weight:600">Script:</b> LED neon flex in soft pink, about 48" wide, on a clear acrylic backer. Dimmable.</span></div>
+    <div><b>02</b><span><b style="color:var(--ink);font-family:var(--sans);font-size:26px;font-weight:600">THINKING:</b> 8 marquee letters, 12–14" tall, painted crimson #D90429, warm 2700K bulbs.</span></div>
+    <div><b>03</b><span>Hang it high enough that it clears the hosts' heads in the wide shot and stays readable in two-shots.</span></div>
+    <div><b>04</b><span>Put both on one smart plug so you can bring the sign up for the intro.</span></div>
+  </div>
+</section>
+
+<!-- 04 Option A -->
+<section data-screen-label="04 Option A">
+  <div class="opt">
+    <div class="img"><img src="renders/option-a-curved-sofa.png" alt=""></div>
+    <div class="txt">
+      <div class="eyebrow">Option A · recommended</div>
+      <h2>The Curved Couch</h2>
+      <div class="spec">
+        <div><b>Hosts</b><span>Shared curved velvet sofa in dusty pink</span></div>
+        <div><b>Guest</b><span>Blood‑red velvet armchair, angled in</span></div>
+        <div><b>Gradient</b><span>A clean left‑to‑right sweep across one frame</span></div>
+        <div><b>Binge cues</b><span>Popcorn, wine, mugs, remotes, low VHS shelf</span></div>
+      </div>
+      <div class="verdict"><span>Why it works</span>A shared couch feels like watching with a friend. The curve also angles both hosts toward camera without any extra staging.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 Option B -->
+<section data-screen-label="05 Option B">
+  <div class="opt">
+    <div class="img"><img src="renders/option-b-armchairs.png" alt=""></div>
+    <div class="txt">
+      <div class="eyebrow">Option B</div>
+      <h2>Three Tub Chairs</h2>
+      <div class="spec">
+        <div><b>Hosts</b><span>Blush + hot pink bouclé swivel chairs</span></div>
+        <div><b>Guest</b><span>Crimson velvet tub chair</span></div>
+        <div><b>Gradient</b><span>Each chair is its own step on the ramp</span></div>
+        <div><b>Binge cues</b><span>CRT TV with a static glow, popcorn bucket, tufted ottoman</span></div>
+      </div>
+      <div class="verdict"><span>Trade‑off</span>Each person is easy to frame on their own, but it reads more like a talk show than a couch. Three chairs also cost more than one sofa.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 Option C -->
+<section data-screen-label="06 Option C">
+  <div class="opt">
+    <div class="img"><img src="renders/option-c-sofa-chair.png" alt=""></div>
+    <div class="txt">
+      <div class="eyebrow">Option C</div>
+      <h2>Sofa + Egg Chair</h2>
+      <div class="spec">
+        <div><b>Hosts</b><span>Deep rose three‑seat sofa</span></div>
+        <div><b>Guest</b><span>Cherry‑red swivel egg chair, camera left</span></div>
+        <div><b>Gradient</b><span>Low to high: red pieces on the floor, pink glow up top</span></div>
+        <div><b>Binge cues</b><span>Full bookcase of DVDs/VHS, shag rug, candy bowl</span></div>
+      </div>
+      <div class="verdict"><span>Trade‑off</span>This is the coziest of the three. But the egg chair's back blocks the guest from the wide angle, and the bookcase eats about 2 ft of floor.</div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 Compare -->
+<section data-screen-label="07 Compare">
+  <div class="pad">
+    <div class="eyebrow">Side by side</div>
+    <h2>Which room are we in?</h2>
+    <table style="margin-top:56px">
+      <tr><th></th><th>A · Curved Couch</th><th>B · Tub Chairs</th><th>C · Sofa + Egg</th></tr>
+      <tr><td>Couch feel</td><td>●●● Shared seat</td><td>●○○ Separate seats</td><td>●●● Sink‑in</td></tr>
+      <tr><td>Camera</td><td>Easy wide + two‑shot</td><td>Best singles</td><td>Guest is hard in the wide</td></tr>
+      <tr><td>Gradient read</td><td>Clearest</td><td>Literal, chair by chair</td><td>Subtle, vertical</td></tr>
+      <tr><td>Footprint</td><td>≈ 12' × 11'</td><td>≈ 13' × 10'</td><td>≈ 14' × 11'</td></tr>
+      <tr class="hl"><td>Est. cost</td><td>≈ $2,850</td><td>≈ $3,300</td><td>≈ $3,100</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- 08 Floor plan -->
+<section data-screen-label="08 Floor Plan">
+  <div class="pad" style="padding-bottom:0">
+    <div class="eyebrow">Option A · floor plan · ≈ 14' × 12'</div>
+    <h2>Three cameras, one couch.</h2>
+  </div>
+  <div class="plan">
+    <div class="wall"></div>
+    <!-- sign -->
+    <div class="pl" style="left:320px;top:34px;width:340px;height:30px;background:var(--p1);color:var(--ink)">Sign</div>
+    <!-- shelf -->
+    <div class="pl" style="left:430px;top:72px;width:300px;height:36px;background:#e6d6c4">Low shelf</div>
+    <!-- plants -->
+    <div class="pl" style="left:40px;top:60px;width:110px;height:110px;border-radius:50%;background:#9fb59a">Fig</div>
+    <div class="pl" style="left:830px;top:60px;width:110px;height:110px;border-radius:50%;background:#9fb59a">Monst.</div>
+    <div class="pl" style="left:740px;top:110px;width:66px;height:66px;border-radius:50%;background:#bccdb6;font-size:15px">Pothos</div>
+    <!-- lamp -->
+    <div class="pl" style="left:780px;top:190px;width:60px;height:60px;border-radius:50%;border:3px dashed var(--ink);font-size:15px">Lamp</div>
+    <!-- sofa -->
+    <div class="pl" style="left:90px;top:180px;width:420px;height:170px;background:var(--p1);border-radius:30px 30px 120px 40px;color:var(--ink)">Host sofa</div>
+    <!-- chair -->
+    <div class="pl" style="left:640px;top:250px;width:150px;height:150px;background:var(--p6);color:#fff;border-radius:18px;transform:rotate(-18deg)">Guest</div>
+    <!-- rug + table -->
+    <div class="pl" style="left:260px;top:310px;width:420px;height:220px;border-radius:50%;background:rgba(255,192,203,.45)"></div>
+    <div class="pl" style="left:400px;top:360px;width:140px;height:110px;border-radius:50%;background:#d8b48c">Table</div>
+    <!-- cams -->
+    <div class="cam" style="left:440px;top:630px">A</div>
+    <div class="cam" style="left:110px;top:560px">B</div>
+    <div class="cam" style="left:800px;top:560px">C</div>
+    <div class="dim" style="left:20px;bottom:-40px">← 14' →</div>
+  </div>
+  <div class="legend">
+    <div><b>A</b><span><strong>Wide master</strong> at about 8'. Sign, both hosts, and the guest in one frame.</span></div>
+    <div><b>B</b><span><strong>Guest single</strong> from camera left, framed over the sofa arm.</span></div>
+    <div><b>C</b><span><strong>Host two‑shot</strong> from camera right, with soft pink brick behind them.</span></div>
+    <div><b>↔</b><span>Pull furniture 3' off the wall so you get depth and a clean light falloff.</span></div>
+  </div>
+</section>
+
+<!-- 09 Lighting -->
+<section data-screen-label="09 Lighting">
+  <div class="pad">
+    <div class="eyebrow">Lighting</div>
+    <h2>Pink on the wall, <em>true skin</em> on the faces.</h2>
+    <div class="cols3">
+      <div><div class="k">Layer 1 · Faces</div><h3>Key + fill</h3><p>A soft box key at 45°, 5600K or 4300K. Keep colored light off skin. The pink belongs to the set, not the hosts.</p></div>
+      <div><div class="k">Layer 2 · Wall</div><h3>RGB wash</h3><p>Two low RGB uplights behind the sofa and chair: soft pink on the left, red on the right. This paints the gradient straight onto the white brick.</p></div>
+      <div><div class="k">Layer 3 · Practicals</div><h3>Sign + lamp</h3><p>Neon at 60–70%, warm marquee bulbs, and the arc lamp at 2700K over the guest. Together they give the room its movie‑night warmth.</p></div>
+    </div>
+  </div>
+  <div class="ramp" style="position:absolute;left:0;right:0;bottom:0;height:18px"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</section>
+
+<!-- 10 Props -->
+<section data-screen-label="10 Props & Plants">
+  <div class="pad">
+    <div class="eyebrow">Dressing</div>
+    <h2>Stuff that says <em>“one more episode.”</em></h2>
+    <div class="cols3" style="margin-top:56px">
+      <div><div class="k">Coffee table</div><p>Glass bowl of real popcorn, two stoneware mugs, two wine glasses with dark juice instead of wine, and two remotes. Reset it between episodes so it always looks freshly dug into.</p></div>
+      <div><div class="k">Textiles</div><p>A chunky knit throw in #FF3B62 draped over the sofa arm, and a blood‑red throw on the guest chair. Use 5–6 velvet pillows that step from pale pink to rose.</p></div>
+      <div><div class="k">Shelf</div><p>VHS and DVD cases plus books, sorted by spine color from pink to red under the sign. Add one trailing pothos at the end.</p></div>
+      <div><div class="k">Plants</div><p>A 6' fiddle leaf fig on the far left and a monstera on the far right to frame the set. Pothos or string‑of‑hearts on the shelf. Quality faux plants are fine and won't wilt under lights.</p></div>
+      <div><div class="k">Floor</div><p>An 8' round pale‑pink plush rug to anchor the seating. It also dampens room echo for the audio.</p></div>
+      <div><div class="k">Avoid</div><p>Glossy surfaces facing camera, busy patterned pillows, and anything with readable logos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 Budget -->
+<section data-screen-label="11 Budget">
+  <div class="pad">
+    <div class="eyebrow">Option A · estimated build</div>
+    <h2>Under $3k, with room to spare.</h2>
+    <div class="bud">
+      <div><span>Faux brick panels + whitewash (10'×8')</span><span>$300</span></div>
+      <div><span>Velvet accent chair (guest)</span><span>$250</span></div>
+      <div><span>Custom LED neon script</span><span>$300</span></div>
+      <div><span>Round coffee table</span><span>$115</span></div>
+      <div><span>Marquee letters ×8 (THINKING)</span><span>$320</span></div>
+      <div><span>8' round plush rug</span><span>$140</span></div>
+      <div><span>Curved velvet sofa</span><span>$650</span></div>
+      <div><span>Arc floor lamp</span><span>$115</span></div>
+      <div><span>Faux plants (fig, monstera, 2 trailing)</span><span>$220</span></div>
+      <div><span>Floating shelf + VHS/books</span><span>$150</span></div>
+      <div><span>Throws + pillows</span><span>$175</span></div>
+      <div><span>RGB uplights ×2 + tabletop props</span><span>$150</span></div>
+    </div>
+    <div class="total"><span class="big">≈ $2,885</span><p class="mute">Assumes you already own cameras, mics and key lights. Shop secondhand for the sofa and chair to free up about $300.</p></div>
+  </div>
+</section>
+
+<!-- 12 Next -->
+<section data-screen-label="12 Recommendation">
+  <div class="pad" style="display:flex;flex-direction:column;justify-content:center">
+    <div class="eyebrow">Recommendation</div>
+    <h2 style="font-size:120px;max-width:1500px">Build <em>Option A.</em><br>Borrow the CRT from B.</h2>
+    <p class="mute" style="max-width:1300px;margin-top:40px">The curved couch gives us the friend‑on‑the‑sofa feeling and the clearest soft‑to‑strong read. A small vintage TV glowing on the shelf adds the binge‑watch cue, and it's cheap.</p>
+    <div class="cols3" style="margin-top:72px">
+      <div><div class="k">Next · 01</div><p>Confirm room dimensions and the wall you'll shoot against.</p></div>
+      <div><div class="k">Next · 02</div><p>Order the neon sign first. Custom signs take 2–3 weeks.</p></div>
+      <div><div class="k">Next · 03</div><p>Do a camera test with only the brick and lights before buying furniture.</p></div>
+    </div>
+  </div>
+  <div class="ramp" style="position:absolute;left:0;right:0;bottom:0;height:18px"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+</section>
+
+</deck-stage>
+</body>
+</html>

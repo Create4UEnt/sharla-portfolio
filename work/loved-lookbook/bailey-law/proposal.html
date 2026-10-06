@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bailey Law Firm · Fall & Holiday Entry Proposal · Create4Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171311; --paper:#f6f1e8; --paper-2:#efe7da; --body:#3d342d; --mute:#8f8274;
+    --burg:#5e1f24; --burg-l:#7a2c31; --copper:#a8653a; --olive:#5f6140; --brass:#a9844a; --brass-l:#d6b77e;
+    --cedar:#2f3d2d; --velvet:#8e1b22;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Jost','Helvetica Neue',Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#4a423b}
+  body{font-family:var(--sans);color:var(--ink)}
+  .page{width:816px;height:1056px;margin:24px auto;position:relative;overflow:hidden;background:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35);break-after:page;page-break-after:always}
+  .page.dark{background:var(--ink);color:var(--paper)}
+  .pad{position:absolute;inset:0;padding:62px 68px 84px}
+  .eyebrow{font:500 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--burg)}
+  .dark .eyebrow{color:var(--brass-l)}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance}
+  h2{font-size:40px;line-height:1.04;margin-top:14px;letter-spacing:-.005em}
+  h3{font-size:22px;line-height:1.1}
+  p{text-wrap:pretty}
+  .body{font:300 13px/1.62 var(--sans);color:var(--body)}
+  .dark .body{color:#d8cfc2}
+  .lede{font:italic 400 19px/1.35 var(--serif);color:var(--burg)}
+  .dark .lede{color:var(--brass-l)}
+  .rule{height:1px;background:var(--brass);opacity:.55}
+  .foot{position:absolute;left:68px;right:68px;bottom:34px;display:flex;justify-content:space-between;align-items:center;font:400 8.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#9b8f80}
+  .foot b{color:var(--brass);font-weight:500}
+  .dia{display:inline-block;width:6px;height:6px;border:1px solid var(--brass);transform:rotate(45deg);margin:0 10px;vertical-align:1px}
+  .img{position:relative;overflow:hidden;background:#2a231d}
+  .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .tag{position:absolute;top:10px;left:10px;font:500 8px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 9px;background:rgba(23,19,17,.82);color:var(--paper)}
+  .tag.gold{background:var(--brass);color:var(--ink)}
+  .cap{font:400 9.5px/1.45 var(--sans);color:var(--mute);margin-top:8px}
+  .dark .cap{color:#8a7f72}
+  .sw{display:grid;gap:3px}
+  .sw i{display:block;height:9px}
+  .swl{display:grid;gap:3px;margin-top:6px;font:400 8.5px/1.2 var(--sans);letter-spacing:.06em;color:var(--mute)}
+  table{border-collapse:collapse;width:100%}
+  .cl{list-style:none}
+  .cl li{position:relative;padding-left:15px;font:300 11.5px/1.5 var(--sans);color:var(--body);margin-bottom:7px}
+  .cl li::before{content:"";position:absolute;left:1px;top:6px;width:5px;height:5px;background:var(--brass);transform:rotate(45deg)}
+  .cl li b{font-weight:500;color:var(--ink)}
+  .dark .cl li{color:#d8cfc2} .dark .cl li b{color:var(--paper)}
+
+  /* tier cards */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .tier{border:1px solid rgba(169,132,74,.45);padding:18px 16px 16px;display:flex;flex-direction:column;background:rgba(255,255,255,.35)}
+  .tier.rec{background:var(--ink);color:var(--paper);border-color:var(--ink);position:relative}
+  .tier .nm{font:500 9px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--burg)}
+  .tier.rec .nm{color:var(--brass-l)}
+  .tier h3{font-size:24px;margin-top:9px}
+  .tier .sub{font:italic 400 13.5px/1.3 var(--serif);color:var(--mute);margin-top:3px;min-height:36px}
+  .tier.rec .sub{color:#b8ab9a}
+  .tier .cl{margin-top:12px;flex:1}
+  .tier .cl li{font-size:10.5px;margin-bottom:6px}
+  .tier.rec .cl li{color:#d8cfc2} .tier.rec .cl li b{color:var(--paper)}
+  .price{border-top:1px solid rgba(169,132,74,.45);padding-top:12px;margin-top:10px}
+  .price .std{font:400 10px/1 var(--sans);color:var(--mute);letter-spacing:.04em}
+  .price .std s{color:var(--mute)}
+  .price .fc{font:500 36px/1 var(--serif);margin-top:6px;color:var(--ink)}
+  .tier.rec .price .fc{color:var(--brass-l)}
+  .price .fcl{font:500 8px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--burg);margin-top:5px}
+  .tier.rec .price .fcl{color:var(--brass-l)}
+  .ribbon{position:absolute;top:-1px;right:14px;background:var(--brass);color:var(--ink);font:600 7.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 8px}
+
+  .note{background:rgba(169,132,74,.13);padding:12px 16px;font:300 11px/1.55 var(--sans);color:var(--body)}
+  .note b{font-weight:500;color:var(--ink)}
+
+  .box{display:inline-block;width:12px;height:12px;border:1px solid #6e6356;vertical-align:-2px;margin-right:10px}
+  .sig td{font:400 11px/1.3 var(--sans);padding:10px 0;border-bottom:1px solid rgba(169,132,74,.35)}
+  .sigline{border-bottom:1px solid var(--ink);height:34px}
+  .siglbl{font:500 8px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-top:6px}
+
+  @media print{
+    html,body{background:none}
+    .page{margin:0;box-shadow:none}
+    @page{size:8.5in 11in;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="page dark" data-screen-label="01 Cover">
+  <div class="img" style="position:absolute;inset:0 0 0 300px"><img src="assets/fall-evening-windows.png" style="object-position:48% 50%"></div>
+  <div style="position:absolute;inset:0 0 0 300px;background:linear-gradient(90deg,var(--ink) 0%,rgba(23,19,17,.55) 22%,rgba(23,19,17,0) 48%)"></div>
+  <div class="pad" style="right:420px">
+    <div class="eyebrow">Proposal · Fall &amp; Holiday Entry · 2026</div>
+    <h1 style="font-size:70px;line-height:.92;margin-top:170px">Evergreen<br><span style="font-style:italic;color:var(--brass-l)">&amp; Ember</span></h1>
+    <div class="rule" style="width:170px;margin:30px 0 24px"></div>
+    <p class="body" style="max-width:300px;font-size:13.5px">Seasonal design, lighting and installation for the front porch and balcony of Bailey Law Firm.</p>
+    <p style="position:absolute;bottom:62px;font:400 9.5px/1.95 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:#a89c8c">Prepared for Tyler D. Bailey, Esq.<br>Bailey Law Firm · Columbia, SC<br>September 29, 2026<br><span style="color:var(--brass-l)">Prepared by Create4Me</span></p>
+  </div>
+  <p style="position:absolute;right:20px;bottom:18px;font:400 7.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)">Concept rendering of your building · Fall evening</p>
+</section>
+
+<!-- 02 OVERVIEW -->
+<section class="page" data-screen-label="02 Overview">
+  <div class="pad">
+    <div class="eyebrow">01 — The Idea</div>
+    <h2 style="max-width:600px">Your building already looks like a firm people can trust. This season, let it glow.</h2>
+    <p class="body" style="max-width:600px;margin-top:20px">Bailey Law Firm sits in one of the most handsome buildings on the street: a two-story porch, black shutters, cast-iron railings, and a grand staircase up to the front door. It doesn't need a pumpkin patch. What it needs is an entrance that stays <b style="font-weight:500">symmetrical, restrained and warm</b>, so clients feel welcome before they reach the door.</p>
+    <p class="body" style="max-width:600px;margin-top:12px">This proposal covers two seasons on the same design. <b style="font-weight:500">Fall</b> uses deep burgundy, burnished copper and olive. <b style="font-weight:500">Holiday</b> moves to cedar, magnolia, brass and red velvet. The warm-white lighting stays up through both seasons, so the switch is quick and your porch is never bare.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px;max-width:680px">
+      <div>
+        <div class="eyebrow" style="color:var(--mute)">Fall palette</div>
+        <div class="sw" style="grid-template-columns:repeat(5,1fr);margin-top:10px"><i style="background:#5e1f24"></i><i style="background:#8a3b2e"></i><i style="background:#a8653a"></i><i style="background:#5f6140"></i><i style="background:#e9dfcc"></i></div>
+        <div class="swl" style="grid-template-columns:repeat(5,1fr)"><span>Burgundy</span><span>Rust</span><span>Copper</span><span>Olive</span><span>Cream</span></div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:var(--mute)">Holiday palette</div>
+        <div class="sw" style="grid-template-columns:repeat(5,1fr);margin-top:10px"><i style="background:#2f3d2d"></i><i style="background:#4f5b3c"></i><i style="background:#8e1b22"></i><i style="background:#a9844a"></i><i style="background:#f1ead9"></i></div>
+        <div class="swl" style="grid-template-columns:repeat(5,1fr)"><span>Cedar</span><span>Magnolia</span><span>Velvet</span><span>Brass</span><span>Ivory</span></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px 34px;margin-top:34px;max-width:680px">
+      <div style="border-top:1px solid var(--brass);padding-top:12px"><h3>Two focal lines</h3><p class="body" style="font-size:11.5px;margin-top:6px">Lit garland follows the upper balcony banister and the first-floor porch railing. It's visible from the street and reads clearly at night.</p></div>
+      <div style="border-top:1px solid var(--brass);padding-top:12px"><h3>A framed front door</h3><p class="body" style="font-size:11.5px;margin-top:6px">Matched urns, a restrained wreath and lit handrails guide visitors up the stairs to the door.</p></div>
+      <div style="border-top:1px solid var(--brass);padding-top:12px"><h3>Warm white only</h3><p class="body" style="font-size:11.5px;margin-top:6px">Only 2700K candlelight-tone bulbs, with no color or flashing. The lights run on a timer from dusk to 11 pm.</p></div>
+      <div style="border-top:1px solid var(--brass);padding-top:12px"><h3>Safe for a historic facade</h3><p class="body" style="font-size:11.5px;margin-top:6px">Nothing is nailed, screwed or taped to wood or iron. Everything comes off cleanly, and every stair tread stays clear.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> The Idea</span><b>Create4Me</b></div>
+</section>
+
+<!-- 03 BEFORE / AFTER -->
+<section class="page" data-screen-label="03 Before and After">
+  <div class="pad">
+    <div class="eyebrow">02 — Before &amp; After</div>
+    <h2>Same porch, fall edition.</h2>
+    <div class="img" style="margin-top:22px;height:330px"><img src="assets/bailey-front-wide.jpg" style="object-position:50% 45%"><span class="tag">Before · today</span></div>
+    <div class="img" style="margin-top:12px;height:400px"><img src="assets/fall-day-windows.png" style="object-position:50% 45%"><span class="tag gold">After · Fall, daytime</span></div>
+    <p class="cap">Concept rendering made from a photo of your building. Estate-level details are shown (window wreaths, pillar-cap pumpkins). Final garland fullness and plant material will vary slightly with the season's availability.</p>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Before &amp; After</span><b>Create4Me</b></div>
+</section>
+
+<!-- 04 FALL DAY / EVENING -->
+<section class="page" data-screen-label="04 Fall Day and Evening">
+  <div class="pad">
+    <div class="eyebrow">03 — Fall · September to Thanksgiving</div>
+    <h2>Quiet by day. Glowing by five.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px">
+      <div class="img" style="height:258px"><img src="assets/fall-day-windows.png" style="object-position:50% 40%"><span class="tag">Daytime</span></div>
+      <div class="img" style="height:258px"><img src="assets/bailey-entry.jpg" style="object-position:50% 50%"><span class="tag">Before · the entry</span></div>
+    </div>
+    <div class="img" style="margin-top:12px;height:392px"><img src="assets/fall-evening-windows.png" style="object-position:50% 55%"><span class="tag gold">Evening · lights on</span></div>
+    <p class="cap">Concept renderings. Evening view shows Estate window wreaths and column uplighting. Signature includes all garland lighting and the lit door lanterns you already have.</p>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Fall</span><b>Create4Me</b></div>
+</section>
+
+<!-- 05 HOLIDAY -->
+<section class="page dark" data-screen-label="05 Holiday Day and Evening">
+  <div class="pad">
+    <div class="eyebrow">04 — Holiday · Thanksgiving week to New Year</div>
+    <h2>Magnolia, cedar, brass and red velvet.</h2>
+    <p class="body" style="max-width:600px;margin-top:12px">A classic Southern holiday look. The lighting and the urns stay up from fall. We swap in cedar and magnolia garland, tie velvet bows at each column, and hang a magnolia wreath on the door.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px">
+      <div class="img" style="height:470px"><img src="assets/holiday-day-windows.png" style="object-position:50% 50%"><span class="tag">Daytime</span></div>
+      <div class="img" style="height:470px"><img src="assets/holiday-evening-windows.png" style="object-position:50% 50%"><span class="tag gold">Evening · lights on</span></div>
+    </div>
+    <p class="cap">Concept renderings of your building. Window wreaths, window candles and pillar-cap lanterns are Estate details.</p>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Holiday</span><b>Create4Me</b></div>
+</section>
+
+<!-- 06 FALL PACKAGES -->
+<section class="page" data-screen-label="06 Fall Packages">
+  <div class="pad">
+    <div class="eyebrow">05 — Fall Packages</div>
+    <h2>Three ways to dress the porch.</h2>
+    <p class="body" style="max-width:620px;margin-top:12px">Every package is all-inclusive: design, décor, lighting, installation, care and takedown. There are no material invoices to manage, and nothing for your staff to set up or store.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="nm">Essential</div><h3>The Front Door</h3><p class="sub">The entry and staircase, done beautifully.</p>
+        <ul class="cl">
+          <li><b>Door wreath</b> in burgundy, copper and olive with cream velvet ribbon</li>
+          <li><b>Pair of tall black urns</b> with burgundy mums, ivy and bronze wheat</li>
+          <li><b>Lit garland</b> on both staircase handrails</li>
+          <li><b>Mum arrangements</b> on the two brick pillar caps</li>
+          <li>Install, one care visit, takedown</li>
+        </ul>
+        <div class="price"><div class="std">Standard <s>$1,250</s></div><div class="fc">$950</div><div class="fcl">Founding client</div></div>
+      </div>
+      <div class="tier rec">
+        <span class="ribbon">Recommended</span>
+        <div class="nm">Signature</div><h3>The Full Porch</h3><p class="sub">Both floors lit, visible from the street.</p>
+        <ul class="cl">
+          <li><b>Everything in Essential</b></li>
+          <li><b>Lit garland</b> along the full first-floor porch railing, both sides</li>
+          <li><b>Lit garland</b> along the upper balcony banister</li>
+          <li>Warm-white lights on a <b>dusk-to-11 pm timer</b></li>
+          <li>Two care visits</li>
+        </ul>
+        <div class="price"><div class="std">Standard <s>$2,950</s></div><div class="fc">$2,250</div><div class="fcl">Founding client</div></div>
+      </div>
+      <div class="tier">
+        <div class="nm">Estate</div><h3>The Evening Estate</h3><p class="sub">Every window dressed, kept fresh all season.</p>
+        <ul class="cl">
+          <li><b>Everything in Signature</b></li>
+          <li><b>Soft uplighting</b> on the four porch columns</li>
+          <li><b>Window wreaths</b> on the eight front windows, hung on burgundy velvet ribbon</li>
+          <li><b>Heirloom cream pumpkins</b> at the pillars</li>
+          <li><b>Mid-season refresh</b>: mums replaced</li>
+          <li>Care visits every other week</li>
+        </ul>
+        <div class="price"><div class="std">Standard <s>$3,850</s></div><div class="fc">$2,950</div><div class="fcl">Founding client</div></div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:18px"><b>Why Signature.</b> The balcony line is what people see from the street and what shows up in photos. Without it, the porch looks decorated only up to the door. Signature also sets up the holiday season: its lighting stays up and carries straight into the holiday look.</div>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Fall Packages</span><b>Create4Me</b></div>
+</section>
+
+<!-- 07 HOLIDAY PACKAGES -->
+<section class="page" data-screen-label="07 Holiday Packages">
+  <div class="pad">
+    <div class="eyebrow">06 — Holiday Packages</div>
+    <h2>The same porch, dressed for December.</h2>
+    <div class="tiers">
+      <div class="tier">
+        <div class="nm">Essential</div><h3>The Front Door</h3><p class="sub">A classic welcome at the entry.</p>
+        <ul class="cl">
+          <li><b>Magnolia &amp; cedar wreath</b> with red velvet bow</li>
+          <li><b>Urns restyled</b> with evergreen boughs, magnolia and birch</li>
+          <li><b>Lit cedar garland</b> on both handrails, bows at the base</li>
+          <li><b>Evergreen arrangements</b> on the pillar caps</li>
+          <li>Install, one care visit, takedown</li>
+        </ul>
+        <div class="price"><div class="std">Standard <s>$1,450</s></div><div class="fc">$1,095</div><div class="fcl">Founding client</div></div>
+      </div>
+      <div class="tier rec">
+        <span class="ribbon">Recommended</span>
+        <div class="nm">Signature</div><h3>The Full Porch</h3><p class="sub">Both floors garlanded and bowed.</p>
+        <ul class="cl">
+          <li><b>Everything in Essential</b></li>
+          <li><b>Lit cedar-magnolia garland</b> on the first-floor porch railing</li>
+          <li><b>Lit garland</b> on the upper balcony banister, with a velvet bow at every column</li>
+          <li>Dusk-to-11 pm timer</li>
+          <li>Two care visits</li>
+        </ul>
+        <div class="price"><div class="std">Standard <s>$3,250</s></div><div class="fc">$2,450</div><div class="fcl">Founding client</div></div>
+      </div>
+      <div class="tier">
+        <div class="nm">Estate</div><h3>The Evening Estate</h3><p class="sub">Wreaths and candlelight in every window.</p>
+        <ul class="cl">
+          <li><b>Everything in Signature</b></li>
+          <li><b>Cedar window wreaths</b> on red velvet ribbon, with a <b>candle</b> in every front window</li>
+          <li><b>Brass lanterns</b> with flameless candles on the pillar caps</li>
+          <li><b>Column uplighting</b></li>
+          <li>Weekly care visits</li>
+        </ul>
+        <div class="price"><div class="std">Standard <s>$4,250</s></div><div class="fc">$3,250</div><div class="fcl">Founding client</div></div>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;display:grid;grid-template-columns:1.15fr 1fr;gap:26px;border-top:1px solid var(--brass);padding-top:16px">
+      <div>
+        <div class="eyebrow">Season bundle</div>
+        <h3 style="font-size:24px;margin-top:8px">Book fall and holiday together, and save $300.</h3>
+        <p class="body" style="font-size:11.5px;margin-top:6px">The lighting is installed once and stays up through both seasons. We only swap the décor. This means one crew visit less, and your porch is never bare between Thanksgiving and the holiday install.</p>
+      </div>
+      <table style="align-self:end">
+        <tr><td style="font:400 11px/1.3 var(--sans);padding:6px 0;border-bottom:1px solid rgba(169,132,74,.3)">Essential bundle</td><td style="text-align:right;font:500 18px/1 var(--serif);border-bottom:1px solid rgba(169,132,74,.3)">$1,745</td></tr>
+        <tr style="background:rgba(169,132,74,.13)"><td style="font:500 11px/1.3 var(--sans);padding:8px 8px">Signature bundle</td><td style="text-align:right;font:500 22px/1 var(--serif);color:var(--burg);padding-right:8px">$4,400</td></tr>
+        <tr><td style="font:400 11px/1.3 var(--sans);padding:6px 0;border-top:1px solid rgba(169,132,74,.3)">Estate bundle</td><td style="text-align:right;font:500 18px/1 var(--serif);border-top:1px solid rgba(169,132,74,.3)">$5,900</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Holiday Packages</span><b>Create4Me</b></div>
+</section>
+
+<!-- 08 FOUNDING CLIENT -->
+<section class="page dark" data-screen-label="08 Founding Client">
+  <div class="img" style="position:absolute;left:0;right:0;top:0;height:330px"><img src="assets/holiday-evening-windows.png" style="object-position:50% 28%"></div>
+  <div style="position:absolute;left:0;right:0;top:0;height:330px;background:linear-gradient(180deg,rgba(23,19,17,0) 40%,var(--ink) 100%)"></div>
+  <div class="pad" style="top:300px;padding-top:0">
+    <div class="eyebrow">07 — The Founding Client Rate</div>
+    <h2 style="max-width:620px">About 25% off standard pricing, in exchange for letting me show your porch.</h2>
+    <p class="body" style="max-width:620px;margin-top:14px">Create4Me is taking on a small number of founding clients for its seasonal entry work this year. Founding clients pay the rates shown in this proposal rather than standard pricing. In exchange, I ask for four things:</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px 30px;margin-top:18px;max-width:640px">
+      <ul class="cl" style="margin:0">
+        <li><b>Photo &amp; video permission.</b> I can photograph and film the finished entry for my portfolio. Staff and clients are never pictured.</li>
+        <li><b>A Google review</b> once the fall install is complete.</li>
+      </ul>
+      <ul class="cl" style="margin:0">
+        <li><b>A short testimonial quote</b> I can use with your name and firm.</li>
+        <li><b>An introduction</b> to one or two neighboring businesses, if you're happy with the result.</li>
+      </ul>
+    </div>
+    <div style="margin-top:26px;border-top:1px solid rgba(214,183,126,.45);padding-top:16px;display:grid;grid-template-columns:1fr 1.25fr;gap:28px;max-width:680px">
+      <div>
+        <div class="eyebrow">Included free for founding clients</div>
+        <h3 style="font-size:24px;margin-top:8px;color:var(--paper)">A before &amp; after reel for your firm's social media.</h3>
+      </div>
+      <div>
+        <p class="body" style="font-size:11.5px">A 20–30 second vertical video of your porch, from daytime to dusk to fully lit, edited for Instagram, Facebook and Google Business. It's yours to post, and it's a warm, seasonal way to show the community your firm.</p>
+        <p class="body" style="font-size:11.5px;margin-top:8px">See my video and editing work: <span style="color:var(--brass-l)">create4uent.github.io/sharla-portfolio</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Founding Client</span><b>Create4Me</b></div>
+</section>
+
+<!-- 09 TIMELINE & TERMS -->
+<section class="page" data-screen-label="09 Timeline and Terms">
+  <div class="pad">
+    <div class="eyebrow">08 — Timeline, Care &amp; Terms</div>
+    <h2>How it works.</h2>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px">
+      <div style="border-top:1px solid var(--brass);padding-top:10px"><div style="font:italic 500 21px/1 var(--serif);color:var(--burg)">By Oct 10</div><p class="body" style="font-size:11px;margin-top:7px">Choose a package and sign. I'll confirm the final design with you within three business days.</p></div>
+      <div style="border-top:1px solid var(--brass);padding-top:10px"><div style="font:italic 500 21px/1 var(--serif);color:var(--burg)">Oct 15–17</div><p class="body" style="font-size:11px;margin-top:7px">Fall install, done early morning or after hours so your clients aren't disrupted.</p></div>
+      <div style="border-top:1px solid var(--brass);padding-top:10px"><div style="font:italic 500 21px/1 var(--serif);color:var(--burg)">Nov 28–Dec 1</div><p class="body" style="font-size:11px;margin-top:7px">Holiday swap after Thanksgiving. The lights stay up and only the décor changes.</p></div>
+      <div style="border-top:1px solid var(--brass);padding-top:10px"><div style="font:italic 500 21px/1 var(--serif);color:var(--burg)">Jan 5–9</div><p class="body" style="font-size:11px;margin-top:7px">Full takedown. The porch is left exactly as I found it.</p></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:34px">
+      <div style="border-top:1px solid var(--brass);padding-top:12px">
+        <h3>Care for the building</h3>
+        <ul class="cl" style="margin-top:12px">
+          <li><b>No fasteners.</b> Garland is secured with padded ties and soft wraps. Nothing is nailed, screwed or taped to the siding, columns or cast iron.</li>
+          <li><b>Clear stairs.</b> Handrails stay fully grippable, and no décor or cords are placed on any tread.</li>
+          <li><b>Cords off the walking path.</b> All wiring is outdoor-rated and runs along railings and porch edges to your existing exterior outlets, on a timer.</li>
+          <li><b>Flags and signage untouched.</b> Your door sign and lanterns stay fully visible.</li>
+        </ul>
+      </div>
+      <div style="border-top:1px solid var(--brass);padding-top:12px">
+        <h3>Terms</h3>
+        <ul class="cl" style="margin-top:12px">
+          <li><b>Deposit.</b> 50% at signing, and the balance on the day of installation. For bundles, the holiday balance is due at the holiday swap.</li>
+          <li><b>Décor stays with Create4Me.</b> All décor and lighting is supplied, maintained, removed and stored by Create4Me. Would you like to keep the fall or holiday pieces? You can purchase them at season's end for 40% of that season's package price.</li>
+          <li><b>Live plants.</b> Mums and fresh greenery are replaced on care visits if they're damaged by weather.</li>
+          <li><b>Validity.</b> Founding client pricing is held until October 10, 2026.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Timeline &amp; Terms</span><b>Create4Me</b></div>
+</section>
+
+<!-- 10 ACCEPTANCE -->
+<section class="page" data-screen-label="10 Acceptance">
+  <div class="pad">
+    <div class="eyebrow">09 — Acceptance</div>
+    <h2>Ready when you are.</h2>
+    <p class="body" style="max-width:600px;margin-top:12px">Check the package you'd like, then sign and return a copy by email. I'll reply within one business day to confirm the design and schedule your install.</p>
+    <table class="sig" style="margin-top:22px">
+      <tr><td><span class="box"></span>Fall · Essential</td><td style="text-align:right">$950</td><td style="width:40px"></td><td><span class="box"></span>Holiday · Essential</td><td style="text-align:right">$1,095</td></tr>
+      <tr><td><span class="box"></span><b style="font-weight:500">Fall · Signature</b></td><td style="text-align:right">$2,250</td><td></td><td><span class="box"></span><b style="font-weight:500">Holiday · Signature</b></td><td style="text-align:right">$2,450</td></tr>
+      <tr><td><span class="box"></span>Fall · Estate</td><td style="text-align:right">$2,950</td><td></td><td><span class="box"></span>Holiday · Estate</td><td style="text-align:right">$3,250</td></tr>
+    </table>
+    <table class="sig" style="margin-top:14px">
+      <tr style="background:rgba(169,132,74,.13)"><td style="padding-left:10px"><span class="box"></span>Season bundle (fall + holiday, save $300): &nbsp;<span class="box" style="margin-left:6px"></span>Essential $1,745 &nbsp;<span class="box" style="margin-left:6px"></span><b style="font-weight:500">Signature $4,400</b> &nbsp;<span class="box" style="margin-left:6px"></span>Estate $5,900</td></tr>
+    </table>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:48px">
+      <div>
+        <div class="eyebrow" style="color:var(--mute)">Client</div>
+        <div class="sigline" style="margin-top:22px"></div><div class="siglbl">Signature</div>
+        <div class="sigline"></div><div class="siglbl">Tyler D. Bailey, Esq. · Bailey Law Firm</div>
+        <div class="sigline"></div><div class="siglbl">Date</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:var(--mute)">Create4Me</div>
+        <div class="sigline" style="margin-top:22px"></div><div class="siglbl">Signature</div>
+        <div class="sigline"></div><div class="siglbl">Sharla Brown · Owner</div>
+        <div class="sigline"></div><div class="siglbl">Date</div>
+      </div>
+    </div>
+
+    <div style="position:absolute;left:68px;right:68px;bottom:84px;border-top:1px solid var(--brass);padding-top:16px;display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <div style="font:500 26px/1 var(--serif)">Sharla Brown</div>
+        <div style="font:400 9.5px/1.8 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute);margin-top:6px">Owner · Create4Me</div>
+      </div>
+      <div style="text-align:right;font:400 11.5px/1.7 var(--sans);color:var(--body)">803-602-4574<br><a href="mailto:sharla@create4me.co">sharla@create4me.co</a></div>
+    </div>
+  </div>
+  <div class="foot"><span>Bailey Law Firm <i class="dia"></i> Acceptance</span><b>Create4Me</b></div>
+</section>
+
+</body>
+</html>

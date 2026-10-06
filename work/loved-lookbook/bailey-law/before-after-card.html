@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bailey Law Firm · Before &amp; After Card 5×7 · Create4Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171311; --paper:#f6f1e8; --mute:#8f8274; --burg:#5e1f24;
+    --brass:#a9844a; --brass-l:#d6b77e;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Jost','Helvetica Neue',Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#4a423b}
+  body{font-family:var(--sans);padding:28px 0}
+  .label{width:7in;margin:0 auto 8px;font:500 9px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:#bdb2a3}
+  /* 7 × 5 in landscape card */
+  .card{width:7in;height:5in;margin:0 auto 30px;position:relative;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.35);break-after:page;page-break-after:always}
+  .card:last-of-type{break-after:auto;page-break-after:auto}
+
+  /* FRONT */
+  .front{background:var(--ink);color:var(--paper);padding:.28in .3in .26in;display:flex;flex-direction:column}
+  .top{display:flex;justify-content:space-between;align-items:baseline}
+  .eyebrow{font:500 7.5pt/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:var(--brass-l)}
+  .title{font:500 22pt/1 var(--serif)}
+  .title i{color:var(--brass-l)}
+  .pair{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:.1in;margin-top:.16in;min-height:0}
+  .ph{position:relative;overflow:hidden;background:#2a231d}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .tag{position:absolute;left:.1in;bottom:.1in;font:500 6.5pt/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:5px 7px;background:rgba(23,19,17,.82);color:var(--paper)}
+  .tag.gold{background:var(--brass);color:var(--ink)}
+  .bot{display:flex;justify-content:space-between;align-items:center;margin-top:.13in;font:400 6.5pt/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#8a7f72}
+  .bot b{color:var(--brass-l);font-weight:500}
+  .dia{display:inline-block;width:5px;height:5px;border:1px solid var(--brass);transform:rotate(45deg);margin:0 8px;vertical-align:1px}
+
+  /* BACK */
+  .back{background:var(--paper);color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .back .frame{position:absolute;inset:.22in;border:1px solid rgba(169,132,74,.55);pointer-events:none}
+  .back .eyebrow{color:var(--burg)}
+  .back .name{font:500 40pt/1 var(--serif);margin-top:.2in}
+  .back .role{font:italic 400 13pt/1.3 var(--serif);color:var(--mute);margin-top:.08in}
+  .back .rule{width:1.1in;height:1px;background:var(--brass);opacity:.7;margin:.24in auto}
+  .back .phone{font:400 15pt/1 var(--sans);letter-spacing:.12em;font-variant-numeric:tabular-nums}
+  .back .diabig{width:7px;height:7px;border:1px solid var(--brass);transform:rotate(45deg);margin-top:.3in}
+
+  @media print{
+    html,body{background:none;padding:0}
+    .label{display:none}
+    .card{margin:0;box-shadow:none}
+    @page{size:7in 5in;margin:0}
+  }
+</style>
+</head>
+<body>
+
+<div class="label">Front</div>
+<section class="card front" data-screen-label="01 Front">
+  <div class="top">
+    <div class="title">Same porch, <i>fall evening.</i></div>
+    <div class="eyebrow">Bailey Law Firm · Columbia, SC</div>
+  </div>
+  <div class="pair">
+    <div class="ph"><img src="assets/bailey-front-wide.jpg" style="object-position:50% 50%"><span class="tag">Before</span></div>
+    <div class="ph"><img src="assets/fall-evening-windows.png" style="object-position:50% 50%"><span class="tag gold">After · Fall evening</span></div>
+  </div>
+  <div class="bot"><span>Seasonal entry design <i class="dia"></i> Concept rendering</span><b>Create4Me</b></div>
+</section>
+
+<div class="label">Back</div>
+<section class="card back" data-screen-label="02 Back">
+  <div class="frame"></div>
+  <div class="eyebrow">Create4Me</div>
+  <div class="name">Sharla Brown</div>
+  <div class="role">Seasonal design, lighting &amp; installation</div>
+  <div class="rule"></div>
+  <div class="phone">803-602-4574</div>
+  <div class="diabig"></div>
+</section>
+
+</body>
+</html>

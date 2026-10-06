@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bailey Law Firm · Sourcing, Cost &amp; Profit Plan · Create4Me (Internal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171311; --paper:#f6f1e8; --body:#3d342d; --mute:#8f8274;
+    --burg:#5e1f24; --brass:#a9844a; --brass-l:#d6b77e; --line:rgba(169,132,74,.35);
+    --pos:#3f5a34; --neg:#8e1b22;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Jost','Helvetica Neue',Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#4a423b}
+  body{font-family:var(--sans);color:var(--ink)}
+  .doc{width:816px;margin:24px auto;background:var(--paper);box-shadow:0 10px 40px rgba(0,0,0,.35);padding:60px 64px 56px}
+  .eyebrow{font:500 10px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--burg)}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance}
+  h1{font-size:46px;line-height:1;margin-top:14px}
+  h2{font-size:30px;line-height:1.05;margin-top:10px}
+  h3{font-size:19px;line-height:1.1}
+  p{text-wrap:pretty}
+  .body{font:300 12.5px/1.6 var(--sans);color:var(--body)}
+  .small{font:300 10.5px/1.5 var(--sans);color:var(--mute)}
+  .rule{height:1px;background:var(--brass);opacity:.55}
+  section{margin-top:44px;break-inside:auto}
+  section.first{margin-top:0}
+  .sec-head{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--brass);padding-top:14px}
+  .pill{display:inline-block;font:500 8px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:5px 7px;background:var(--ink);color:var(--paper);vertical-align:2px}
+  .pill.gold{background:var(--brass);color:var(--ink)}
+  .pill.ghost{background:transparent;border:1px solid var(--brass);color:var(--burg)}
+
+  table{border-collapse:collapse;width:100%}
+  th{font:500 8px/1.2 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute);text-align:left;padding:8px 6px;border-bottom:1px solid var(--brass)}
+  td{font:300 11px/1.35 var(--sans);color:var(--body);padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  td b{font-weight:500;color:var(--ink)}
+  .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  th.num{text-align:right}
+  tr.tier-row td{background:rgba(169,132,74,.12);font:500 8.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--burg);padding:7px 6px}
+  tr.sub td{font-weight:500;color:var(--ink);border-bottom:1px solid var(--brass)}
+  .src{color:var(--mute);font-size:10px}
+  .keep{font:500 7.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:3px 5px;border:1px solid var(--brass);color:var(--burg);white-space:nowrap}
+  .use{font:500 7.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:3px 5px;background:rgba(143,130,116,.15);color:var(--mute);white-space:nowrap}
+
+  input.ed{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px dotted var(--brass);width:52px;text-align:right;padding:1px 2px;font-variant-numeric:tabular-nums}
+  input.ed.q{width:34px}
+  input.ed:focus{outline:none;background:#fff;border-bottom:1px solid var(--burg)}
+  .pre{color:var(--mute);margin-right:1px}
+
+  .summary td{font-size:11.5px;padding:9px 6px}
+  .summary tr.hl td{background:var(--ink);color:var(--paper)}
+  .summary tr.hl td b{color:var(--brass-l)}
+  .summary tr.grp td{background:transparent;font:500 8.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--burg);padding:14px 6px 6px;border-bottom:1px solid var(--brass)}
+  .pos{color:var(--pos);font-weight:500}
+  .neg{color:var(--neg);font-weight:500}
+  .summary tr.hl .pos{color:#b9d3a3}
+
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px}
+  .card{border:1px solid var(--line);padding:14px 14px 12px;background:rgba(255,255,255,.35)}
+  .card.dark{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .card .k{font:500 8px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--mute)}
+  .card.dark .k{color:var(--brass-l)}
+  .card .v{font:500 34px/1 var(--serif);margin-top:8px}
+  .card.dark .v{color:var(--brass-l)}
+  .card .d{font:300 10.5px/1.45 var(--sans);color:var(--body);margin-top:6px}
+  .card.dark .d{color:#d8cfc2}
+
+  .cl{list-style:none;margin-top:12px}
+  .cl li{position:relative;padding-left:15px;font:300 11.5px/1.55 var(--sans);color:var(--body);margin-bottom:8px}
+  .cl li::before{content:"";position:absolute;left:1px;top:6px;width:5px;height:5px;background:var(--brass);transform:rotate(45deg)}
+  .cl li b{font-weight:500;color:var(--ink)}
+
+  .settings{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+  .settings div{border-top:1px solid var(--line);padding-top:8px}
+  .settings label{display:block;font:500 7.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)}
+  .settings .row{margin-top:6px;font:500 17px/1 var(--serif)}
+  .settings input.ed{font:500 17px/1 var(--serif);width:46px}
+
+  .toolbar{position:fixed;right:18px;bottom:18px;display:flex;gap:8px;z-index:5}
+  .toolbar button{font:500 9px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:10px 12px;border:0;background:var(--ink);color:var(--paper);cursor:pointer}
+  .toolbar button.alt{background:var(--paper);color:var(--ink);border:1px solid var(--brass)}
+
+  .foot{margin-top:40px;display:flex;justify-content:space-between;font:400 8.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#9b8f80;border-top:1px solid var(--line);padding-top:14px}
+  .foot b{color:var(--brass);font-weight:500}
+
+  @media print{
+    html,body{background:none}
+    .doc{margin:0;box-shadow:none;width:auto;padding:0}
+    @page{size:8.5in 11in;margin:.55in .6in}
+    .toolbar{display:none}
+    input.ed{border-bottom:0}
+    .pb{break-before:page}
+    tr{break-inside:avoid}
+    .sec-head{break-after:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="doc">
+
+<section class="first" data-screen-label="01 Summary">
+  <div class="eyebrow">Internal · Not for client · Bailey Law Firm</div>
+  <h1>Sourcing, cost <span style="font-style:italic;color:var(--burg)">&amp; profit plan</span></h1>
+  <p class="body" style="margin-top:14px;max-width:620px">What to buy for each package, where to buy it, what it costs you, and what you keep after materials, sales tax, a helper and travel. Prices are Columbia-area retail estimates for fall 2026. <b style="font-weight:500">Every blue-underlined number is editable.</b> Enter real prices as you shop and all totals update.</p>
+
+  <div class="cards">
+    <div class="card"><div class="k">Fall Signature · year 1</div><div class="v" id="c1">—</div><div class="d" id="c1d"></div></div>
+    <div class="card dark"><div class="k">Signature bundle · year 1</div><div class="v" id="c2">—</div><div class="d" id="c2d"></div></div>
+    <div class="card"><div class="k">Signature bundle · year 2+</div><div class="v" id="c3">—</div><div class="d">Profit when you reuse this year's garland, lights, urns and wreaths for another client next season.</div></div>
+  </div>
+
+  <div class="sec-head" style="margin-top:30px"><h3>Profit at a glance</h3><span class="small">Year 1 = buying everything new</span></div>
+  <table class="summary" style="margin-top:4px">
+    <thead><tr><th>Package</th><th class="num">Price</th><th class="num">Materials + tax</th><th class="num">Labor + travel</th><th class="num">Total cost</th><th class="num">Profit yr 1</th><th class="num">Margin</th><th class="num">Profit yr 2+</th></tr></thead>
+    <tbody id="summary"></tbody>
+  </table>
+
+  <ul class="cl" id="takeaways" style="margin-top:18px"></ul>
+</section>
+
+<section data-screen-label="02 Assumptions">
+  <div class="sec-head"><h2>Assumptions</h2><span class="small">Edit to match your business</span></div>
+  <div class="settings">
+    <div><label>Sales tax<br>(Columbia)</label><div class="row"><input class="ed" data-set="tax">%</div></div>
+    <div><label>Helper rate<br>per hour</label><div class="row"><span class="pre">$</span><input class="ed" data-set="rate"></div></div>
+    <div><label>Travel per<br>visit</label><div class="row"><span class="pre">$</span><input class="ed" data-set="trip"></div></div>
+    <div><label>Contingency<br>(breakage, extras)</label><div class="row"><input class="ed" data-set="cont">%</div></div>
+    <div><label>Yr 2 replacement<br>of reusables</label><div class="row"><input class="ed" data-set="repl">%</div></div>
+  </div>
+  <ul class="cl" style="margin-top:16px">
+    <li><b>Measurements are estimated from the photos</b>: stair handrails about 24 ft total, first-floor porch railing about 36 ft (both sides), upper balcony about 50 ft. Garland comes in 6 or 9 ft lengths. Measure on site before ordering; the quantities below are what these lengths need.</li>
+    <li><b>Lights run about 1.5× the garland length</b> because they wrap through it. Plan on commercial-grade warm-white (2700K) LED minis, 100 bulbs per strand, about 33 ft each.</li>
+    <li><b>Your own time is not counted as a cost.</b> Profit is what you pay yourself. Helper hours are only for installs and takedowns.</li>
+    <li><b>Lights, cords, timers and urns are bought once.</b> On a single-season package they're charged to that season. In a bundle they're only counted once, and the holiday install becomes a quicker décor swap.</li>
+    <li><b>Décor stays with Create4Me</b>, so reusable pieces (marked <span class="keep">Keep</span>) become your inventory for next year's clients. That's why year 2+ profit is much higher.</li>
+  </ul>
+</section>
+
+<section class="pb" data-screen-label="03 Shared lighting">
+  <div class="sec-head"><h2>Lighting, urns &amp; hardware</h2><span class="small">Bought once · used in both seasons</span></div>
+  <table style="margin-top:4px"><thead><tr><th style="width:36%">Item</th><th>Where to buy</th><th class="num">Qty</th><th class="num">Each</th><th class="num">Total</th><th></th></tr></thead><tbody id="t-shared"></tbody></table>
+</section>
+
+<section data-screen-label="04 Fall list">
+  <div class="sec-head"><h2>Fall shopping list</h2><span class="small">Burgundy · rust · copper · olive · cream</span></div>
+  <table style="margin-top:4px"><thead><tr><th style="width:36%">Item</th><th>Where to buy</th><th class="num">Qty</th><th class="num">Each</th><th class="num">Total</th><th></th></tr></thead><tbody id="t-fall"></tbody></table>
+</section>
+
+<section class="pb" data-screen-label="05 Holiday list">
+  <div class="sec-head"><h2>Holiday shopping list</h2><span class="small">Cedar · magnolia · velvet · brass · ivory</span></div>
+  <table style="margin-top:4px"><thead><tr><th style="width:36%">Item</th><th>Where to buy</th><th class="num">Qty</th><th class="num">Each</th><th class="num">Total</th><th></th></tr></thead><tbody id="t-holiday"></tbody></table>
+</section>
+
+<section data-screen-label="06 Labor">
+  <div class="sec-head"><h2>Labor &amp; visits</h2><span class="small">Helper hours at <span id="rateLbl"></span>/hr · travel at <span id="tripLbl"></span>/visit</span></div>
+  <table style="margin-top:4px"><thead><tr><th>Package</th><th class="num">Helper hours</th><th class="num">Site visits</th><th class="num">Helper cost</th><th class="num">Travel</th><th class="num">Total</th></tr></thead><tbody id="t-labor"></tbody></table>
+  <p class="small" style="margin-top:8px">Visits = install + care visits + takedown. Fall Estate has biweekly care from mid-October to Thanksgiving plus the mum refresh. Holiday Estate has weekly care. In a bundle, the holiday "install" is a décor swap, because the lights and urns are already up.</p>
+</section>
+
+<section class="pb" data-screen-label="07 Where to shop">
+  <div class="sec-head"><h2>Where to shop</h2><span class="small">Columbia, SC + online</span></div>
+  <table style="margin-top:4px">
+    <thead><tr><th style="width:24%">Source</th><th style="width:38%">Buy here</th><th>Tip</th></tr></thead>
+    <tbody>
+      <tr><td><b>SC State Farmers Market</b><br><span class="src">West Columbia</span></td><td>Mums, trailing ivy, heirloom white pumpkins, fresh cedar and fir in December</td><td>Usually cheaper than big-box stores for mums and pumpkins bought by the flat. Go early in the week for the best selection.</td></tr>
+      <tr><td><b>Hobby Lobby</b></td><td>Faux fall magnolia garland, window and door wreaths, magnolia stems, dried wheat, birch poles, velvet ribbon</td><td>Seasonal floral goes 40–50% off on a rotating schedule. Never pay full price; check the weekly ad and buy garland on the half-off week.</td></tr>
+      <tr><td><b>Michaels</b></td><td>Wired velvet ribbon, bows, floral foam, wire</td><td>Stack the app coupon with ribbon sales. Good backup when Hobby Lobby is out of stock.</td></tr>
+      <tr><td><b>Afloral.com</b></td><td>Door wreaths and extra magnolia stems</td><td>Most realistic faux magnolia. Spend here on the door wreaths, since they're seen up close. Allow 5–7 days for shipping.</td></tr>
+      <tr><td><b>Wintergreen Lighting</b> or <b>Christmas Designers</b><br><span class="src">online</span></td><td>Commercial-grade warm-white LED mini strands, 2700K, connectable</td><td>They last 5+ seasons, where big-box sets last 1–2. Order by October 5 for the October 15 install.</td></tr>
+      <tr><td><b>Lowe's / Home Depot</b></td><td>Outdoor extension cords, outdoor timers, urns, soil, LED uplights, fresh greenery bundles (November)</td><td>Buy 12- or 14-gauge outdoor cords. Check the clearance endcaps for urns in late September.</td></tr>
+      <tr><td><b>Costco / Sam's Club</b></td><td>Tall resin urns, pre-lit garland (seasonal)</td><td>Urns show up in late summer. Buy the pair once and use it for years.</td></tr>
+      <tr><td><b>Target / Walmart</b></td><td>Brass lanterns, flameless pillar candles with timers, LED window candles</td><td>Choose candles with a built-in 6-hour timer so staff never have to touch them.</td></tr>
+      <tr><td><b>Amazon</b></td><td>Suction wreath hooks for glass, padded garland ties, velcro wraps, over-the-door wreath hanger</td><td>These are the no-damage hardware the proposal promises. Order a spare pack.</td></tr>
+      <tr><td><b>Etsy</b></td><td>Handmade outdoor red velvet bows (12")</td><td>Order by November 10 for the November 28 swap. Buying 12+ bows often gets a bulk discount.</td></tr>
+      <tr><td><b>Local tree services / neighbors</b></td><td>Fresh magnolia branches</td><td>Magnolia cuttings are often free for the asking in December. They look great in the urns.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section data-screen-label="08 Buying calendar">
+  <div class="sec-head"><h2>Buying calendar</h2><span class="small">Timed to the proposal schedule</span></div>
+  <table style="margin-top:4px">
+    <tbody>
+      <tr><td style="width:24%"><b>At signing (by Oct 10)</b></td><td>Collect the 50% deposit. Order the commercial lights and Afloral wreaths right away; they're the longest lead times.</td></tr>
+      <tr><td><b>Oct 10–14</b></td><td>Hobby Lobby garland and window wreaths, urns, cords, timers, hardware. Mums, ivy and pumpkins 1–2 days before install so they're fresh.</td></tr>
+      <tr><td><b>Oct 15–17</b></td><td>Fall install with helper. Collect the balance.</td></tr>
+      <tr><td><b>Nov 10</b></td><td>Order Etsy bows. Pre-buy the holiday faux garland and window wreaths, since they sell out by Thanksgiving.</td></tr>
+      <tr><td><b>Nov 26–27</b></td><td>Buy fresh evergreen boughs and gather magnolia cuttings.</td></tr>
+      <tr><td><b>Nov 28–Dec 1</b></td><td>Holiday swap. Collect the holiday balance.</td></tr>
+      <tr><td><b>Dec 26–Jan 10</b></td><td>After-Christmas clearance (50–70% off). Restock next year's inventory for new clients.</td></tr>
+    </tbody>
+  </table>
+  <p class="small" style="margin-top:10px">All prices are estimates for planning. Check current prices before you buy, and update the numbers in this sheet as you go.</p>
+</section>
+
+<div class="foot"><span>Bailey Law Firm · Sourcing, Cost &amp; Profit Plan</span><b>Create4Me · Internal</b></div>
+</div>
+
+<div class="toolbar"><button class="alt" id="reset">Reset prices</button><button id="print">Print / PDF</button></div>
+
+<script src="sourcing-plan.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crown & Ash — Website Proposal · Create4Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f4eee3; --paper2:#ebe2d3; --card:#fbf7f0;
+  --ink:#2a1c15; --ink2:#4d3d32; --muted:#86766a;
+  --line:rgba(58,30,21,.14); --line2:rgba(58,30,21,.3);
+  --gold:#8c6a33; --gold2:#b8955a; --deep:#141110; --cream:#ede4d4;
+  --serif:'Bodoni Moda',Georgia,serif; --garamond:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#2b2420}
+body{font-family:var(--sans);color:var(--ink);font-weight:300;font-size:14.5px;line-height:1.55;padding:40px 0 80px;-webkit-font-smoothing:antialiased}
+.page{width:816px;height:1056px;margin:0 auto 32px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.45);padding:72px 72px 64px;display:flex;flex-direction:column}
+.page.dark{background:var(--deep);color:var(--cream)}
+em{font-style:italic;color:var(--gold)}
+.dark em{color:var(--gold2)}
+.eyebrow{font-size:10.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.dark .eyebrow{color:var(--gold2)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.05}
+h2{font-size:42px;margin-top:14px}
+h3{font-size:22px}
+h2 em,h1 em,h3 em{font-family:var(--garamond);font-size:1.08em}
+.lede{font-family:var(--garamond);font-size:21px;line-height:1.4;color:var(--ink2);margin-top:18px;max-width:560px;text-wrap:pretty}
+.dark .lede{color:#cbbfae}
+p{text-wrap:pretty}
+.pfoot{margin-top:auto;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);padding-top:18px;border-top:1px solid var(--line)}
+.dark .pfoot{border-color:rgba(212,185,138,.18);color:#8f8476}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{width:34px;height:34px;border:1px solid currentColor;transform:rotate(45deg);display:grid;place-items:center;flex:none}
+.mark span{transform:rotate(-45deg);font-family:var(--serif);font-size:14px}
+.bname{font-family:var(--serif);font-size:17px;letter-spacing:.14em;text-transform:uppercase;line-height:1}
+.bname small{display:block;font-family:var(--sans);font-size:8.5px;letter-spacing:.4em;margin-top:5px;opacity:.7}
+
+/* cover */
+.cover{padding:0}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.cover .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,12,11,.55) 0%,rgba(14,12,11,.25) 35%,rgba(14,12,11,.92) 72%,#0e0c0b 100%)}
+.cover .in{position:relative;height:100%;padding:64px 72px;display:flex;flex-direction:column;color:var(--cream)}
+.cover h1{font-size:64px;margin-top:22px;max-width:620px}
+.cover .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:44px;padding-top:24px;border-top:1px solid rgba(212,185,138,.3)}
+.cover .meta span{display:block;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px}
+.cover .meta div{font-size:14px;line-height:1.45}
+
+/* concept page */
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-top:22px}
+.feat div{padding:9px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:118px 1fr;gap:14px}
+.feat b{font-family:var(--serif);font-weight:400;font-size:15px}
+.feat p{font-size:13.5px;color:var(--ink2)}
+.tag{display:inline-block;font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line2);color:var(--muted);margin-top:6px;border-radius:2px}
+.tag.live{border-color:var(--gold);color:var(--gold)}
+.photo-strip{display:grid;grid-template-columns:1.4fr 1fr;gap:12px;margin-top:20px;height:100px}
+.photo-strip img{width:100%;height:100px;min-height:0;object-fit:cover;display:block}
+.callout{margin-top:16px;padding:14px 20px;background:var(--paper2);font-size:13.5px;color:var(--ink2);display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.callout b{font-family:var(--serif);font-weight:400;font-size:15px;color:var(--ink)}
+
+/* roles */
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
+.role{background:var(--card);padding:24px 22px;border-top:2px solid var(--line2)}
+.role.me{border-top-color:var(--gold)}
+.role h3{font-size:20px}
+.role .who{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.role ul{list-style:none;margin-top:14px}
+.role li{font-size:13px;padding:7px 0;border-top:1px solid var(--line);color:var(--ink2)}
+.plain{margin-top:30px;display:grid;grid-template-columns:200px 1fr;gap:32px;padding-top:26px;border-top:1px solid var(--line)}
+.plain p{font-family:var(--garamond);font-size:19px;line-height:1.45;color:var(--ink2)}
+
+/* options */
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;flex:1;max-height:640px}
+.opt{background:var(--card);padding:24px 20px 20px;display:flex;flex-direction:column;position:relative}
+.opt.rec{background:var(--deep);color:var(--cream)}
+.opt .num{font-family:var(--serif);font-size:13px;color:var(--gold)}
+.opt.rec .num{color:var(--gold2)}
+.opt h3{font-size:21px;margin-top:8px;min-height:48px}
+.opt .price{font-family:var(--serif);font-size:36px;margin-top:14px;line-height:1}
+.opt .price small{font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:block;margin-top:8px}
+.opt.rec .price small{color:#8f8476}
+.opt .desc{font-size:12.5px;color:var(--ink2);margin-top:14px;min-height:74px}
+.opt.rec .desc{color:#cbbfae}
+.opt ul{list-style:none;margin-top:10px}
+.opt li{font-size:12.5px;padding:6px 0 6px 16px;border-top:1px solid var(--line);position:relative}
+.opt.rec li{border-color:rgba(212,185,138,.16)}
+.opt li:before{content:'';position:absolute;left:0;top:13px;width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.opt.rec li:before{background:var(--gold2)}
+.opt .best{margin-top:auto;padding-top:14px;font-size:11.5px;color:var(--muted);font-style:italic;font-family:var(--garamond);font-size:15px}
+.ribbon{position:absolute;top:0;right:20px;background:var(--gold2);color:var(--deep);font-size:9px;letter-spacing:.22em;text-transform:uppercase;padding:5px 9px;font-weight:500}
+.fineprint{font-size:11.5px;color:var(--muted);margin-top:16px;line-height:1.5}
+
+/* care */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.plan{padding:26px 26px 22px;background:var(--card);border-top:2px solid var(--line2)}
+.plan.sig{border-top-color:var(--gold)}
+.plan .row{display:flex;justify-content:space-between;align-items:baseline}
+.plan .p{font-family:var(--serif);font-size:34px}
+.plan .p small{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.plan .hrs{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-top:6px}
+.plan ul{list-style:none;margin-top:14px}
+.plan li{font-size:13px;padding:7px 0;border-top:1px solid var(--line);color:var(--ink2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:28px}
+.two h4{font-family:var(--serif);font-weight:400;font-size:17px;margin-bottom:10px}
+.two ul{list-style:none}
+.two li{font-size:13px;padding:6px 0;border-top:1px solid var(--line);color:var(--ink2)}
+.two .no li{color:var(--muted)}
+
+/* costs table */
+table{width:100%;border-collapse:collapse;margin-top:26px}
+th{font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:left;padding:0 0 10px;border-bottom:1px solid var(--line2)}
+td{padding:11px 0;border-bottom:1px solid var(--line);font-size:13px;vertical-align:top;color:var(--ink2)}
+td:first-child{font-family:var(--serif);font-size:14.5px;color:var(--ink);width:190px}
+td:last-child{text-align:right;white-space:nowrap;font-family:var(--serif);color:var(--ink);width:120px}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:22px;border-top:1px solid var(--line2)}
+.timeline div{padding:14px 14px 0 0}
+.timeline b{display:block;font-family:var(--serif);font-weight:400;font-size:15px;margin-bottom:4px}
+.timeline span{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.timeline p{font-size:12.5px;color:var(--ink2);margin-top:4px}
+
+/* terms */
+.terms{display:grid;grid-template-columns:1fr 1fr;gap:0 36px;margin-top:28px}
+.terms div{padding:13px 0;border-top:1px solid var(--line)}
+.terms b{font-family:var(--serif);font-weight:400;font-size:15px;display:block;margin-bottom:3px}
+.terms p{font-size:13px;color:var(--ink2)}
+.select{margin-top:28px;display:flex;gap:26px;font-size:13px}
+.select label{display:flex;gap:9px;align-items:center}
+.select i{width:14px;height:14px;border:1px solid var(--ink2);display:inline-block}
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+.sign div{border-top:1px solid var(--ink2);padding-top:8px;font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);height:70px}
+
+@page{size:letter;margin:0}
+@media print{
+  html,body{background:none;padding:0}
+  .page{margin:0;box-shadow:none;break-after:page;page-break-after:always}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media screen and (max-width:860px){ body{zoom:.46} }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="page dark cover" data-screen-label="01 Cover">
+  <img src="assets/lounge.jpg" alt="">
+  <div class="shade"></div>
+  <div class="in">
+    <div class="brand"><div class="mark"><span>C</span></div><div class="bname">Crown &amp; Ash<small>Cigar Lounge</small></div></div>
+    <div style="margin-top:auto">
+      <div class="eyebrow">Website Proposal · Prepared by Create4Me</div>
+      <h1>A room worth lingering in, <em>online too.</em></h1>
+      <p class="lede">A proposal to redesign the Crown &amp; Ash website and keep it current every week, with clear options and honest roles.</p>
+      <div class="meta">
+        <div><span>Prepared for</span>Dr. Tiniece Javis<br>Justin Nelson</div>
+        <div><span>Prepared by</span>Create4Me<br><a href="mailto:sharla@create4me.co">sharla@create4me.co</a></div>
+        <div><span>Date</span>September 26, 2026<br>Valid for 30 days</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 THE CONCEPT -->
+<section class="page" data-screen-label="02 The Concept">
+  <div class="eyebrow">01 — The Concept</div>
+  <h2>What you've seen <em>in the preview.</em></h2>
+  <p class="lede">The concept, sent with this proposal, is a working design prototype. It shows how the site looks, reads and feels on phone and desktop, built from your photos, your story and your lounge.</p>
+  <div class="feat">
+    <div><b>Age gate</b><p>21+ entry screen with Surgeon General warnings, required for tobacco and alcohol content.<br><span class="tag live">Ready as designed</span></p></div>
+    <div><b>Our Story</b><p>Founders front and center: Dr. Javis and Justin as your guides to the humidor.<br><span class="tag live">Ready as designed</span></p></div>
+    <div><b>Digital Humidor</b><p>Browse cigars by strength and origin, with tasting notes and a paired pour.<br><span class="tag live">Ready: you update the list</span></p></div>
+    <div><b>Poured to Pair</b><p>Bar menu where every drink points to a cigar match.<br><span class="tag live">Ready: you update the list</span></p></div>
+    <div><b>Live Music</b><p>Friday event calendar with seat availability.<br><span class="tag">Needs event / ticket tool</span></p></div>
+    <div><b>Membership</b><p>Crown VIP and Elite tiers, yearly or monthly.<br><span class="tag">Needs payment service</span></p></div>
+    <div><b>Reservations</b><p>Step-by-step booking for seats, private rooms and shows.<br><span class="tag">Needs booking service</span></p></div>
+    <div><b>Member Portal</b><p>Locker, rewards and members-only RSVPs.<br><span class="tag">Phase 2: custom development</span></p></div>
+  </div>
+  <div class="photo-strip">
+    <img src="assets/humidor-shelves.jpg" alt="">
+    <img src="assets/owners-smoke.jpg" alt="" style="object-position:50% 25%">
+  </div>
+  <div class="callout"><b>Worth knowing</b><span>Features marked "needs" look finished in the preview, but they need a real service connected behind them (booking, payments, ticketing) before customers can use them. Page 06 covers the costs.</span></div>
+  <div class="pfoot"><span>Crown &amp; Ash · Website Proposal</span><span>02</span></div>
+</section>
+
+<!-- 03 ROLES -->
+<section class="page" data-screen-label="03 Who Does What">
+  <div class="eyebrow">02 — Who Does What</div>
+  <h2>Clear roles, <em>no surprises.</em></h2>
+  <p class="lede">I'm a designer and content partner, not a software developer. Knowing who owns each piece keeps the project on budget and on time.</p>
+  <div class="roles">
+    <div class="role me">
+      <div class="who">Create4Me</div>
+      <h3>Design &amp; <em>content</em></h3>
+      <ul>
+        <li>Look, layout and brand feel</li>
+        <li>Page copy and headlines</li>
+        <li>Photo selection and preparation</li>
+        <li>Style guide for any developer</li>
+        <li>Humidor, menu and event updates</li>
+        <li>Building pages in your Squarespace site</li>
+        <li>Your single point of contact</li>
+      </ul>
+    </div>
+    <div class="role">
+      <div class="who">Your developer (if needed)</div>
+      <h3>Build &amp; <em>connect</em></h3>
+      <ul>
+        <li>Turning the design into a live site</li>
+        <li>Booking, payment and email connections</li>
+        <li>Speed, security and search setup</li>
+        <li>Hosting and domain configuration</li>
+        <li>Anything that needs real code</li>
+        <li>Future custom features (member portal)</li>
+      </ul>
+    </div>
+    <div class="role">
+      <div class="who">Crown &amp; Ash team</div>
+      <h3>Decide &amp; <em>supply</em></h3>
+      <ul>
+        <li>Final approval on design and copy</li>
+        <li>Current cigar, bar and event info</li>
+        <li>Choosing booking and payment services</li>
+        <li>Account logins for your platforms</li>
+        <li>Owning your domain and accounts</li>
+      </ul>
+    </div>
+  </div>
+  <div class="plain">
+    <div class="eyebrow" style="padding-top:6px">In plain terms</div>
+    <p>I bring the vision and keep it looking right every week. When something needs real code, it goes to a developer, and I'll hand them everything they need so the design stays intact.</p>
+  </div>
+  <div class="pfoot"><span>Crown &amp; Ash · Website Proposal</span><span>03</span></div>
+</section>
+
+<!-- 04 OPTIONS -->
+<section class="page" data-screen-label="04 Three Paths">
+  <div class="eyebrow">03 — Choose a Path</div>
+  <h2>Two ways <em>to launch.</em></h2>
+  <p class="lede" style="font-size:19px">Both paths include the finished design. Pick the one that fits your budget, your current platform and whether you already work with a developer.</p>
+  <div class="opts">
+    <div class="opt">
+      <div class="num">A</div>
+      <h3>Design <em>Handoff</em></h3>
+      <div class="price">$2,200<small>One-time</small></div>
+      <p class="desc">You already have a developer, or want to hire one. I deliver everything they need to build it right.</p>
+      <ul>
+        <li>Final design, 1 round of revisions</li>
+        <li>HTML prototype files</li>
+        <li>Optimized photo and asset package</li>
+        <li>Style guide: colors, type, buttons</li>
+        <li>Copy document for every page</li>
+        <li>60-min handoff call with your developer</li>
+        <li>30 days of developer Q&amp;A</li>
+      </ul>
+      <p class="best">Best if you have a developer lined up.</p>
+    </div>
+    <div class="opt rec">
+      <span class="ribbon">Recommended</span>
+      <div class="num">B</div>
+      <h3>Design + <em>Site Placement</em></h3>
+      <div class="price">$3,400<small>One-time</small></div>
+      <p class="desc">I rebuild the key sections inside your current Squarespace site, using its built-in sections plus custom code blocks for the signature pieces.</p>
+      <ul>
+        <li>Everything in Handoff</li>
+        <li>Home, Story, Humidor, Bar, Music, Membership pages</li>
+        <li>Connected to Squarespace's own booking, membership and email tools where they fit</li>
+        <li>Mobile check on every page</li>
+        <li>1-hour training on making edits</li>
+      </ul>
+      <p class="best" style="color:#8f8476">Best for a faster, lower-cost launch without leaving Squarespace. Some interactive features are simplified to fit what Squarespace allows.</p>
+    </div>
+  </div>
+  <p class="fineprint">Prices cover design and placement labor. Third-party services and subscriptions are paid directly by Crown &amp; Ash (see page 06). Custom features such as the Member Portal require a developer and are not part of either path.</p>
+  <div class="pfoot"><span>Crown &amp; Ash · Website Proposal</span><span>04</span></div>
+</section>
+
+<!-- 05 CARE -->
+<section class="page" data-screen-label="05 Monthly Site Care">
+  <div class="eyebrow">04 — Monthly Site Care</div>
+  <h2>Kept fresh, <em>every Friday.</em></h2>
+  <p class="lede">A lounge changes weekly: new cigars, new pours, new shows. Site Care keeps the website current without you touching it. Available with any path.</p>
+  <div class="plans">
+    <div class="plan">
+      <div class="row"><h3>Essentials</h3><div class="p">$175<small> /mo</small></div></div>
+      <div class="hrs">Up to 2.5 hours monthly</div>
+      <ul>
+        <li>Live music calendar updates</li>
+        <li>Humidor and bar menu changes</li>
+        <li>Hours, specials and announcements</li>
+        <li>1 homepage banner or event graphic</li>
+        <li>Replies within 2 business days</li>
+      </ul>
+    </div>
+    <div class="plan sig">
+      <div class="row"><h3>Signature</h3><div class="p">$350<small> /mo</small></div></div>
+      <div class="hrs">Up to 5 hours monthly</div>
+      <ul>
+        <li>Everything in Essentials</li>
+        <li>Monthly Crown Council email, designed and sent</li>
+        <li>4 social graphics to match the site</li>
+        <li>Seasonal refresh of homepage imagery</li>
+        <li>Monthly check of links, forms and bookings</li>
+      </ul>
+    </div>
+  </div>
+  <div class="two">
+    <div>
+      <h4>How it works</h4>
+      <ul>
+        <li>Send updates by Wednesday for a Friday refresh</li>
+        <li>Extra time billed at $70 / hour, approved first</li>
+        <li>Unused hours don't roll over</li>
+        <li>3-month minimum, then month to month</li>
+        <li>Cancel with 30 days' notice</li>
+      </ul>
+    </div>
+    <div class="no">
+      <h4>Not included (referred to developer)</h4>
+      <ul>
+        <li>New features or custom code</li>
+        <li>Hosting, security and server issues</li>
+        <li>Plugin or platform errors</li>
+        <li>Payment or booking system troubleshooting</li>
+        <li>Billed by the developer at their rate, quoted first</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pfoot"><span>Crown &amp; Ash · Website Proposal</span><span>05</span></div>
+</section>
+
+<!-- 06 COSTS + TIMELINE -->
+<section class="page" data-screen-label="06 Costs & Timeline">
+  <div class="eyebrow">05 — Going Live</div>
+  <h2>What else <em>to budget for.</em></h2>
+  <p class="lede" style="font-size:19px">Services you pay for directly, in your name, so you always own your accounts. Estimates only. I'll help you compare options.</p>
+  <table>
+    <thead><tr><th>Service</th><th>What it does</th><th>Est. cost</th></tr></thead>
+    <tbody>
+      <tr><td>Squarespace plan</td><td>You already have this. Custom code sections need the Core plan or higher, so you may need to upgrade.</td><td>Current plan</td></tr>
+      <tr><td>Reservations</td><td>Lounge seats and private room bookings (e.g. Squarespace Scheduling, Tock, OpenTable)</td><td>$0 – 250 / mo</td></tr>
+      <tr><td>Event tickets</td><td>Paid shows and tastings (e.g. Eventbrite, Square)</td><td>Per-ticket fees</td></tr>
+      <tr><td>Membership billing</td><td>Recurring VIP / Elite payments, e.g. Squarespace Member Sites. Confirm the payment processor allows tobacco-related businesses.</td><td>~3% per payment</td></tr>
+      <tr><td>Email newsletter</td><td>The Crown Council list (e.g. Squarespace Email Campaigns, Mailchimp)</td><td>$0 – 35 / mo</td></tr>
+      <tr><td>Photography</td><td>Replacing concept stock photos with your own. Strongly recommended.</td><td>$400 – 1,200 once</td></tr>
+    </tbody>
+  </table>
+  <div style="margin-top:34px"><div class="eyebrow">Timeline · Path B</div></div>
+  <div class="timeline">
+    <div><span>Week 1</span><b>Kickoff</b><p>Gather menus, logins, photos. Choose services.</p></div>
+    <div><span>Week 2</span><b>Final design</b><p>Your revisions applied and approved.</p></div>
+    <div><span>Week 3</span><b>Placement</b><p>Pages built in your platform and linked to your services. You preview as it goes.</p></div>
+    <div><span>Week 4</span><b>Launch</b><p>Final review, training and go-live.</p></div>
+  </div>
+  <p class="fineprint" style="margin-top:18px">Path A: about 1–2 weeks, plus your developer's build time. Timelines depend on how quickly content and approvals come back.</p>
+  <div class="pfoot"><span>Crown &amp; Ash · Website Proposal</span><span>06</span></div>
+</section>
+
+<!-- 07 TERMS -->
+<section class="page" data-screen-label="07 Terms & Next Steps">
+  <div class="eyebrow">06 — Terms &amp; Next Steps</div>
+  <h2>Ready when <em>you are.</em></h2>
+  <div class="terms">
+    <div><b>Payment</b><p>50% deposit to begin, 50% at handoff or launch. Site Care billed monthly in advance.</p></div>
+    <div><b>Ownership</b><p>The concept stays the property of Create4Me until the project fee is paid. After that, Crown &amp; Ash owns the final design and site.</p></div>
+    <div><b>Revisions</b><p>One full round of design revisions is included. Further rounds are billed at $70 / hour.</p></div>
+    <div><b>Your accounts</b><p>Squarespace and service accounts stay in Crown &amp; Ash's name. I'm added as a contributor, never the owner.</p></div>
+    <div><b>Photos</b><p>Concept stock images are placeholders and must be licensed or replaced before launch.</p></div>
+    <div><b>Developer work</b><p>Any developer is hired and paid by Crown &amp; Ash directly. I'm happy to recommend and brief one.</p></div>
+    <div><b>Compliance</b><p>Age gate and warnings are included as designed. Final legal wording is Crown &amp; Ash's responsibility to confirm.</p></div>
+    <div><b>Validity</b><p>This proposal is valid for 30 days from September 26, 2026.</p></div>
+  </div>
+  <div class="select">
+    <label><i></i>Path A · Handoff</label>
+    <label><i></i>Path B · Placement</label>
+    <label><i></i>Site Care: Essentials / Signature</label>
+  </div>
+  <div class="sign">
+    <div>Crown &amp; Ash · Signature &amp; date</div>
+    <div>Create4Me · Signature &amp; date</div>
+  </div>
+  <div class="pfoot" style="border:0;margin-top:auto;padding-top:0">
+    <span>Create4Me · <a href="mailto:sharla@create4me.co">sharla@create4me.co</a> · 803-602-4574</span><span>07</span>
+  </div>
+</section>
+
+</body>
+</html>

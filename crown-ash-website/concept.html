@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Crown & Ash Cigar Lounge — Heavy Crown. Smooth Draw.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site/v2.css">
+<script>document.documentElement.dataset.theme=localStorage.getItem('ca_theme')||'dark';</script>
+</head>
+<body class="locked">
+
+<!-- AGE GATE -->
+<div class="gate" id="gate" data-mode="yes" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+  <div class="gate-bg"></div>
+  <div class="gate-card">
+    <div class="brand"><div class="brand-mark"><span>C</span></div><div class="brand-name">Crown & Ash<small>Cigar Lounge</small></div></div>
+    <div class="form">
+      <h2 id="gateTitle">Welcome. <em>Are you 21 or older?</em></h2>
+      <p class="q">This site contains tobacco and alcohol content intended for adults of legal age.</p>
+      <div class="m-yes gate-btns">
+        <button class="btn btn-light" id="gateNo">No</button>
+        <button class="btn btn-gold" id="gateYes">Yes, enter</button>
+      </div>
+      <div class="m-dob">
+        <div class="dob">
+          <input id="dobM" inputmode="numeric" maxlength="2" placeholder="MM" aria-label="Month">
+          <input id="dobD" inputmode="numeric" maxlength="2" placeholder="DD" aria-label="Day">
+          <input id="dobY" inputmode="numeric" maxlength="4" placeholder="YYYY" aria-label="Year">
+        </div>
+        <button class="btn btn-gold" id="enterBtn" style="width:100%;background:#b8955a;color:#141110">Enter the Lounge <span class="arr">→</span></button>
+      </div>
+      <label class="remember"><input type="checkbox" id="remember"> Remember me for 30 days</label>
+      <div class="err" id="gateErr"></div>
+    </div>
+    <div class="denied">
+      <h2>Until we <em>meet again.</em></h2>
+      <p class="q">You must be 21 or older to enter. We look forward to welcoming you when the time comes.</p>
+    </div>
+    <div class="gate-warn">Warning: Cigar smoking can cause cancers of the mouth and throat, even if you do not inhale.</div>
+    <p class="fine">By entering you confirm you are of legal age and agree to our Terms &amp; Privacy Policy. Tobacco is not sold online.</p>
+  </div>
+</div>
+
+<div class="warnbar">Warning: Cigars are not a safe alternative to cigarettes.</div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-in">
+    <a href="#top" class="brand"><div class="brand-mark"><span>C</span></div><div class="brand-name">Crown & Ash<small>Cigar Lounge</small></div></a>
+    <nav class="nav-links"><a href="#humidor">Humidor</a><a href="#bar">The Bar</a><a href="#music">Live Music</a><a href="#membership">Membership</a><a href="#founders">Our Story</a></nav>
+    <div class="nav-cta">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle light / dark" title="Light / Dark"></button>
+      <button class="icon-btn hide-md" data-portal aria-label="Member login" title="Member Login"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></button>
+      <a href="#reserve" class="btn btn-gold">Reserve</a>
+      <button class="icon-btn burger" id="burger" aria-label="Menu"><svg width="20" height="14" viewBox="0 0 20 14" stroke="currentColor"><path d="M0 1h20M6 7h14M0 13h20"/></svg></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu">
+  <button class="close" id="mclose">Close ✕</button>
+  <a href="#humidor">Humidor</a><a href="#bar">The Bar</a><a href="#music">Live Music</a><a href="#membership">Membership</a><a href="#founders">Our Story</a><a href="#reserve">Reserve</a><a href="#" data-portal>Member Login</a>
+</div>
+
+<main id="top">
+<!-- 01 HERO -->
+<section class="hero" data-screen-label="01 Hero">
+  <img src="assets/lounge.jpg" alt="The Crown & Ash lounge — leather seating beneath warm light">
+  <canvas id="smoke"></canvas>
+  <div class="wrap hero-in">
+    <div class="eyebrow" style="color:#d4b98a">Cigar Lounge · Columbia, SC</div>
+    <h1 class="h1" style="margin-top:18px"><span class="ln"><span>Heavy Crown.</span></span><span class="ln"><span><em>Smooth Draw.</em></span></span></h1>
+    <p class="lede">A hand-selected humidor, top-shelf pours and live music — beneath warm light, in deep leather.</p>
+    <div class="hero-actions">
+      <a href="#reserve" class="btn btn-gold" style="background:#b8955a;border-color:#b8955a;color:#141110">Reserve a Seat <span class="arr">→</span></a>
+      <a href="#membership" class="btn btn-light">Membership</a>
+    </div>
+    <div class="hero-bar">
+      <span class="live"><span class="dot"></span><span>This Friday · <b id="heroEv">Velvet Hour Jazz Trio</b> · 8 PM</span></span>
+      <span class="hide-md">101 Sparkleberry Crossing, Suite 4</span>
+      <button class="film" id="filmBtn"><span class="ring"><svg width="11" height="13" viewBox="0 0 14 16"><path d="M0 0l14 8-14 8z" fill="currentColor"/></svg></span>Watch the film</button>
+    </div>
+  </div>
+</section>
+
+<!-- 02 FOUNDERS -->
+<section class="founders" id="founders" data-screen-label="02 Founders">
+  <div class="wrap f-grid">
+    <div class="f-copy reveal">
+      <div class="eyebrow">Our Story</div>
+      <h2 class="h2">A private celebration <em>of the good life.</em></h2>
+      <p class="lede">Crown &amp; Ash was built on a simple belief: a great cigar deserves great company, a great pour, and a room worth lingering in.</p>
+      <p class="body">Whether you're lighting your first or you live for nuanced, complex smokes, our founders will guide you to the right one — and the right glass beside it.</p>
+    </div>
+    <div class="f-pics reveal">
+      <figure class="f-pic"><div class="ph"><img src="assets/tiniece.jpg" alt="Dr. Tiniece Jarvis" style="object-position:50% 20%"></div><figcaption><b>Dr. Tiniece Jarvis</b><span>Co-Founder</span></figcaption></figure>
+      <figure class="f-pic"><div class="ph"><img src="assets/justin.jpg" alt="Justin Nelson" style="object-position:40% 30%"></div><figcaption><b>Justin Nelson</b><span>Co-Founder</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 03 HUMIDOR -->
+<section class="humidor" id="humidor" data-screen-label="03 Digital Humidor">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div><div class="eyebrow">The Digital Humidor</div><h2 class="h2">Walk the shelves <em>before you arrive.</em></h2></div>
+      <p>A selection from our walk-in humidor. Tap any cigar for origin, tasting notes and our recommended pour.</p>
+    </div>
+    <div class="filters reveal" id="filters">
+      <button class="chip on" data-s="all">All</button><button class="chip" data-s="mild">Mild–Medium</button><button class="chip" data-s="med">Medium–Full</button><button class="chip" data-s="full">Full</button>
+      <span class="sep"></span>
+      <button class="chip on" data-o="all">Any origin</button><button class="chip" data-o="Nicaragua">Nicaragua</button><button class="chip" data-o="Dominican Republic">Dominican Rep.</button><button class="chip" data-o="Honduras">Honduras</button>
+    </div>
+    <div class="cgrid" id="cigarGrid"></div>
+    <div class="h-foot"><span>Selection rotates weekly · Available in-lounge only</span><a href="#reserve" class="link">Plan a visit →</a></div>
+  </div>
+</section>
+
+<!-- 04 BAR -->
+<section class="bar" id="bar" data-screen-label="04 Spirits & Pairings">
+  <div class="wrap">
+    <div class="shead reveal">
+      <div><div class="eyebrow">Spirits &amp; Cocktails</div><h2 class="h2">Poured <em>to pair.</em></h2></div>
+      <p>Every pour on our list is chosen to stand beside a cigar. Select a drink to see its match from the humidor.</p>
+    </div>
+    <div class="bar-grid">
+      <aside class="feature reveal" id="feature"></aside>
+      <div class="reveal">
+        <div class="tabs" id="tabs"><button class="tab on" data-t="bourbon">Bourbon</button><button class="tab" data-t="scotch">Scotch</button><button class="tab" data-t="cocktails">Signature Cocktails</button><button class="tab" data-t="wine">Wine &amp; Draft</button></div>
+        <ul class="mlist" id="menuList"></ul>
+        <p class="mnote">Sample menu for concept purposes · 21+ · Please enjoy responsibly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 05 MUSIC -->
+<section class="music" id="music" data-screen-label="05 Live Music">
+  <div class="music-grid">
+    <div class="music-img">
+      <img src="assets/stock/sax2.jpg" alt="Live saxophone">
+      <div class="cap"><div class="eyebrow">Live Music <span class="eq"><i></i><i></i><i></i><i></i></span></div><h2 class="h2">Smoke, sax <em>&amp; soul.</em></h2></div>
+    </div>
+    <div class="music-list">
+      <p class="lede">Jazz, neo-soul, blues and acoustic sets every Friday — the tempo for a long, slow smoke.</p>
+      <div id="events"></div>
+      <a href="#reserve" class="link" id="evAll">Reserve a seat for a show →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 06 MEMBERSHIP -->
+<section class="membership" id="membership" data-screen-label="06 Membership">
+  <div class="wrap">
+    <div class="m-head reveal"><div class="eyebrow">Membership</div><h2 class="h2">Wear the <em>Crown.</em></h2><p>For those who make Crown &amp; Ash their second home.</p></div>
+    <div class="billing reveal"><div class="seg" id="billing"><button class="on" data-b="y">Yearly</button><button data-b="m">Monthly</button></div></div>
+    <div class="tiers">
+      <article class="tier elite reveal" data-tier="elite">
+        <div class="tier-top"><div><div class="tname">Crown</div><h3>Elite</h3></div><span class="pill">Top tier</span></div>
+        <div class="price"><b data-price>$699</b><span data-per>/ year</span></div>
+        <div class="sub muted" data-sub>Save $81 vs. monthly</div>
+        <div class="spots"><span class="dd" id="eliteDots"></span><span>3 of 9 spots remain</span></div>
+        <ul class="perks"><li>Locker with special nameplate</li><li>VIP lounge access</li><li>Monthly lounge credit</li><li>15% off purchases</li><li>3 free guest passes</li><li>Monthly gift item</li><li>No cut fees</li><li>Priority reserved seating</li><li>Priority on lounge events</li></ul>
+        <button class="btn btn-gold" data-join="Crown Elite">Apply for Elite <span class="arr">→</span></button>
+      </article>
+      <article class="tier reveal" data-tier="vip">
+        <div class="tier-top"><div><div class="tname">Crown</div><h3>VIP</h3></div></div>
+        <div class="price"><b data-price>$499</b><span data-per>/ year</span></div>
+        <div class="sub" data-sub>Save $41 vs. monthly</div>
+        <div class="spots" style="visibility:hidden">&nbsp;</div>
+        <ul class="perks"><li>Assigned locker</li><li>VIP lounge access</li><li>10% off purchases</li><li>1 free guest pass</li><li>Quarterly gift item</li><li>No cut fee</li><li>Priority on lounge events</li></ul>
+        <button class="btn btn-ghost" data-join="Crown VIP">Join VIP <span class="arr">→</span></button>
+      </article>
+    </div>
+    <p class="m-note">Already a member? <button data-portal>Sign in to your portal</button></p>
+  </div>
+</section>
+
+<!-- 07 RESERVE -->
+<section class="reserve" id="reserve" data-screen-label="07 Reservations">
+  <div class="wrap res-grid">
+    <div class="res-side reveal">
+      <div class="eyebrow">Reservations</div>
+      <h2 class="h2">Your chair <em>is waiting.</em></h2>
+      <p class="lede">Lounge seating, a private room for your group, or a seat at the next show or tasting.</p>
+      <div class="clist">
+        <div><span>Address</span>101 Sparkleberry Crossing, Ste 4<br>Columbia, SC 29223</div>
+        <div><span>Phone</span><a href="tel:8036384228">803-638-4228</a></div>
+        <div><span>Walk-ins</span>Welcome, seating permitting</div>
+      </div>
+    </div>
+    <div class="booker reveal"><div class="steps" id="steps"></div><div class="bk-body" id="bkBody"></div><div class="bk-foot" id="bkFoot"></div></div>
+  </div>
+</section>
+</main>
+
+<footer data-screen-label="08 Footer">
+  <div class="wrap">
+    <div class="news">
+      <div><div class="eyebrow">The Crown Council</div><h2 class="h2">First to know. <em>Always.</em></h2></div>
+      <div><form id="councilForm"><input type="email" required placeholder="Your email address"><button type="submit">Join →</button></form><p class="fine">Live events, membership openings, specials &amp; VIP updates. We respect your privacy.</p></div>
+    </div>
+    <div class="fgrid">
+      <div><a href="#top" class="brand"><div class="brand-mark"><span>C</span></div><div class="brand-name">Crown & Ash<small>Cigar Lounge</small></div></a><p class="ftag">Heavy Crown. Smooth Draw.</p></div>
+      <div><h5>Visit</h5><p>101 Sparkleberry Crossing<br>Suite 4, Columbia, SC 29223</p><a href="tel:8036384228">803-638-4228</a></div>
+      <div><h5>Explore</h5><a href="#humidor">Humidor</a><a href="#bar">The Bar</a><a href="#music">Live Music</a><a href="#membership">Membership</a></div>
+      <div><h5>Connect</h5><a href="https://www.instagram.com/reel/DVJ3aNfAcWW/" target="_blank" rel="noopener">Instagram</a><a href="#" data-portal>Member Portal</a><a href="#reserve">Private Events</a></div>
+    </div>
+    <div class="surgeon">Surgeon General Warning: Tobacco smoke increases the risk of lung cancer and heart disease, even in nonsmokers.</div>
+    <div class="legal"><span>© 2026 Crown &amp; Ash Cigar Lounge · Adults 21+ only · Please drink responsibly</span><span>Privacy · Terms · Accessibility</span></div>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"></aside>
+
+<div class="scrim film-modal" id="filmScrim">
+  <div style="position:relative;width:min(400px,92vw)">
+    <button id="filmClose" style="position:absolute;top:-40px;right:0;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:#ede4d4">Close ✕</button>
+    <div id="filmSlot" style="aspect-ratio:9/16;background:#000"></div>
+  </div>
+</div>
+
+<div class="portal" id="portal" data-screen-label="09 Member Portal">
+  <div class="ptop"><div class="brand"><div class="brand-mark"><span>C</span></div><div class="brand-name">Crown & Ash<small>Member Portal</small></div></div><button class="linkbtn" id="portalClose">← Back to site</button></div>
+  <div class="login">
+    <div class="login-img"><img src="assets/lounge.jpg" alt=""><blockquote>“Your locker. Your pour. Your seat — held.”</blockquote></div>
+    <div class="login-form">
+      <div class="eyebrow">Members Only</div>
+      <h2 class="h2">Welcome <em>back.</em></h2>
+      <p style="color:var(--muted);margin-top:10px">View your locker, RSVP to members-only events and track your rewards.</p>
+      <div class="fields"><div class="field"><label>Email or Member ID</label><input value="justin@crownandash.com"></div><div class="field"><label>Password</label><input type="password" value="password"></div></div>
+      <div class="row"><label style="display:flex;gap:8px;align-items:center"><input type="checkbox" checked style="accent-color:var(--accent)"> Keep me signed in</label><a href="#" style="color:var(--accent2)">Forgot password?</a></div>
+      <button class="btn btn-gold" id="signIn">Sign In <span class="arr">→</span></button>
+      <p style="margin-top:20px;font-size:13px;color:var(--muted)">Not a member? <a href="#membership" data-closeportal style="color:var(--accent2)">Explore membership</a></p>
+    </div>
+  </div>
+  <div class="dash" id="dash"></div>
+</div>
+
+<div class="concept"><b>Concept</b> by Create4Me <button id="gateMode">Gate: Yes/No</button><button id="resetGate">Replay gate</button></div>
+<div class="toast" id="toast"></div>
+
+<script src="site/data.js"></script>
+<script src="site/app2.js"></script>
+</body>
+</html>

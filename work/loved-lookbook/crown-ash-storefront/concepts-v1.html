@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crown &amp; Ash — Fall Storefront Concepts · Create4Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16120f; --ivory:#f4efe6; --mute:#a89c8c; --mute-d:#6e6356;
+    --gold:#c8a15a; --gold-l:#e2c88f; --ox:#6b2323;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Jost','Helvetica Neue',Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#000;font-family:var(--sans)}
+  deck-stage section{width:1920px;height:1080px;position:relative;overflow:hidden;background:var(--ink);color:var(--ivory);font-family:var(--sans)}
+  section.light{background:var(--ivory);color:var(--ink)}
+  .pad{position:absolute;inset:0;padding:96px 120px}
+  .eyebrow{font:500 22px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+  .light .eyebrow{color:#9a7636}
+  h1,h2,h3{font-family:var(--serif);font-weight:500}
+  h2{font-size:84px;line-height:1.02;margin-top:28px;text-wrap:balance}
+  h3{font-size:44px;line-height:1.1}
+  p,li,td{text-wrap:pretty}
+  .body{font:300 28px/1.5 var(--sans);color:#d9d0c3}
+  .light .body{color:#3d352d}
+  .small{font:400 24px/1.45 var(--sans)}
+  .rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent);opacity:.7}
+  .foot{position:absolute;left:120px;right:120px;bottom:44px;display:flex;justify-content:space-between;font:400 20px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute-d)}
+  .light .foot{color:#9b8f80}
+  .foot b{color:var(--gold);font-weight:500}
+  .crest{width:12px;height:12px;border:1.5px solid var(--gold);transform:rotate(45deg);display:inline-block;margin:0 16px;vertical-align:middle}
+  .photo{background-size:cover;background-position:center;background-color:#2a231d}
+  .cap{font:400 20px/1.35 var(--sans);color:#6e6356;margin-top:14px}
+  .chip{display:flex;flex-direction:column;gap:10px}
+  .chip i{display:block;width:100%;border-radius:2px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+  .chip span{font:400 18px/1.2 var(--sans);letter-spacing:.04em;color:var(--mute)}
+  table{border-collapse:collapse;width:100%}
+  .list td,.list th{font:400 21px/1.3 var(--sans);padding:10px 0;border-bottom:1px solid rgba(200,161,90,.18);text-align:left;vertical-align:top}
+  .list th{font-weight:500;font-size:17px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-bottom:12px}
+  .list td.r,.list th.r{text-align:right;white-space:nowrap;padding-left:16px}
+  .list td.store{color:var(--gold-l);white-space:nowrap;padding-left:16px}
+  .list tr.tot td{border-bottom:none;border-top:1px solid var(--gold);font:500 34px/1 var(--serif);padding-top:16px}
+  .tag{display:inline-block;font:500 18px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--gold);color:var(--gold)}
+  .light .tag{border-color:#9a7636;color:#9a7636}
+  .box{display:inline-block;width:22px;height:22px;border:1.5px solid #6e6356;vertical-align:-3px;margin-right:18px}
+
+  /* photo overlay scene (840 x 630) */
+  .scene{position:relative;width:840px;height:630px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+  .scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) brightness(.92)}
+  .zone{position:absolute;border:2px dashed;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:4px;text-align:center}
+  .zone b{font:600 12px/1.1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+  .callout{position:absolute;font:500 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(22,18,15,.78);padding:9px 12px}
+  .rugtag{position:absolute;text-align:center;font:600 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:#fff;text-shadow:0 1px 3px #000}
+  .walk{position:absolute;text-align:center;font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#fff;background:rgba(22,18,15,.7);padding:8px 0}
+
+  /* plan view */
+  .plan{position:relative;width:100%;height:640px}
+  .plan .lbl{position:absolute;font:500 16px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#6e6356}
+</style>
+</head>
+<body>
+<deck-stage id="deck">
+
+<!-- 01 COVER -->
+<section data-label="Cover">
+  <div class="photo" style="position:absolute;right:0;top:0;width:980px;height:1080px;background-image:url('assets/site-5-wide.jpg');background-position:50% 40%"></div>
+  <div style="position:absolute;right:0;top:0;width:980px;height:1080px;background:linear-gradient(90deg,var(--ink) 0%,rgba(22,18,15,.35) 30%,rgba(22,18,15,0) 55%)"></div>
+  <div class="pad" style="right:980px">
+    <div class="eyebrow">Fall Storefront Concepts · 2026</div>
+    <h1 style="font-size:156px;line-height:.9;margin-top:130px">Crown<br><span style="font-style:italic;color:var(--gold)">&amp;</span> Ash</h1>
+    <div class="rule" style="width:420px;margin:56px 0 40px"></div>
+    <p class="body" style="max-width:640px">Five elegant, affordable autumn entrances for the lounge, each tied together by a single rug.</p>
+    <p style="position:absolute;bottom:96px;font:400 21px/1.65 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)">101 Sparkleberry Crossing, Suite 4<br>Columbia, SC<br><span style="color:var(--gold)">Prepared by Create4Me</span></p>
+  </div>
+</section>
+
+<!-- 02 THE SITE -->
+<section class="light" data-label="The Site">
+  <div class="pad">
+    <div class="eyebrow">01 — The Site</div>
+    <h2 style="max-width:1300px">Red brick, a wine-red dome awning, and a glass double door.</h2>
+    <div style="position:absolute;left:120px;right:120px;top:370px;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:28px">
+      <div><div class="photo" style="height:430px;background-image:url('assets/site-1-front.jpg')"></div><p class="cap">Suite 4 frontage: brick piers with coach lights on each side, glazing, and a center double door.</p></div>
+      <div><div class="photo" style="height:430px;background-image:url('assets/site-7-walk.jpg')"></div><p class="cap">Shared stamped-concrete walk. The neighbor's bistro seating shows how deep the walk is.</p></div>
+      <div><div class="photo" style="height:430px;background-image:url('assets/site-4-walk-sun.jpg')"></div><p class="cap">Faces west into strong afternoon sun, so the mums will need regular water.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Fall Concepts</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- 03 WHAT THE SITE TELLS US -->
+<section data-label="Site Read">
+  <div class="photo" style="position:absolute;left:0;top:0;width:820px;height:1080px;background-image:url('assets/site-6-doors-straight.jpg')"></div>
+  <div class="pad" style="left:820px;padding-left:110px">
+    <div class="eyebrow">02 — What the Site Tells Us</div>
+    <h2 style="font-size:76px">The awning is already the color. We build around it.</h2>
+    <table class="list" style="margin-top:44px">
+      <tr><td style="font-size:25px;padding:18px 0"><b style="font-weight:500;color:var(--gold-l)">Wine-red awning + red brick.</b> Stick to wine, bronze, ivory and black. Bright orange would clash with the brick.</td></tr>
+      <tr><td style="font-size:25px;padding:18px 0"><b style="font-weight:500;color:var(--gold-l)">Gold-and-cream logo on the door.</b> Brass and cream accents repeat it at eye level.</td></tr>
+      <tr><td style="font-size:25px;padding:18px 0"><b style="font-weight:500;color:var(--gold-l)">Brick piers on each side.</b> This is where the planters go, flanking the door symmetrically without blocking the glass.</td></tr>
+      <tr><td style="font-size:25px;padding:18px 0"><b style="font-weight:500;color:var(--gold-l)">No step at the door.</b> Glass doors open straight onto the concrete, so the rug has to be thin and the doors must clear it.</td></tr>
+      <tr><td style="font-size:25px;padding:18px 0"><b style="font-weight:500;color:var(--gold-l)">Glass reflects everything.</b> Tall shapes and warm lantern light keep the entrance readable against the reflections.</td></tr>
+    </table>
+  </div>
+  <div class="foot" style="left:930px"><span>Crown &amp; Ash <i class="crest"></i> Fall Concepts</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- 04 INSPIRATION -->
+<section class="light" data-label="Inspiration">
+  <div class="pad">
+    <div class="eyebrow">03 — Inspiration</div>
+    <h2>What we're borrowing from each image.</h2>
+    <div style="position:absolute;left:120px;right:120px;top:330px;display:grid;grid-template-columns:repeat(3,1fr);gap:48px">
+      <div style="display:grid;grid-template-columns:230px 1fr;gap:26px">
+        <div class="photo" style="height:410px;background-image:url('assets/insp-4-copper.jpg')"></div>
+        <div><div class="tag">Image 4</div><h3 style="font-size:38px;margin:22px 0 14px">Copper &amp; height</h3><p class="body" style="font-size:23px">Tall aged-copper urns, faux pampas and wheat, and dark foliage. Leads to <b style="font-weight:500">Option B</b>.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:230px 1fr;gap:26px">
+        <div class="photo" style="height:410px;background-image:url('assets/insp-5-terracotta.jpg')"></div>
+        <div><div class="tag">Image 5</div><h3 style="font-size:38px;margin:22px 0 14px">The mum colors</h3><p class="body" style="font-size:23px">Wine, raspberry and deep red mums, packed and tiered. Leads to <b style="font-weight:500">Options C &amp; D</b>.</p></div>
+      </div>
+      <div style="display:grid;grid-template-columns:230px 1fr;gap:26px">
+        <div class="photo" style="height:410px;background-image:url('assets/insp-6-black.jpg')"></div>
+        <div><div class="tag">Image 6</div><h3 style="font-size:38px;margin:22px 0 14px">Black planters</h3><p class="body" style="font-size:23px">Tall black tapered planters flanking the door, with lantern light. Leads to <b style="font-weight:500">Options A &amp; E</b>.</p></div>
+      </div>
+    </div>
+    <p class="body" style="position:absolute;left:120px;right:120px;top:810px;font-size:24px;color:#6e6356">We're leaving out the hanging wreaths, string lights on the building and café furniture from these images, because the landlord and fire rules at this site restrict them (see the next slide).</p>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Fall Concepts</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- 05 COMPLIANCE -->
+<section data-label="Rules">
+  <div class="pad">
+    <div class="eyebrow">04 — Rules We Designed To</div>
+    <h2 style="max-width:1500px">Every option follows the same placement rules.</h2>
+    <div style="position:absolute;left:120px;right:120px;top:380px;display:grid;grid-template-columns:repeat(3,1fr);gap:52px 72px">
+      <div><div class="tag">Walkway</div><p class="body" style="font-size:24px;margin-top:20px">At least <b style="color:var(--gold-l);font-weight:500">60″ of clear sidewalk</b> left open between the décor and the curb, wide enough for two people or a wheelchair (ADA minimum is 36″). Décor stays in a band about 30″ deep against the storefront.</p></div>
+      <div><div class="tag">Doors &amp; exit</div><p class="body" style="font-size:24px;margin-top:20px">The double door is an exit. <b style="color:var(--gold-l);font-weight:500">Nothing goes in the door swing</b>, and there's at least 18″ of clear space beside each door on the pull side. The fire-department sign on the glass stays visible.</p></div>
+      <div><div class="tag">Rug safety</div><p class="body" style="font-size:24px;margin-top:20px">Low-profile outdoor flatweave, <b style="color:var(--gold-l);font-weight:500">under ½″ thick</b>, with edges taped to the concrete. We test that both doors open over it before we leave.</p></div>
+      <div><div class="tag">Wind &amp; weight</div><p class="body" style="font-size:24px;margin-top:20px">Planters weighted with gravel or bricks. Tier stands placed against the piers with their feet weighted, so nothing can tip onto the walk.</p></div>
+      <div><div class="tag">Fire &amp; smoke</div><p class="body" style="font-size:24px;margin-top:20px">No real hay, corn stalks or dried grasses. <b style="color:var(--gold-l);font-weight:500">Faux stems only</b>, kept away from ash urns and smoking areas. Battery LED lanterns only, no open flame and no extension cords.</p></div>
+      <div><div class="tag">Landlord</div><p class="body" style="font-size:24px;margin-top:20px">Everything stays within Suite 4's frontage. <b style="color:var(--gold-l);font-weight:500">Nothing drilled, glued or hung</b> on the brick, awning or coach lights, and nothing in the landscape beds. We get written approval from property management first.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>To confirm before install — see Approval slide</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- 06 PLACEMENT PLAN -->
+<section class="light" data-label="Placement Plan">
+  <div class="pad" style="display:grid;grid-template-columns:560px 1fr;gap:90px">
+    <div>
+      <div class="eyebrow">05 — Placement Plan</div>
+      <h2 style="font-size:76px">One layout, five looks.</h2>
+      <p class="body" style="margin-top:34px;font-size:25px">Every option uses the same four zones. Planters go against the brick piers, pumpkins sit at their base, and the rug goes at the door. The rest of the walk stays open.</p>
+      <p class="body" style="margin-top:22px;font-size:25px">Dimensions are <b style="font-weight:500">estimated from the photos</b>. We'll measure on site before buying anything.</p>
+    </div>
+    <div style="padding-top:30px">
+      <div class="plan">
+        <!-- building -->
+        <div style="position:absolute;left:0;right:0;top:0;height:70px;background:repeating-linear-gradient(135deg,#b4543e 0 6px,#a44a36 6px 12px)"></div>
+        <div class="lbl" style="left:0;top:-30px">Building line · Suite 4</div>
+        <!-- piers -->
+        <div style="position:absolute;left:40px;top:0;width:180px;height:70px;background:#8e3c2c"></div>
+        <div style="position:absolute;right:40px;top:0;width:180px;height:70px;background:#8e3c2c"></div>
+        <!-- glazing + door -->
+        <div style="position:absolute;left:220px;right:220px;top:54px;height:16px;background:#bcd0d6"></div>
+        <div style="position:absolute;left:calc(50% - 100px);width:200px;top:54px;height:16px;background:#16120f"></div>
+        <!-- door swings -->
+        <div style="position:absolute;left:calc(50% - 100px);top:70px;width:100px;height:100px;border:1.5px dashed #6e6356;border-top:none;border-right:none;border-radius:0 0 0 100px"></div>
+        <div style="position:absolute;left:50%;top:70px;width:100px;height:100px;border:1.5px dashed #6e6356;border-top:none;border-left:none;border-radius:0 0 100px 0"></div>
+        <div class="lbl" style="left:calc(50% - 80px);top:180px;width:160px;text-align:center">Door swing · keep clear</div>
+        <!-- rug -->
+        <div style="position:absolute;left:calc(50% - 130px);top:190px;width:260px;height:110px;background:repeating-linear-gradient(90deg,#16120f 0 14%,#efe6d2 14% 28%);outline:2px solid #c8a15a;outline-offset:4px;opacity:.92"></div>
+        <div class="lbl" style="left:calc(50% - 130px);top:312px;width:260px;text-align:center;color:#9a7636">Rug · 4×6 · just outside door swing</div>
+        <!-- planters -->
+        <div style="position:absolute;left:80px;top:82px;width:100px;height:100px;border-radius:50%;background:#16120f;box-shadow:0 0 0 10px rgba(107,35,35,.35)"></div>
+        <div style="position:absolute;right:80px;top:82px;width:100px;height:100px;border-radius:50%;background:#16120f;box-shadow:0 0 0 10px rgba(107,35,35,.35)"></div>
+        <div class="lbl" style="left:40px;top:200px;width:180px;text-align:center">Planter / stand</div>
+        <div class="lbl" style="right:40px;top:200px;width:180px;text-align:center">Planter / stand</div>
+        <!-- pumpkins -->
+        <div style="position:absolute;left:200px;top:120px;width:34px;height:34px;border-radius:50%;background:#9c5a2c"></div>
+        <div style="position:absolute;left:232px;top:140px;width:26px;height:26px;border-radius:50%;background:#efe6d2;box-shadow:0 0 0 1px #c9bca6"></div>
+        <div style="position:absolute;right:200px;top:120px;width:34px;height:34px;border-radius:50%;background:#9c5a2c"></div>
+        <div style="position:absolute;right:232px;top:140px;width:26px;height:26px;border-radius:50%;background:#efe6d2;box-shadow:0 0 0 1px #c9bca6"></div>
+        <!-- decor band -->
+        <div style="position:absolute;left:0;right:0;top:70px;height:150px;border-bottom:2px dashed #9a7636"></div>
+        <div class="lbl" style="right:0;top:226px;color:#9a7636">Décor band ≈ 30″</div>
+        <!-- clear path -->
+        <div style="position:absolute;left:0;right:0;top:360px;height:200px;background:repeating-linear-gradient(90deg,rgba(154,118,54,.08) 0 40px,rgba(154,118,54,.16) 40px 80px);display:flex;align-items:center;justify-content:center">
+          <span style="font:500 italic 44px/1 var(--serif);color:#6e6356">60″+ clear walkway</span>
+        </div>
+        <!-- curb -->
+        <div style="position:absolute;left:0;right:0;top:572px;height:14px;background:#b8ad9c"></div>
+        <div class="lbl" style="left:0;top:596px">Curb · parking</div>
+        <div class="lbl" style="right:0;top:596px">Plan view · not to scale</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Fall Concepts</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- option slides are inserted here -->
+<template id="opt-anchor"></template>
+
+<!-- COMPARISON -->
+<section class="light" id="compare" data-label="Compare">
+  <div class="pad">
+    <div class="eyebrow">Side by Side</div>
+    <h2>Choose a direction.</h2>
+    <div id="compare-grid" style="position:absolute;left:120px;right:120px;top:320px;display:grid;grid-template-columns:repeat(5,1fr);gap:30px"></div>
+  </div>
+  <div class="foot"><span>Estimated materials · 2026 retail before tax and coupons</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- SEASON PLAN -->
+<section data-label="Season Plan">
+  <div class="pad">
+    <div class="eyebrow">Season Plan</div>
+    <h2>Install, maintain, then carry into the holidays.</h2>
+    <div style="position:absolute;left:120px;right:120px;top:430px;display:grid;grid-template-columns:repeat(4,1fr)">
+      <div style="border-top:1px solid var(--gold);padding:36px 48px 0 0">
+        <div style="font:italic 400 60px/1 var(--serif);color:var(--gold)">Week 1</div>
+        <h3 style="font-size:36px;margin:22px 0 16px">Approve &amp; shop</h3>
+        <p class="body" style="font-size:24px">Client picks a direction and property management approves it in writing. Buy everything in one trip, using the Michaels and Hobby Lobby weekly coupons and sales.</p>
+      </div>
+      <div style="border-top:1px solid var(--gold);padding:36px 48px 0 0">
+        <div style="font:italic 400 60px/1 var(--serif);color:var(--gold)">Install</div>
+        <h3 style="font-size:36px;margin:22px 0 16px">Before opening</h3>
+        <p class="body" style="font-size:24px">About 2 hours. Add gravel to the planters, tape down the rug, test both doors over it, then tape-measure the 60″ walkway.</p>
+      </div>
+      <div style="border-top:1px solid var(--gold);padding:36px 48px 0 0">
+        <div style="font:italic 400 60px/1 var(--serif);color:var(--gold)">Weekly</div>
+        <h3 style="font-size:36px;margin:22px 0 16px">Keep it crisp</h3>
+        <p class="body" style="font-size:24px">The storefront gets direct afternoon sun, so water the mums daily in warm weeks. Pinch off spent blooms and re-tape the rug corners as needed.</p>
+      </div>
+      <div style="border-top:1px solid var(--gold);padding:36px 0 0 0">
+        <div style="font:italic 400 60px/1 var(--serif);color:var(--gold)">Late Nov</div>
+        <h3 style="font-size:36px;margin:22px 0 16px">Holiday swap</h3>
+        <p class="body" style="font-size:24px">Keep the rug, planters, stands and lanterns. Swap the mums and pumpkins for faux evergreens, red berries and gold ribbon, so most of the fall budget carries into the holidays.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Fall Concepts</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- APPROVAL -->
+<section class="light" data-label="Approval">
+  <div class="pad" style="display:grid;grid-template-columns:1fr 1fr;gap:120px">
+    <div>
+      <div class="eyebrow">Approval</div>
+      <h2>Before we install</h2>
+      <table class="list" style="margin-top:44px">
+        <tr><td style="font-size:24px;color:#3d352d;padding:17px 0"><span class="box"></span>Client selects Option ____ (A–E)</td></tr>
+        <tr><td style="font-size:24px;color:#3d352d;padding:17px 0"><span class="box"></span>Written OK from Sparkleberry Crossing property management; lease exhibit on common-area décor reviewed</td></tr>
+        <tr><td style="font-size:24px;color:#3d352d;padding:17px 0"><span class="box"></span>Jurisdiction confirmed: City of Columbia or Richland County (the walkway is private common area; city sidewalk rules apply only if it's in the public right-of-way)</td></tr>
+        <tr><td style="font-size:24px;color:#3d352d;padding:17px 0"><span class="box"></span>Walkway measured on site and 60″ clear path confirmed</td></tr>
+        <tr><td style="font-size:24px;color:#3d352d;padding:17px 0"><span class="box"></span>Install date: ______________</td></tr>
+      </table>
+    </div>
+    <div style="padding-top:150px">
+      <table class="list">
+        <tr><td style="font-size:25px;color:#3d352d">Materials (selected option)</td><td class="r" style="font-size:25px;color:#3d352d">$ ________</td></tr>
+        <tr><td style="font-size:25px;color:#3d352d">Design &amp; install — Create4Me</td><td class="r" style="font-size:25px;color:#3d352d">$ ________</td></tr>
+        <tr><td style="font-size:25px;color:#3d352d">Holiday swap (optional)</td><td class="r" style="font-size:25px;color:#3d352d">$ ________</td></tr>
+        <tr class="tot"><td style="color:#16120f">Total</td><td class="r" style="color:#16120f">$ ________</td></tr>
+      </table>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:120px">
+        <div><div style="border-bottom:1px solid #9b8f80;height:60px"></div><p class="small" style="margin-top:12px;color:#6e6356;font-size:20px">Crown &amp; Ash — signature / date</p></div>
+        <div><div style="border-bottom:1px solid #9b8f80;height:60px"></div><p class="small" style="margin-top:12px;color:#6e6356;font-size:20px">Create4Me — signature / date</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Fall Concepts</span><span><b>Create4Me</b></span></div>
+</section>
+
+</deck-stage>
+
+<script src="options.js"></script>
+<script src="deck_stage.js"></script>
+</body>
+</html>

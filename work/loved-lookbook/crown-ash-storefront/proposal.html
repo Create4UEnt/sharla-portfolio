@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Crown &amp; Ash · Fall Entry Proposal · Create4Me</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16120f; --ivory:#f4efe6; --paper:#f7f3ec; --mute:#a89c8c; --mute-d:#6e6356;
+    --gold:#c8a15a; --gold-d:#9a7636; --gold-l:#e2c88f; --text:#3d352d;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Jost','Helvetica Neue',Helvetica,sans-serif;
+  }
+  @page{size:8.5in 11in;margin:0}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#5a524a}
+  body{font-family:var(--sans);color:var(--text)}
+  .page{width:8.5in;height:11in;position:relative;overflow:hidden;background:var(--paper);margin:24px auto;box-shadow:0 10px 40px rgba(0,0,0,.35);break-after:page;page-break-after:always}
+  .page:last-child{break-after:auto;page-break-after:auto}
+  @media print{html,body{background:none}.page{margin:0;box-shadow:none}}
+  .dark{background:var(--ink);color:var(--ivory)}
+  .pad{position:absolute;inset:0;padding:64px 68px 80px}
+  .eyebrow{font:500 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-d)}
+  .dark .eyebrow{color:var(--gold)}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--ink)}
+  .dark h1,.dark h2{color:var(--ivory)}
+  h2{font-size:42px;line-height:1.02;margin-top:14px;text-wrap:balance}
+  h3{font-size:24px;line-height:1.1}
+  p,li,td{text-wrap:pretty}
+  .body{font:300 13.5px/1.6 var(--sans);color:var(--text)}
+  .lede{font:italic 400 20px/1.35 var(--serif);color:var(--gold-d)}
+  .rule{height:1px;background:var(--gold);opacity:.6}
+  .crest{width:7px;height:7px;border:1px solid var(--gold);transform:rotate(45deg);display:inline-block;margin:0 10px;vertical-align:middle}
+  .foot{position:absolute;left:68px;right:68px;bottom:34px;display:flex;justify-content:space-between;font:400 9px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#9b8f80}
+  .foot b{color:var(--gold-d);font-weight:500}
+  .img{background-size:cover;background-position:center;background-color:#2a231d}
+  table{border-collapse:collapse;width:100%}
+  .t td,.t th{font:400 11.5px/1.35 var(--sans);padding:7px 0;border-bottom:1px solid rgba(154,118,54,.2);text-align:left;vertical-align:top;color:#2a241e}
+  .t th{font-weight:500;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d);padding-bottom:8px}
+  .t .r{text-align:right;white-space:nowrap;padding-left:12px}
+  .t .strike{text-decoration:line-through;color:#a89c8c}
+  .t.tight td{padding:5px 0}
+  .t.tight td.c{padding:5px 8px}
+  .t.tight td.r{padding-left:12px}
+  .t.tight td:first-child{line-height:1.3}
+  .t .c{text-align:center;white-space:nowrap;padding:7px 8px;color:#6e6356}
+  .t .s{color:var(--gold-d);white-space:nowrap;padding-left:12px;font-size:10.5px}
+  .t tr.sub td{border-bottom:none;color:#6e6356;padding:5px 0}
+  .t tr.sub:first-of-type td{padding-top:12px}
+  .t tr.tot td{border-bottom:none;border-top:1px solid var(--gold);font:500 20px/1 var(--serif);padding-top:12px;color:var(--ink)}
+  .tag{display:inline-block;font:500 8.5px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;padding:6px 9px;border:1px solid var(--gold-d);color:var(--gold-d)}
+  .tag.fill{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+  .box{display:inline-block;width:13px;height:13px;border:1px solid #6e6356;vertical-align:-2px;margin-right:12px}
+  .num{font:500 38px/1 var(--serif);color:var(--ink)}
+  .cl{list-style:none;margin-top:12px;display:grid;gap:9px}
+  .cl li{font:300 11.5px/1.5 var(--sans);color:var(--text);padding-left:16px;position:relative}
+  .cl li::before{content:'';position:absolute;left:0;top:6px;width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+  .cl b{font-weight:500;color:var(--ink)}
+  .small{font:400 11px/1.5 var(--sans);color:#6e6356}
+  .sw{display:flex;gap:3px}.sw i{flex:1;height:10px}
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="page dark" data-screen-label="01 Cover">
+  <div class="img" style="position:absolute;right:0;top:0;width:430px;height:100%;background-image:url('assets/render-dusk-lounge-01.png');background-position:50% 50%"></div>
+  <div style="position:absolute;right:0;top:0;width:430px;height:100%;background:linear-gradient(90deg,var(--ink) 0%,rgba(22,18,15,.35) 28%,rgba(22,18,15,0) 55%)"></div>
+  <div class="pad" style="right:390px">
+    <div class="eyebrow">Proposal · Fall Entry Design 2026</div>
+    <h1 style="font-size:78px;line-height:.9;margin-top:150px">The Curing<br><span style="font-style:italic;color:var(--gold)">Season</span></h1>
+    <div class="rule" style="width:200px;margin:34px 0 26px"></div>
+    <p style="font:300 14px/1.6 var(--sans);color:#d9d0c3;max-width:300px">Design, materials and installation for the fall storefront at Crown &amp; Ash.</p>
+    <div style="position:absolute;left:68px;bottom:64px;font:400 10px/1.9 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute)">
+      Prepared for the owners of Crown &amp; Ash<br>
+      101 Sparkleberry Crossing, Suite 4 · Columbia, SC<br>
+      September 25, 2026<br>
+      <span style="color:var(--gold)">Prepared by Create4Me</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 OVERVIEW -->
+<section class="page" data-screen-label="02 Overview">
+  <div class="pad">
+    <div class="eyebrow">01 — Overview</div>
+    <h2 style="max-width:560px">A fall entrance that looks like Crown &amp; Ash.</h2>
+    <p class="body" style="margin-top:22px;max-width:600px">Thank you for the chance to work on your storefront. This proposal covers the three fall concepts we developed for your Suite 4 entrance, what the materials will cost for each, and what Create4Me will do to design, source and install the one you choose.</p>
+    <p class="body" style="margin-top:12px;max-width:600px">All three concepts use the same idea. Fall in the Carolinas is tobacco harvest season, so the palette comes from cigar wrapper shades (Claro to Oscuro), with gold for the <i>Crown</i> and white-grey for the <i>Ash</i>. Each concept is a mirrored pair of arrangements on the brick piers, with a solid rug at the door. Each one also includes warm evening lighting, since most guests arrive after dark.</p>
+
+    <div class="sw" style="margin-top:28px;max-width:600px">
+      <i style="background:#c9a877"></i><i style="background:#a47444"></i><i style="background:#8a4f2c"></i><i style="background:#4e1f22"></i><i style="background:#141414"></i><i style="background:#c8a15a"></i><i style="background:#efe9dc;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)"></i>
+    </div>
+
+    <div class="eyebrow" style="margin-top:46px">Scope of work</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;margin-top:20px">
+      <div style="border-top:1px solid var(--gold);padding-top:14px"><h3>Design</h3><p class="body" style="font-size:12.5px;margin-top:8px">Three custom concepts with photo renders of your storefront, elevations, a placement plan and itemized shopping lists.</p></div>
+      <div style="border-top:1px solid var(--gold);padding-top:14px"><h3>Sourcing</h3><p class="body" style="font-size:12.5px;margin-top:8px">Create4Me buys everything on the list, times purchases to store sales, and orders the printed crest bands.</p></div>
+      <div style="border-top:1px solid var(--gold);padding-top:14px"><h3>Installation</h3><p class="body" style="font-size:12.5px;margin-top:8px">On-site setup (about 2–3 hours): ballast, planting, bands, fairy lights and uplights on timers, and a taped-down rug, with the doors and walkway tested before we leave.</p></div>
+      <div style="border-top:1px solid var(--gold);padding-top:14px"><h3>Walkthrough</h3><p class="body" style="font-size:12.5px;margin-top:8px">A short care guide for your staff covering watering, deadheading and light timers, plus one check-in visit in the first two weeks.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Proposal</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- 03 CONCEPTS AT A GLANCE -->
+<section class="page" data-screen-label="03 Concepts">
+  <div class="pad">
+    <div class="eyebrow">02 — The Three Concepts</div>
+    <h2>One idea, three ways to build it.</h2>
+    <div id="glance" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px"></div>
+  </div>
+  <div class="foot"><span>Materials are 2026 retail estimates before tax</span><span><b>Create4Me</b></span></div>
+</section>
+
+<template id="concept-anchor"></template>
+
+<!-- INVESTMENT -->
+<section class="page" data-screen-label="Investment">
+  <div class="pad">
+    <div class="eyebrow">04 — Investment</div>
+    <h2>Create4Me services</h2>
+    <p class="body" style="margin-top:14px;max-width:600px">One flat fee, the same for whichever concept you choose. Crown &amp; Ash receives Create4Me's introductory rate on this project.</p>
+    <table class="t" style="margin-top:22px">
+      <tr><th>Service</th><th class="r">Standard</th><th class="r">Introductory</th></tr>
+      <tr><td><b style="font-weight:500">Design &amp; concept development</b><br><span class="small">Three concepts, storefront renders, elevations, placement plan, shopping lists, compliance review</span></td><td class="r strike">$325</td><td class="r">$175</td></tr>
+      <tr><td><b style="font-weight:500">Sourcing &amp; procurement</b><br><span class="small">Shopping, sale timing, crest band printing, delivery to site</span></td><td class="r strike">$120</td><td class="r">$70</td></tr>
+      <tr><td><b style="font-weight:500">Installation &amp; styling</b><br><span class="small">About 2–3 hours on site, plus the staff care guide and one check-in visit</span></td><td class="r strike">$250</td><td class="r">$150</td></tr>
+      <tr><td><b style="font-weight:500">Materials handling</b><br><span class="small">Standard 20% handling on materials, waived. Materials billed at receipt cost.</span></td><td class="r strike">20%</td><td class="r">Waived</td></tr>
+      <tr class="tot"><td>Create4Me fee</td><td class="r strike" style="font-size:16px">$695</td><td class="r" style="color:var(--gold-d)">$395</td></tr>
+    </table>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding:10px 14px;background:rgba(200,161,90,.14)"><span class="eyebrow" style="font-size:9.5px">Introductory rate</span><span style="font:500 13px/1 var(--sans);color:var(--ink)">You save $300 on fees, plus the handling charge on materials</span></div>
+
+    <div class="eyebrow" style="margin-top:34px">Project total by concept</div>
+    <table class="t" style="margin-top:14px" id="totals">
+      <tr><th>Concept</th><th class="r">Materials</th><th class="r">Tax 8%*</th><th class="r">Create4Me</th><th class="r">Total</th><th class="r">At signing</th><th class="r">At install</th></tr>
+    </table>
+    <p class="small" style="margin-top:14px">Material costs are estimates. Final materials are billed at actual receipt cost. If a concept's materials would run more than 10% over the estimate, we'll check with you before buying. *Sales tax is paid at the store when materials are purchased and passed through at receipt cost. The 2026 combined rate for Richland County is 8% (6% state, 1% local option, 1% transportation). Create4Me's service fee is not taxed. "At signing" covers all estimated materials and tax plus half the fee, so materials are fully paid before anything is purchased. Totals include the evening lighting kit and the fuller planters upgrade. Skip the fuller planters to save $35 plus tax on any concept.</p>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Proposal</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- OPTIONS + TIMELINE + TERMS -->
+<section class="page" data-screen-label="Options and Terms">
+  <div class="pad">
+    <div class="eyebrow">05 — Optional Services</div>
+    <table class="t" style="margin-top:16px">
+      <tr><th>Add-on</th><th class="r">Fee</th></tr>
+      <tr><td><b style="font-weight:500">Holiday swap (late November)</b><br><span class="small">Keep the planters, bands, rug and lights. Swap the mums for faux evergreen and the leaves for gold-dipped magnolia. Materials quoted separately.</span></td><td class="r">$150</td></tr>
+      <tr><td><b style="font-weight:500">Weekly care visit</b><br><span class="small">Water, deadhead, tidy and reset. Useful in warm weeks, since the front gets afternoon sun.</span></td><td class="r">$25 / visit</td></tr>
+      <tr><td><b style="font-weight:500">End-of-season takedown</b><br><span class="small">Remove, clean and pack reusable pieces for next year.</span></td><td class="r">$60</td></tr>
+    </table>
+
+    <div class="eyebrow" style="margin-top:40px">Timeline</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:16px">
+      <div style="border-top:1px solid var(--gold);padding-top:12px"><div style="font:italic 400 24px/1 var(--serif);color:var(--gold-d)">Day 1</div><p class="body" style="font-size:12px;margin-top:8px">Signed approval and deposit. You choose a concept and approve the crest art.</p></div>
+      <div style="border-top:1px solid var(--gold);padding-top:12px"><div style="font:italic 400 24px/1 var(--serif);color:var(--gold-d)">Days 2–7</div><p class="body" style="font-size:12px;margin-top:8px">Property management approval, compliance check, on-site measurements, sourcing and crest band printing.</p></div>
+      <div style="border-top:1px solid var(--gold);padding-top:12px"><div style="font:italic 400 24px/1 var(--serif);color:var(--gold-d)">Install</div><p class="body" style="font-size:12px;margin-top:8px">About 2–3 hours, scheduled before opening or on a slow afternoon.</p></div>
+      <div style="border-top:1px solid var(--gold);padding-top:12px"><div style="font:italic 400 24px/1 var(--serif);color:var(--gold-d)">Week 2</div><p class="body" style="font-size:12px;margin-top:8px">Check-in visit to refresh the mums and adjust anything needed.</p></div>
+    </div>
+
+    <div class="eyebrow" style="margin-top:40px">Terms</div>
+    <ul style="list-style:none;margin-top:14px;display:grid;gap:9px">
+      <li class="body" style="font-size:12.5px"><b style="font-weight:500;color:var(--ink)">Deposit.</b> Due at signing: 100% of estimated materials and tax, plus half of the Create4Me fee. Materials are bought only after the deposit is received. The other half of the fee is due at installation, adjusted up or down to match actual receipts.</li>
+      <li class="body" style="font-size:12.5px"><b style="font-weight:500;color:var(--ink)">Materials.</b> Billed at cost, with receipts provided. All purchased items belong to Crown &amp; Ash and can be reused next season.</li>
+      <li class="body" style="font-size:12.5px"><b style="font-weight:500;color:var(--ink)">Live plants.</b> Mums and dusty miller need regular watering. Create4Me can't guarantee live plants after the check-in visit.</li>
+      <li class="body" style="font-size:12.5px"><b style="font-weight:500;color:var(--ink)">Property.</b> Nothing gets attached to the brick, awning or lights. Installation begins once Sparkleberry Crossing property management gives written approval.</li>
+      <li class="body" style="font-size:12.5px"><b style="font-weight:500;color:var(--ink)">Validity.</b> This proposal is valid for 14 days from the date on the cover.</li>
+    </ul>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Proposal</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="page" data-screen-label="Compliance">
+  <div class="pad">
+    <div class="eyebrow">06 — Compliance &amp; Site Review</div>
+    <h2 style="max-width:600px">Planned to meet local code and the property's rules.</h2>
+    <p class="body" style="margin-top:14px;max-width:620px">Before designing, Create4Me reviewed the requirements that apply to a storefront in a Columbia shopping center. All three concepts were built to meet them, and each one is checked again on site before installation.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:28px">
+      <div>
+        <div style="border-top:1px solid var(--gold);padding-top:12px"><h3 style="font-size:22px">City of Columbia &amp; Richland County</h3></div>
+        <ul class="cl">
+          <li><b>Exits &amp; fire code.</b> Under the International Fire Code (adopted by South Carolina), nothing blocks the entry doors, their swing, or the path to them. The fire-department sign stays visible.</li>
+          <li><b>Decorative materials.</b> Only faux leaves and stems. No hay, straw, cornstalks or dried grasses near the entrance or the ash urns.</li>
+          <li><b>No open flame.</b> All lighting is battery LED on timers. No candles, extension cords or cords across the walkway.</li>
+          <li><b>Accessibility (ADA).</b> The accessible route needs at least 36″ clear. We keep 60″+ open, and the rug is under ½″ with a taped-down edge.</li>
+          <li><b>Signage.</b> The crest band is decoration on a free-standing planter, not a sign attached to the building. If the city or landlord sees it as a sign, we'll switch to a plain band.</li>
+          <li><b>Sidewalk.</b> Everything stays within about 30″ of the storefront on private shopping-center property, so no city encroachment permit should be needed. We'll confirm this before install.</li>
+        </ul>
+      </div>
+      <div>
+        <div style="border-top:1px solid var(--gold);padding-top:12px"><h3 style="font-size:22px">Sparkleberry Crossing</h3></div>
+        <ul class="cl">
+          <li><b>Written approval.</b> Create4Me will send property management the render and placement plan, and we won't install until they approve in writing.</li>
+          <li><b>Lease &amp; center rules.</b> We'll check the décor to be sure it complies with Crown &amp; Ash's lease and any center design or common-area rules.</li>
+          <li><b>Nothing attached.</b> No drilling, adhesive, hooks or ties on the brick, awning, columns, coach lights or glass.</li>
+          <li><b>Stable &amp; weighted.</b> Tall planters are ballasted with gravel and pumpkin towers are pinned, for wind and for pressure-washing crews.</li>
+          <li><b>Neighbors.</b> Everything stays within the Suite 4 frontage and off shared walks and neighboring storefronts.</li>
+          <li><b>Care during the season.</b> Create4Me checks the arrangement in week 2 and resets anything that has shifted, so the walkway and doors stay clear.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:22px;padding:14px 16px;background:rgba(200,161,90,.14);display:flex;gap:16px;align-items:baseline">
+      <span class="eyebrow" style="font-size:9.5px;white-space:nowrap">Our commitment</span>
+      <p class="body" style="font-size:12px;line-height:1.5">If any requirement from the city or property management changes the design, Create4Me will adjust it at no extra design cost before anything is purchased.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Compliance</span><span><b>Create4Me</b></span></div>
+</section>
+
+<!-- ACCEPTANCE -->
+<section class="page dark" data-screen-label="Acceptance">
+  <div class="pad">
+    <div class="eyebrow">07 — Acceptance</div>
+    <h2>Ready when you are.</h2>
+    <p style="font:300 13.5px/1.6 var(--sans);color:#d9d0c3;margin-top:14px;max-width:560px">Select a concept and any add-ons, then sign below. Create4Me will send a deposit invoice covering all materials plus half the fee, then schedule the site measurement.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:36px">
+      <div>
+        <div class="eyebrow">Concept</div>
+        <div id="pick" style="margin-top:14px;display:grid;gap:12px"></div>
+      </div>
+      <div>
+        <div class="eyebrow">Add-ons</div>
+        <div style="margin-top:14px;display:grid;gap:12px;font:400 13px/1.3 var(--sans);color:#d9d0c3">
+          <div><span class="box" style="border-color:var(--gold)"></span>Skip fuller planters · save $35 + tax</div>
+          <div><span class="box" style="border-color:var(--gold)"></span>Holiday swap · $150 + materials</div>
+          <div><span class="box" style="border-color:var(--gold)"></span>Weekly care visits · $25 each</div>
+          <div><span class="box" style="border-color:var(--gold)"></span>End-of-season takedown · $60</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:46px;display:grid;grid-template-columns:1fr 1fr;gap:18px 44px;font:400 13px/1 var(--sans);color:#d9d0c3">
+      <div>Preferred install date<div style="border-bottom:1px solid #6e6356;height:28px"></div></div>
+      <div>Project total<div style="border-bottom:1px solid #6e6356;height:28px"></div></div>
+    </div>
+
+    <div style="position:absolute;left:68px;right:68px;bottom:96px;display:grid;grid-template-columns:1fr 1fr;gap:44px">
+      <div>
+        <div style="border-bottom:1px solid var(--gold);height:52px"></div>
+        <p style="font:400 10px/1.7 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:10px">Crown &amp; Ash · Owner<br>Name / Date</p>
+      </div>
+      <div>
+        <div style="border-bottom:1px solid var(--gold);height:52px"></div>
+        <p style="font:400 10px/1.7 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-top:10px">Create4Me<br>Name / Date</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot" style="color:var(--mute-d)"><span>Crown &amp; Ash <i class="crest"></i> Proposal</span><span><b style="color:var(--gold)">Create4Me</b></span></div>
+</section>
+
+<script>
+const FEE=395, TAX=0.08;
+const C=[
+ {key:'01',name:'Maduro Reserve',tier:'Recommended',rec:true,render:'assets/render-dusk-lounge-01.png',day:'assets/render-v2-01.png',
+  idea:'Your tall black planters, wrapped with a crest band like a cigar and framing the door.',
+  sum:'Satin-black tapered planters with an ivory and gold crest band. Bronze faux tobacco-style leaves bring the height to about 5′. Maduro-burgundy mums, silver dusty miller, and white and slate pumpkins on cedar cigar boxes. At dusk, fairy lights glow through the leaves and uplights wash the brick.',
+  pal:['#141414','#4e1f22','#7a5230','#efe9dc','#9aa0a0','#c8a15a'],
+  items:[['Tall tapered planters 28–32″, satin black','Target / Hobby Lobby',2,45],['Faux bronze magnolia or large-leaf stems, 36″+','Hobby Lobby',6,10],['Mums 9″, burgundy','Lowe’s / Walmart',4,9],['Dusty miller, 4″ pots','Lowe’s',6,3],['Faux pumpkins, white + slate','Michaels',8,7],['Crest band: ivory ribbon, gold trim, printed crest','Michaels + local print',1,30],['Cedar cigar boxes as risers','From the lounge',2,0],['Battery LED uplights, warm white, timer','Walmart / Amazon',2,15],['Rug 3×5, black flatweave, ivory border','Target / Walmart',1,40],['Pea gravel ballast + rug tape','Home Depot',1,18],['Evening glow lighting kit','4 warm fairy-light strands for the leaves · 2 extra uplights · 2 pumpkin glow lights — Walmart / Amazon',1,90,'light'],['Fuller planters (optional)','2 extra burgundy mums · 4 trailing ivy pots — Lowe’s',1,35,'full']]},
+ {key:'02',name:'Copper & Cedar',tier:'Warmest',render:'assets/render-dusk-lounge-02.png',day:'assets/render-v2-02.png',
+  idea:'Copper urns that tell the story of the tobacco harvest.',
+  sum:'Aged-copper urns hold bundles of faux cured tobacco-style leaves tied with jute. Colorado-rust mums and burgundy smokebush fill the base, with white and copper pumpkins on cedar crates. At dusk, the leaf bundles glow like embers and flameless candles flicker in copper lanterns.',
+  pal:['#8a4f2c','#a24a26','#4a1e2b','#b08a4a','#efe9dc','#1f1512'],
+  items:[['Urn planters 26–30″, aged copper','Hobby Lobby',2,55],['Faux large dried-leaf stems (tobacco look)','Hobby Lobby / Michaels',8,8],['Faux smokebush / burgundy foliage','Hobby Lobby',2,8],['Mums 9″, rust','Lowe’s / Walmart',4,9],['Faux pumpkins, white + copper','Michaels',6,8],['Crest band: black ribbon, gold trim, printed crest','Michaels + local print',1,30],['Cedar crates as risers','Michaels',2,12],['Copper LED lanterns','Target',2,30],['Rug 4×6, tonal tobacco flatweave','Target / Walmart',1,50],['Pea gravel ballast + rug tape','Home Depot',1,18],['Evening glow lighting kit','4 warm fairy-light strands for the leaf bundles · 2 flameless flicker pillars for the lanterns · 2 uplights — Walmart / Amazon',1,86,'light'],['Fuller planters (optional)','2 extra rust mums · 4 creeping jenny pots — Lowe’s',1,35,'full']]},
+ {key:'03',name:'White Ash',tier:'Lowest cost',render:'assets/render-dusk-lounge-03.png',day:'assets/render-v2-03.png',
+  idea:'Black and white, like a tuxedo. The “Ash” in Crown & Ash.',
+  sum:'Low black cylinders filled with white mums and dusty miller, next to towers of three stacked white pumpkins with gold-leafed stems. Tall black lanterns with flameless candles add height and evening glow. Still the lowest cost.',
+  pal:['#141414','#efe9dc','#f6f1e6','#b9bdb6','#c8a15a','#2a2826'],
+  items:[['Cylinder planters 18–20″, black resin','Walmart',2,25],['Mums 9″, white','Lowe’s / Walmart',4,8],['Dusty miller, 4″ pots','Lowe’s',6,3],['Faux white pumpkins, L / M / S','Michaels / Dollar General',6,7],['Gold leaf paint + gold pinstripe tape','Michaels',1,14],['Rug 3×5, solid charcoal flatweave','Walmart',1,30],['Pea gravel ballast, dowel, rug tape','Home Depot',1,18],['Evening glow lighting kit','2 tall black lanterns, about 30″ · 2 flameless flicker pillars · 2 pumpkin glow lights — Target / Amazon',1,126,'light'],['Fuller planters (optional)','2 extra white mums · 4 trailing ivy pots — Lowe’s',1,35,'full']]}
+];
+const $=n=>'$'+Math.round(n).toLocaleString();
+C.forEach(c=>{c.mat=c.items.reduce((s,i)=>s+i[2]*i[3],0);c.tax=Math.round(c.mat*TAX);c.total=c.mat+c.tax+FEE;c.bal=Math.floor(FEE/2);c.dep=c.total-c.bal;});
+const sw=p=>`<div class="sw">${p.map(x=>`<i style="background:${x};box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)"></i>`).join('')}</div>`;
+
+document.getElementById('glance').innerHTML=C.map(c=>`<div>
+  <div class="img" style="height:330px;background-image:url('${c.render}');position:relative"><span class="tag fill" style="position:absolute;left:8px;top:8px;font-size:7.5px">Evening</span></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px"><span class="eyebrow">${c.key}</span>${c.rec?'<span class="tag fill">Recommended</span>':`<span class="tag">${c.tier}</span>`}</div>
+  <h3 style="font-size:26px;margin:10px 0 8px">${c.name}</h3>
+  <p class="body" style="font-size:12px;line-height:1.5;min-height:54px">${c.idea}</p>
+  <div style="margin-top:12px">${sw(c.pal)}</div>
+  <div class="num" style="margin-top:16px;color:${c.rec?'var(--gold-d)':'var(--ink)'}">${$(c.mat)}</div>
+  <p class="small" style="letter-spacing:.14em;text-transform:uppercase;font-size:9px">Est. materials</p>
+</div>`).join('');
+
+const anchor=document.getElementById('concept-anchor');
+C.forEach((c,idx)=>{
+  const s=document.createElement('section');
+  s.className='page';s.dataset.screenLabel=`0${4+idx} Concept ${c.key}`;
+  s.innerHTML=`<div class="pad" style="display:grid;grid-template-columns:230px minmax(0,1fr);gap:36px">
+    <div>
+      <div class="img" style="height:410px;background-image:url('${c.render}');position:relative"><span class="tag fill" style="position:absolute;left:8px;top:8px">Evening · lights on</span></div>
+      <div style="display:grid;grid-template-columns:86px 1fr;gap:12px;margin-top:12px;align-items:end">
+        <div class="img" style="height:154px;background-image:url('${c.day}')"></div>
+        <div><div class="eyebrow" style="font-size:8.5px">Daytime</div><p class="small" style="font-size:9.5px;margin-top:6px">The same arrangement in daylight. Lights run on timers, 5 pm to midnight.</p></div>
+      </div>
+      <div style="margin-top:12px">${sw(c.pal)}</div>
+      <div style="margin-top:14px;padding:10px 12px;background:rgba(200,161,90,.14)">
+        <div class="eyebrow" style="font-size:8.5px">Save $35</div>
+        <p class="small" style="font-size:10px;margin-top:6px;color:var(--text)">Prefer a simpler look? Skip the extra mums and trailing plants (the fuller planters line) to take $35, plus tax, off the price.</p>
+      </div>
+      <p class="small" style="margin-top:10px;font-size:9px">AI-generated concept of the Suite 4 storefront. Actual products and placement will vary slightly.</p>
+    </div>
+    <div>
+      <div style="display:flex;gap:14px;align-items:center"><span class="eyebrow">03 — Concept ${c.key}</span>${c.rec?'<span class="tag fill">Recommended</span>':`<span class="tag">${c.tier}</span>`}</div>
+      <h2 style="font-size:40px">${c.name}</h2>
+      <p class="lede" style="margin-top:10px">${c.idea}</p>
+      <p class="body" style="font-size:12.5px;margin-top:12px">${c.sum}</p>
+      <table class="t tight" style="margin-top:16px">
+        <tr><th>Item</th><th class="c">Qty</th><th class="r">Each</th><th class="r">Est.</th></tr>
+        ${c.items.map(i=>`<tr${i[4]?' style="background:rgba(200,161,90,.12)"':''}><td style="${i[4]?'padding-left:8px':''}">${i[4]==='light'?'<b style="font-weight:500">'+i[0]+'</b>':i[0]}<br><span class="s" style="padding:0;white-space:normal">${i[1]}</span></td><td class="c">${i[2]}</td><td class="r">${i[3]?$(i[3]):'—'}</td><td class="r" style="${i[4]?'padding-right:8px':''}">${i[3]?$(i[2]*i[3]):'Free'}</td></tr>`).join('')}
+        <tr class="sub"><td colspan="3">Materials subtotal</td><td class="r">${$(c.mat)}</td></tr>
+        <tr class="sub"><td colspan="3">Sales tax, Richland County 8%</td><td class="r">${$(c.tax)}</td></tr>
+        <tr class="tot"><td colspan="3">Estimated materials</td><td class="r" style="color:var(--gold-d)">${$(c.mat+c.tax)}</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Crown &amp; Ash <i class="crest"></i> Concept ${c.key} materials</span><span><b>Create4Me</b></span></div>`;
+  anchor.parentNode.insertBefore(s,anchor);
+});
+anchor.remove();
+
+document.getElementById('totals').insertAdjacentHTML('beforeend',C.map(c=>`<tr${c.rec?' style="background:rgba(200,161,90,.12)"':''}>
+  <td style="padding-left:${c.rec?8:0}px"><b style="font-weight:500">${c.key} · ${c.name}</b>${c.rec?' <span class="small" style="color:var(--gold-d)">· Recommended</span>':''}</td>
+  <td class="r">${$(c.mat)}</td><td class="r">${$(c.tax)}</td><td class="r">${$(FEE)}</td>
+  <td class="r" style="font:500 18px/1 var(--serif);color:var(--ink)">${$(c.total)}</td><td class="r">${$(c.dep)}</td><td class="r" style="padding-right:${c.rec?8:0}px">${$(c.bal)}</td></tr>`).join(''));
+
+document.getElementById('pick').innerHTML=C.map(c=>`<div style="font:400 13px/1.3 var(--sans);color:#d9d0c3"><span class="box" style="border-color:var(--gold)"></span>${c.key} · ${c.name} <span style="color:var(--gold)">· ${$(c.total)}</span> <span style="color:var(--mute)">· ${$(c.dep)} deposit</span></div>`).join('');
+
+// renumber labels sequentially
+document.querySelectorAll('.page').forEach((p,i)=>{const l=p.dataset.screenLabel.replace(/^\d+\s*/,'');p.dataset.screenLabel=String(i+1).padStart(2,'0')+' '+l;});
+</script>
+</body>
+</html>

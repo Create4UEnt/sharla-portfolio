@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Component system — Create4Me</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Fraunces:ital,opsz,wght@0,9..144,300..400;1,9..144,300..400&display=swap&subset=latin" rel="stylesheet">
+<link rel="stylesheet" href="assets/c4m.css?v=3">
+<style>
+  .modes{ display:grid; grid-template-columns:1fr; }
+  @media (min-width:1024px){ .modes{ grid-template-columns:1fr 1fr; } }
+  .modes > div{ padding:48px var(--gutter); }
+  .row{ border-top:1px solid var(--line); padding:28px 0; }
+  .row > .t-label{ display:block; color:var(--text-secondary); margin-bottom:20px; }
+  .sw{ display:grid; grid-template-columns:repeat(5,1fr); gap:0; border:1px solid var(--line); }
+  .sw div{ aspect-ratio:1; display:flex; align-items:flex-end; padding:8px; font:600 10px/13px var(--f-text); letter-spacing:.12em; text-transform:uppercase; }
+  .pages{ display:grid; gap:0; grid-template-columns:1fr; border-top:1px solid var(--line); }
+  @media (min-width:900px){ .pages{ grid-template-columns:repeat(4,1fr); } }
+  .pages a{ display:flex; flex-direction:column; gap:6px; padding:20px 20px 20px 0; border-bottom:1px solid var(--line); text-decoration:none; min-height:88px; }
+  .pages a:hover .t-subhead{ font-style:italic; }
+</style>
+</head>
+<body class="mode-day">
+<main>
+  <section class="section" style="padding-bottom:48px">
+    <div class="wrap">
+      <a class="mark" href="index.html"><span class="mark__sq" aria-hidden="true">4</span><span class="mark__word">Create4Me</span></a>
+      <h1 class="t-display-l" style="margin-top:40px;max-width:20ch">Website design v1 — <em>pages and components.</em></h1>
+      <p class="measure muted" style="margin-top:16px">Seven pages plus the case-study template, one shared stylesheet (<code>assets/c4m.css</code>). Every highlighted <span class="ph">[placeholder]</span> must be filled before launch.</p>
+      <nav class="pages" style="margin-top:32px" aria-label="Pages">
+        <a href="index.html"><span class="t-label muted">01 · Daylight + one dark band</span><span class="t-subhead">Home</span></a>
+        <a href="work.html"><span class="t-label muted">02 · After dark</span><span class="t-subhead">Work</span></a>
+        <a href="work/bailey-law-firm.html"><span class="t-label muted">02a · Template</span><span class="t-subhead">Historic law office (proposed)</span></a>
+        <a href="work/crown-and-ash.html"><span class="t-label muted">02b</span><span class="t-subhead">Crown &amp; Ash</span></a>
+        <a href="work/what-was-she-thinking.html"><span class="t-label muted">02c</span><span class="t-subhead">What Was She Thinking</span></a>
+        <a href="services.html"><span class="t-label muted">03 · Daylight</span><span class="t-subhead">Services</span></a>
+        <a href="celebrations.html"><span class="t-label muted">04 · Daylight, warmest</span><span class="t-subhead">Celebrations</span></a>
+        <a href="contact.html"><span class="t-label muted">05 · Daylight</span><span class="t-subhead">Contact</span></a>
+        <a href="available.html"><span class="t-label muted">06 · Footer only</span><span class="t-subhead">Available</span></a>
+      </nav>
+    </div>
+  </section>
+
+  <div class="modes">
+    <!-- DAYLIGHT -->
+    <div class="mode-day">
+      <span class="eyebrow">Mode one</span>
+      <h2 class="t-display-l">Daylight</h2>
+      <div class="row" style="margin-top:28px"><span class="t-label">Palette</span>
+        <div class="sw">
+          <div style="background:var(--c4m-ivory)">Ivory</div>
+          <div style="background:var(--c4m-paper)">Paper</div>
+          <div style="background:var(--c4m-ink);color:var(--c4m-ivory)">Ink</div>
+          <div style="background:var(--c4m-brass)">Brass</div>
+          <div style="background:var(--c4m-oxblood);color:var(--c4m-ivory)">Oxblood</div>
+        </div></div>
+      <div class="row"><span class="t-label">Mark</span>
+        <span class="mark"><span class="mark__sq">4</span><span class="mark__word">Create4Me</span></span></div>
+      <div class="row"><span class="t-label">Type</span>
+        <p class="t-display-xl" style="margin:0">I’ll design the <em>world it lives in.</em></p>
+        <p class="t-heading" style="margin:16px 0 0">Heading 26/32</p>
+        <p class="t-subhead" style="margin:8px 0 0">Subhead 19/27</p>
+        <p style="margin:8px 0 0">Body 16.5/27 — Archivo. Every environment proposal starts with photos of your space as it is today.</p>
+        <p class="eyebrow" style="margin:12px 0 0">Eyebrow · label</p></div>
+      <div class="row"><span class="t-label">Section numeral</span><div class="numeral"><b>02</b></div></div>
+      <div class="row"><span class="t-label">Buttons</span>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#">Start a project</a><a class="btn btn--line" href="#">Start a project</a><a class="link" href="#">Case study →</a></div></div>
+      <div class="row"><span class="t-label">Price block</span>
+        <div class="price"><span class="t-label price__lab">Starting</span><span class="price__n">$950</span></div>
+        <p class="t-small price-scope" style="margin:6px 0 0">Concept renders, sourcing, install and takedown.</p></div>
+      <div class="row"><span class="t-label">Tier card</span>
+        <article class="tier tier--rec" style="max-width:360px">
+          <div class="tier__top"><span class="t-label tier__tierlabel">One room</span><span class="t-label tier__rec">Recommended</span></div>
+          <h3 class="tier__name">The Room</h3>
+          <div class="price"><span class="price__from">from</span><span class="price__n">$750</span></div>
+          <ul><li>One room</li><li>Private event styling</li></ul>
+        </article></div>
+      <div class="row"><span class="t-label">Before / after pair</span>
+        <figure class="pair">
+          <div class="pair__grid">
+            <div class="pair__panel"><img src="assets/bailey-before.jpg" alt="Bailey porch before"><div class="pair__lab"><span class="t-label">Before</span></div></div>
+            <div class="pair__divider"></div>
+            <div class="pair__panel"><img src="assets/bailey-after-holiday.jpg" alt="Bailey porch after, dusk"><div class="pair__lab"><span class="t-label">After</span></div></div>
+          </div>
+          <div class="pair__labels"><div class="pair__lab"><span class="t-label">Before</span></div><span></span><div class="pair__lab"><span class="t-label">After</span></div></div>
+        </figure></div>
+      <div class="row"><span class="t-label">Form field</span>
+        <div class="field" style="max-width:360px"><label for="d1">Email</label><input id="d1"></div></div>
+    </div>
+
+    <!-- AFTER DARK -->
+    <div class="mode-dark">
+      <span class="eyebrow">Mode two</span>
+      <h2 class="t-display-l">After dark</h2>
+      <div class="row" style="margin-top:28px"><span class="t-label">Palette</span>
+        <div class="sw">
+          <div style="background:var(--c4m-void);color:var(--c4m-paper)">Void</div>
+          <div style="background:var(--c4m-void-deep);color:var(--c4m-paper)">Void deep</div>
+          <div style="background:var(--c4m-paper)">Paper</div>
+          <div style="background:var(--c4m-brass)">Brass</div>
+          <div style="background:var(--c4m-brass-lit)">Brass lit</div>
+        </div></div>
+      <div class="row"><span class="t-label">Mark</span>
+        <span class="mark"><span class="mark__sq">4</span><span class="mark__word">Create4Me</span></span></div>
+      <div class="row"><span class="t-label">Type</span>
+        <p class="t-display-xl" style="margin:0">I’ll design the <em>world it lives in.</em></p>
+        <p class="t-heading" style="margin:16px 0 0">Heading 26/32</p>
+        <p class="t-subhead" style="margin:8px 0 0">Subhead 19/27</p>
+        <p style="margin:8px 0 0">Body 16.5/27 — Archivo. Every environment proposal starts with photos of your space as it is today.</p>
+        <p class="eyebrow" style="margin:12px 0 0">Eyebrow · label</p></div>
+      <div class="row"><span class="t-label">Section numeral</span><div class="numeral"><b>02</b></div></div>
+      <div class="row"><span class="t-label">Buttons</span>
+        <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn" href="#">Start a project</a><a class="link" href="#">Case study →</a></div></div>
+      <div class="row"><span class="t-label">Price block</span>
+        <div class="price"><span class="t-label price__lab">Starting</span><span class="price__n">$950</span></div>
+        <p class="t-small price-scope" style="margin:6px 0 0">Concept renders, sourcing, install and takedown.</p></div>
+      <div class="row"><span class="t-label">Tier card</span>
+        <article class="tier tier--rec" style="max-width:360px">
+          <div class="tier__top"><span class="t-label tier__tierlabel">Signature</span><span class="t-label tier__rec">Recommended</span></div>
+          <h3 class="tier__name">The Full Porch</h3>
+          <p class="t-small no-mt">Everything in Essential, plus lit garland across both porch levels on a dusk timer.</p>
+        </article></div>
+      <div class="row"><span class="t-label">Case card</span>
+        <img src="assets/ca-after-dusk.jpg" alt="Crown & Ash at dusk" style="width:100%;max-width:360px;aspect-ratio:4/5;object-fit:cover">
+        <h3 class="t-heading" style="margin-top:16px">Crown &amp; Ash</h3>
+        <p class="muted" style="margin-top:6px;max-width:36ch">Lit at dusk, so the lounge glows through the glass.</p></div>
+      <div class="row"><span class="t-label">Form field</span>
+        <div class="field" style="max-width:360px"><label for="d2">Email</label><input id="d2"></div></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

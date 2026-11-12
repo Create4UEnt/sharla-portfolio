@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script>window.__resources={"renderDay": "data:image/png;base64,[IMG]", "renderDusk": "data:image/png;base64,[IMG]"};</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evergreen & Brass — Holiday Exterior Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F0E8; --paper2:#ECE6DA; --ink:#1C1D1B; --mute:#6B6A63;
+    --green:#1F3A2E; --green2:#2F5543; --brass:#A9854E; --ivory:#FBF8F1;
+    --clay:#B48A64; --line:#D8D0C1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Instrument Sans",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+  h1,h2,h3{font-family:"Cormorant",serif;font-weight:500;letter-spacing:-.01em;line-height:1.05}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--brass);font-weight:600}
+  p{text-wrap:pretty}
+
+  /* header */
+  header{padding:56px 0 36px;border-bottom:1px solid var(--line)}
+  .hdr{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}
+  header h1{font-size:76px;margin-top:14px}
+  header h1 em{font-style:italic;color:var(--brass)}
+  .meta{font-size:13px;color:var(--mute);text-align:right;line-height:1.8}
+  .meta b{color:var(--ink);font-weight:600}
+
+  /* hero */
+  .hero{display:grid;grid-template-columns:1fr 360px;gap:36px;padding:40px 0 64px}
+  .photo{position:relative;border-radius:2px;overflow:hidden;background:#111;aspect-ratio:1024/768;user-select:none}
+  .photo img{width:100%;height:100%;display:block;object-fit:cover;transition:filter .8s ease}
+  .photo.dusk img{filter:brightness(.38) saturate(.7) contrast(1.05) hue-rotate(-8deg)}
+  .glow{position:absolute;border-radius:50%;pointer-events:none;opacity:0;transition:opacity .8s ease;mix-blend-mode:screen;
+    background:radial-gradient(closest-side,rgba(255,206,140,.85),rgba(255,180,100,.35) 45%,rgba(255,170,90,0) 100%)}
+  .glow.bar{border-radius:40px}
+  .photo.dusk .glow{opacity:1}
+  .pin{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;
+    background:var(--ivory);color:var(--green);font:600 13px "Instrument Sans";display:grid;place-items:center;
+    border:1.5px solid var(--green);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.25);transition:transform .2s,background .2s,color .2s;z-index:3}
+  .pin:hover,.pin.on{transform:translate(-50%,-50%) scale(1.2);background:var(--green);color:var(--ivory);border-color:var(--ivory)}
+  .photo.hidepins .pin{opacity:0;pointer-events:none}
+  .toolbar{display:flex;gap:8px;margin-top:14px;align-items:center}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--ivory)}
+  .seg button{border:0;background:none;font:500 13px "Instrument Sans";padding:7px 16px;border-radius:999px;cursor:pointer;color:var(--mute)}
+  .seg button.on{background:var(--green);color:var(--ivory)}
+  .toolbar .note{font-size:12px;color:var(--mute);margin-left:auto}
+
+  .legend{display:flex;flex-direction:column}
+  .legend h2{font-size:34px;margin:8px 0 18px}
+  .legend ol{list-style:none;border-top:1px solid var(--line)}
+  .legend li{display:grid;grid-template-columns:30px 1fr;gap:12px;padding:11px 4px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .2s}
+  .legend li:hover,.legend li.on{background:var(--paper2)}
+  .legend .n{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--green);color:var(--green);font-size:11px;font-weight:600;display:grid;place-items:center;margin-top:1px}
+  .legend li.on .n{background:var(--green);color:var(--ivory)}
+  .legend b{font-weight:600;font-size:14.5px;display:block}
+  .legend span{font-size:13px;color:var(--mute)}
+
+  /* intent */
+  section{padding:72px 0;border-top:1px solid var(--line)}
+  .intent{display:grid;grid-template-columns:5fr 7fr;gap:64px}
+  .intent h2{font-size:52px;margin-top:12px}
+  .intent .lead{font-family:"Cormorant",serif;font-size:27px;line-height:1.3;margin-bottom:28px}
+  .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:8px}
+  .principles h3{font-size:22px;margin-bottom:6px}
+  .principles p{font-size:14px;color:var(--mute)}
+
+  /* palette */
+  .pal-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px}
+  .pal-head h2{font-size:52px;margin-top:12px}
+  .palette{display:grid;grid-template-columns:2.2fr 1.4fr 1.2fr 1fr 1fr;height:240px;border-radius:2px;overflow:hidden}
+  .sw{padding:18px;display:flex;flex-direction:column;justify-content:flex-end;font-size:12.5px}
+  .sw b{font-size:15px;font-weight:600;display:block}
+  .materials{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px}
+  .materials h3{font-size:22px;margin-bottom:8px;padding-top:14px;border-top:2px solid var(--green)}
+  .materials ul{list-style:none;font-size:14px;color:var(--mute)}
+  .materials li{padding:3px 0}
+  .materials li.x{color:#9a5a4a}
+  .materials li.x::before{content:"✕  ";font-size:10px}
+
+  /* specs */
+  .specs-head h2{font-size:52px;margin:12px 0 36px}
+  .specs{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+  .spec{padding:26px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:44px 1fr;gap:16px;transition:background .3s}
+  .spec.flash{background:var(--paper2)}
+  .spec .n{font-family:"Cormorant",serif;font-size:36px;color:var(--brass);line-height:1}
+  .spec h3{font-size:26px;margin-bottom:8px}
+  .spec p{font-size:14.5px;margin-bottom:10px}
+  .spec dl{display:grid;grid-template-columns:88px 1fr;gap:4px 12px;font-size:13px}
+  .spec dt{color:var(--mute);text-transform:uppercase;letter-spacing:.08em;font-size:11px;padding-top:2px}
+
+  /* lighting */
+  .dark{background:var(--green);color:var(--ivory);border:0}
+  .dark .eyebrow{color:#D6B67E}
+  .light-grid{display:grid;grid-template-columns:5fr 7fr;gap:64px}
+  .light-grid h2{font-size:52px;margin-top:12px}
+  .light-grid .lead{font-family:"Cormorant",serif;font-size:24px;line-height:1.35;margin-top:22px;color:#E4DCCB}
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+  .rule{padding:18px 0;border-top:1px solid rgba(255,255,255,.15)}
+  .rule b{display:block;font-weight:600;font-size:15px;margin-bottom:4px}
+  .rule span{font-size:14px;color:#C9CFC6}
+
+  /* tiers */
+  .tiers-head h2{font-size:52px;margin:12px 0 36px}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .tier{background:var(--ivory);border:1px solid var(--line);padding:30px 28px;display:flex;flex-direction:column}
+  .tier.rec{border:1.5px solid var(--green);position:relative}
+  .tier.rec::after{content:"Recommended";position:absolute;top:-11px;left:26px;background:var(--green);color:var(--ivory);font-size:11px;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;font-weight:600}
+  .tier h3{font-size:32px}
+  .tier .sub{font-size:13px;color:var(--mute);margin:4px 0 18px}
+  .tier ul{list-style:none;font-size:14px}
+  .tier li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:10px}
+  .tier li i{font-style:normal;color:var(--brass);font-weight:600;min-width:20px;font-size:12px;padding-top:2px}
+
+  /* timeline */
+  .tl-head h2{font-size:52px;margin:12px 0 40px}
+  .timeline{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+  .timeline::before{content:"";position:absolute;top:7px;left:0;right:0;height:1px;background:var(--line)}
+  .step{padding-right:24px;position:relative}
+  .step::before{content:"";display:block;width:15px;height:15px;border-radius:50%;background:var(--paper);border:2px solid var(--green);margin-bottom:18px;position:relative}
+  .step.key::before{background:var(--green)}
+  .step .d{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass);font-weight:600}
+  .step h3{font-size:23px;margin:4px 0 6px}
+  .step p{font-size:13.5px;color:var(--mute)}
+
+  /* next */
+  .next{display:grid;grid-template-columns:5fr 7fr;gap:64px}
+  .next h2{font-size:52px;margin-top:12px}
+  .shots{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .shot{border:1px dashed #BDB29E;padding:18px;font-size:14px;background:var(--ivory)}
+  .shot b{display:block;font-weight:600;margin-bottom:2px}
+  .shot span{color:var(--mute);font-size:13px}
+  .ren-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:24px}
+  .ren-head h2{font-size:52px;margin-top:12px}
+  .compare{position:relative;aspect-ratio:1760/1328;overflow:hidden;background:#111;cursor:ew-resize;user-select:none;touch-action:none}
+  .compare img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+  .beforeWrap{position:absolute;inset:0;clip-path:inset(0 50% 0 0)}
+  .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--ivory);transform:translateX(-1px)}
+  .handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:var(--ivory);color:var(--green);display:grid;place-items:center;font-weight:600;box-shadow:0 2px 12px rgba(0,0,0,.3)}
+  .tag{position:absolute;top:16px;background:rgba(28,29,27,.7);color:var(--ivory);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;font-weight:600}
+  .tag.l{left:16px}.tag.r{right:16px}
+  .ren-note{font-size:13px;color:var(--mute);margin-top:12px}
+  footer{padding:36px 0 60px;border-top:1px solid var(--line);font-size:12px;color:var(--mute);display:flex;justify-content:space-between}
+
+  @media (max-width:980px){
+    .hero,.intent,.light-grid,.next{grid-template-columns:1fr}
+    .specs,.tiers,.materials,.principles,.rules{grid-template-columns:1fr}
+    .timeline{grid-template-columns:1fr 1fr}
+    header h1{font-size:52px}
+  }
+</style>
+<meta name="ext-resource-dependency" content="assets/render-day.png" data-resource-id="renderDay" />
+<meta name="ext-resource-dependency" content="assets/render-dusk.png" data-resource-id="renderDusk" />
+<div id="__splash" style="position:fixed;inset:0;background:#F4F0E8;display:flex;align-items:center;justify-content:center;z-index:2147483647;transition:opacity .25s ease"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect width="400" height="200" fill="#F4F0E8"/><text x="200" y="108" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#1F3A2E">Evergreen &amp; Brass</text></svg></div><script>(function(){var s=document.getElementById("__splash");if(!s)return;function hide(){s.style.opacity="0";setTimeout(function(){if(s&&s.parentNode)s.parentNode.removeChild(s);},300);}if(document.readyState==="complete")hide();else window.addEventListener("load",hide);})();</script>
+</head>
+<body>
+
+<header>
+  <div class="wrap hdr">
+    <div>
+      <div class="eyebrow">Holiday Exterior Concept · Main Entrance</div>
+      <h1>Evergreen <em>&amp;</em> Brass</h1>
+    </div>
+    <div class="meta">
+      Prepared for <b>Smith | Robinson</b><br>
+      Season <b>2026–27</b> · Install from Nov 19<br>
+      Scope <b>Entrance only</b> · full facade to follow
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero" data-screen-label="Placement Map">
+    <div>
+      <div class="photo" id="photo">
+        <img src="assets/sr-before.jpg" alt="Law firm main entrance">
+        <!-- dusk glows -->
+        <div class="glow" style="left:14%;top:52%;width:17%;height:22%"></div>
+        <div class="glow" style="left:72%;top:54%;width:17%;height:22%"></div>
+        <div class="glow" style="left:17%;top:30%;width:16%;height:20%"></div>
+        <div class="glow" style="left:70%;top:30%;width:16%;height:20%"></div>
+        <div class="glow bar" style="left:33%;top:21%;width:37%;height:12%"></div>
+        <div class="glow" style="left:46%;top:2%;width:16%;height:20%;opacity:.0"></div>
+        <div class="glow" style="left:47%;top:38%;width:18%;height:22%"></div>
+        <div class="glow" style="left:40%;top:46%;width:8%;height:22%"></div>
+        <div class="glow" style="left:63%;top:46%;width:8%;height:22%"></div>
+        <div class="glow" style="left:0%;top:35%;width:14%;height:20%"></div>
+        <div class="glow" style="left:90%;top:35%;width:10%;height:20%"></div>
+        <!-- pins -->
+        <div class="pin" data-k="1" style="left:22%;top:66%">1</div>
+        <div class="pin" data-k="1" style="left:80%;top:68%">1</div>
+        <div class="pin" data-k="2" style="left:25%;top:40%">2</div>
+        <div class="pin" data-k="2" style="left:78%;top:41%">2</div>
+        <div class="pin" data-k="3" style="left:51%;top:27%">3</div>
+        <div class="pin" data-k="4" style="left:62%;top:12%">4</div>
+        <div class="pin" data-k="5" style="left:56%;top:52%">5</div>
+        <div class="pin" data-k="6" style="left:44%;top:58%">6</div>
+        <div class="pin" data-k="6" style="left:67%;top:58%">6</div>
+        <div class="pin" data-k="7" style="left:7%;top:44%">7</div>
+        <div class="pin" data-k="7" style="left:96%;top:44%">7</div>
+      </div>
+      <div class="toolbar">
+        <div class="seg" id="mode">
+          <button class="on" data-m="day">Day</button>
+          <button data-m="dusk">Dusk preview</button>
+        </div>
+        <div class="seg" id="pins">
+          <button class="on" data-p="1">Markers</button>
+          <button data-p="0">Clean</button>
+        </div>
+        <div class="note">Dusk preview shows rough glow placement only, not a rendering</div>
+      </div>
+    </div>
+
+    <aside class="legend">
+      <div class="eyebrow">Placement map</div>
+      <h2>Seven moves, one composition</h2>
+      <ol id="legend">
+        <li data-k="1"><div class="n">1</div><div><b>Olive jar planters</b><span>Winter fill with birch, cedar drape and fir</span></div></li>
+        <li data-k="2"><div class="n">2</div><div><b>Pier wreaths</b><span>36" wreaths centered below the bronze sconces</span></div></li>
+        <li data-k="3"><div class="n">3</div><div><b>Canopy garland</b><span>Lit straight run along the black steel fascia</span></div></li>
+        <li data-k="4"><div class="n">4</div><div><b>Clerestory lobby tree</b><span>12' slim tree under the chandelier, visible from outside</span></div></li>
+        <li data-k="5"><div class="n">5</div><div><b>Door wreath pair</b><span>Matched 22" wreaths, one per door leaf</span></div></li>
+        <li data-k="6"><div class="n">6</div><div><b>Vestibule lanterns</b><span>Oversized black lanterns flanking the doors</span></div></li>
+        <li data-k="7"><div class="n">7</div><div><b>Wing window rhythm</b><span>Repeating wreaths that carry the look across the facade</span></div></li>
+      </ol>
+    </aside>
+  </div>
+</div>
+
+<section data-screen-label="Photoreal Renderings" style="padding-top:56px">
+  <div class="wrap">
+    <div class="ren-head">
+      <div><div class="eyebrow">Photorealistic renderings</div><h2>Before &amp; after</h2></div>
+      <div class="seg" id="renMode"><button class="on" data-r="day">Day</button><button data-r="dusk">Dusk</button></div>
+    </div>
+    <div class="compare" id="compare">
+      <img class="after" id="afterImg" src="assets/sr-after.jpg" alt="Decorated entrance rendering">
+      <div class="beforeWrap" id="beforeWrap"><img src="assets/sr-before.jpg" alt="Existing entrance"></div>
+      <div class="handle" id="handle"><span>‹ ›</span></div>
+      <div class="tag l">Existing</div><div class="tag r">Proposed</div>
+    </div>
+    <p class="ren-note">Drag to compare. These are concept renderings for discussion. Final greenery, scale and light density get confirmed at the site survey.</p>
+  </div>
+</section>
+
+<section data-screen-label="Day and Dusk" style="padding-top:40px">
+  <div class="wrap">
+    <div class="pal-head"><div>
+      <div class="eyebrow">Day and dusk</div>
+      <h2>Two looks, one installation.</h2>
+    </div></div>
+    <img src="assets/sr-compare-day.jpg" alt="Existing and proposed entrance in daylight" style="width:100%;display:block;border-radius:6px;margin-bottom:14px">
+    <img src="assets/sr-compare-dusk.jpg" alt="Existing and proposed entrance at dusk, lit" style="width:100%;display:block;border-radius:6px">
+    <p class="ren-note" style="margin-top:10px">The lighting goes up once in November and stays through the holidays &mdash; only the d&eacute;cor changes between seasons.</p>
+  </div>
+</section>
+
+<section data-screen-label="Design Intent">
+  <div class="wrap intent">
+    <div>
+      <div class="eyebrow">Design intent</div>
+      <h2>Quiet confidence, warmly lit.</h2>
+    </div>
+    <div>
+      <p class="lead">Smith | Robinson brings together more than 150 years of South Carolina practice in Sumter and Camden, so the decor should feel rooted and timeless, never trendy. Southern magnolia leads the design as a nod to home. The building already does a lot: white stucco piers, black steel glazing, bronze sconces and two Mediterranean olive jars. Our job is to add warmth without competing with it. Everything sits on the existing architecture, every light is warm white, and the look stays inclusive so it can run from Thanksgiving well into January.</p>
+      <div class="principles">
+        <div><h3>Frame, don't fill</h3><p>The decor follows the piers, the canopy and the window grid so the entrance gets more formal, not busier.</p></div>
+        <div><h3>One light temperature</h3><p>Only 2700K warm white, all steady. That matches the sconces you already have and reads as hospitality, not retail.</p></div>
+        <div><h3>Seasonal, not sectarian</h3><p>Evergreen, birch, magnolia and brass. No religious symbols or characters, which suits a client-facing professional firm.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Palette & Materials">
+  <div class="wrap">
+    <div class="pal-head">
+      <div><div class="eyebrow">Palette &amp; materials</div><h2>Drawn from the façade</h2></div>
+    </div>
+    <div class="palette">
+      <div class="sw" style="background:#1F3A2E;color:#F4F0E8"><b>Fraser Evergreen</b>Garland, wreaths, planter fill</div>
+      <div class="sw" style="background:#FBF8F1;color:#1C1D1B;border:1px solid var(--line)"><b>Stucco Ivory</b>Velvet ribbon, birch, white pine cones</div>
+      <div class="sw" style="background:#A9854E;color:#FBF8F1"><b>Antique Brass</b>Bells, lantern trim, matte accents</div>
+      <div class="sw" style="background:#B48A64;color:#FBF8F1"><b>Olive Jar Clay</b>Magnolia backs, natural cones</div>
+      <div class="sw" style="background:#1C1D1B;color:#F4F0E8"><b>Steel Black</b>Lanterns, hardware, ribbon edge</div>
+    </div>
+    <div class="materials">
+      <div><h3>Greenery</h3><ul><li>Commercial-grade PE Fraser fir and noble fir</li><li>Western cedar for soft drape</li><li>Bronze-backed magnolia leaves</li><li>Fresh fir tips in planters only</li></ul></div>
+      <div><h3>Accents</h3><ul><li>White birch poles</li><li>White-washed and natural cones</li><li>Matte antique-brass bells, used sparingly</li><li>Dried ivory hydrangea</li></ul></div>
+      <div><h3>Ribbon</h3><ul><li>4" ivory velvet, wired, weather-treated</li><li>Hand-tied bows with 30" tails</li><li>No glitter, no metallic lamé</li></ul></div>
+      <div><h3>Leave out</h3><ul><li class="x">Red and green together</li><li class="x">Colored or chasing lights</li><li class="x">Inflatables and figures</li><li class="x">Religious iconography</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Placement Specs">
+  <div class="wrap">
+    <div class="specs-head"><div class="eyebrow">Placement specifications</div><h2>What goes where</h2></div>
+    <div class="specs">
+      <div class="spec" id="s1"><div class="n">1</div><div>
+        <h3>Olive jar planters</h3>
+        <p>Keep the boxwood as a base. Set three white birch poles at staggered heights (4', 5', 6') toward the back of each jar, add a full collar of fir tips and magnolia, and let cedar spill over the rim so it softens the jar's shoulder. Weave warm micro-lights through the greenery and up one birch pole.</p>
+        <dl><dt>Quantity</dt><dd>2, mirrored</dd><dt>Power</dt><dd>Battery pack with 6-hour dusk timer, hidden in the soil</dd><dt>Care</dt><dd>Weekly visit to refresh fresh tips and check lights</dd></dl>
+      </div></div>
+      <div class="spec" id="s2"><div class="n">2</div><div>
+        <h3>Pier wreaths</h3>
+        <p>A 36" mixed fir and magnolia wreath centered on each white pier about 18" below the sconce, so the sconce's light washes over it at night. Finish with an ivory velvet bow at the bottom and tails that hang to roughly 5 ft.</p>
+        <dl><dt>Size</dt><dd>36" diameter, 8" profile</dd><dt>Mounting</dt><dd>Removable adhesive stucco anchors or a tension band around the pier, with no drilling</dd><dt>Lights</dt><dd>Pre-lit 5mm warm white on battery timer</dd></dl>
+      </div></div>
+      <div class="spec" id="s3"><div class="n">3</div><div>
+        <h3>Canopy garland</h3>
+        <p>The hero piece. A 12" diameter lit garland runs straight along the black steel fascia above the doors, with no swags, so it matches the building's horizontal lines. At each end it turns down the inner face of the pier about 3 ft. Lit greenery shows up best against the black.</p>
+        <dl><dt>Length</dt><dd>~22 LF plus 6 LF of returns (site-measure)</dd><dt>Mounting</dt><dd>Concealed clips on the top edge of the fascia</dd><dt>Power</dt><dd>Hardwired to the nearest exterior GFCI on a photocell timer</dd></dl>
+      </div></div>
+      <div class="spec" id="s4"><div class="n">4</div><div>
+        <h3>Clerestory lobby tree</h3>
+        <p>The tall glass above the canopy looks into the lobby chandelier. Put a 12' slim noble fir just inside that glass, lit densely in warm white and decorated in ivory and brass. From the street it reads as a lantern above the entrance. Add a light magnolia ring to the chandelier.</p>
+        <dl><dt>Size</dt><dd>12' × 5' slim profile (confirm ceiling height)</dd><dt>Placement</dt><dd>Interior, clear of egress and fire sprinklers</dd><dt>Note</dt><dd>Doubles as the interior lobby display</dd></dl>
+      </div></div>
+      <div class="spec" id="s5"><div class="n">5</div><div>
+        <h3>Door wreath pair</h3>
+        <p>A matched pair of 22" wreaths, one centered on each door leaf at eye level, hung on clear monofilament from the transom. They make the doors read as one formal pair and leave the suite signage and push hardware clear.</p>
+        <dl><dt>Size</dt><dd>22" diameter, slim 4" profile so they clear the door swing</dd><dt>Mounting</dt><dd>Monofilament from the transom with clear cups on the inside of the glass</dd><dt>Lights</dt><dd>None, so they don't fight the reflections</dd></dl>
+      </div></div>
+      <div class="spec" id="s6"><div class="n">6</div><div>
+        <h3>Vestibule lanterns</h3>
+        <p>On the tiled entry, one oversized matte-black steel lantern on each side of the doors (40" and 30" on each side, grouped) with warm LED pillar candles. Tuck a small cedar and cone base at their feet. They pick up the window frames and keep the floor area tidy.</p>
+        <dl><dt>Size</dt><dd>40" + 30" per side</dd><dt>Clearance</dt><dd>Keep a 44" clear path to the doors (ADA)</dd><dt>Security</dt><dd>Weighted bases with a discreet cable tether</dd></dl>
+      </div></div>
+      <div class="spec" id="s7"><div class="n">7</div><div>
+        <h3>Wing window rhythm</h3>
+        <p>Your building is wide, so this is what ties it together. Hang a 24" wreath with an ivory bow centered in every other bay of the black-mullion windows on both wings, all at the same height. The repetition carries the entrance look across the whole front. Final count will come from full-facade photos.</p>
+        <dl><dt>Size</dt><dd>24" diameter</dd><dt>Mounting</dt><dd>Exterior hangers or monofilament from the window head</dd><dt>Lights</dt><dd>Battery micro-lights on the same timer as #2</dd></dl>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark" data-screen-label="Lighting Plan">
+  <div class="wrap light-grid">
+    <div>
+      <div class="eyebrow">Lighting plan</div>
+      <h2>Lit like a residence, not a storefront.</h2>
+      <p class="lead">Your existing bronze sconces set the tone. We add light in layers: the garland as the main glow, the wreaths lit by the sconces, the planters as soft points, and the lobby tree as a lantern above it all.</p>
+    </div>
+    <div class="rules">
+      <div class="rule"><b>2700K warm white only</b><span>Matches the existing sconces. No cool white, color or RGB.</span></div>
+      <div class="rule"><b>Steady burn</b><span>No twinkle, chase or flashing modes.</span></div>
+      <div class="rule"><b>Commercial-grade LED</b><span>Rated for wet locations, UL-listed, with coaxial connectors.</span></div>
+      <div class="rule"><b>Dusk to 11pm</b><span>Photocell with an astronomical timer, so it's on when people leave work and at evening events.</span></div>
+      <div class="rule"><b>GFCI-protected circuits</b><span>Hardwired items go only on existing exterior outlets. No cords across walkways.</span></div>
+      <div class="rule"><b>Glare check</b><span>Nothing points toward the glass doors, so the entry doesn't mirror back at night.</span></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Scope Options">
+  <div class="wrap">
+    <div class="tiers-head"><div class="eyebrow">Scope options</div><h2>Three ways to build it</h2></div>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Essential</h3><div class="sub">The entrance, handled well</div>
+        <ul><li><i>1</i>Planter winter fill</li><li><i>2</i>Pier wreaths, lit</li><li><i>3</i>Canopy garland, lit</li><li><i>—</i>Install, maintenance and removal</li></ul>
+      </div>
+      <div class="tier rec">
+        <h3>Signature</h3><div class="sub">The full entrance composition</div>
+        <ul><li><i>1–3</i>Everything in Essential</li><li><i>4</i>Clerestory lobby tree</li><li><i>5</i>Door wreath pair</li><li><i>6</i>Vestibule lanterns</li><li><i>—</i>January winter changeover</li></ul>
+      </div>
+      <div class="tier">
+        <h3>Estate</h3><div class="sub">The whole façade, start to finish</div>
+        <ul><li><i>1–6</i>Everything in Signature</li><li><i>7</i>Wing window rhythm, full facade</li><li><i>—</i>Matching interior reception decor</li><li><i>—</i>Off-season storage of firm-owned pieces</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Season Timeline">
+  <div class="wrap">
+    <div class="tl-head"><div class="eyebrow">Season timeline</div><h2>Install to removal</h2></div>
+    <div class="timeline">
+      <div class="step"><div class="d">Fri, Nov 14</div><h3>Site survey</h3><p>Measure the fascia and piers, map outlets, confirm the lobby ceiling height, and get landlord/HOA approval.</p></div>
+      <div class="step key"><div class="d">Nov 19&ndash;21</div><h3>Install</h3><p>After-hours or weekend install so the entrance stays open for business.</p></div>
+      <div class="step"><div class="d">Nov – Dec</div><h3>Maintenance</h3><p>Weekly visits to refresh fresh greenery, check lights and adjust after storms.</p></div>
+      <div class="step key"><div class="d">Jan 2</div><h3>Winter changeover</h3><p>Take down the bows and bells. Greenery, birch and lanterns stay as a neutral winter look.</p></div>
+      <div class="step"><div class="d">Late Jan</div><h3>Removal</h3><p>Full strike, inspect the stucco and store or recycle the materials.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Next Steps">
+  <div class="wrap next">
+    <div>
+      <div class="eyebrow">To extend this concept</div>
+      <h2>Send the rest of the façade</h2>
+    </div>
+    <div class="shots">
+      <div class="shot"><b>Straight-on, from the street</b><span>The whole front in one frame, even if it's small</span></div>
+      <div class="shot"><b>Left wing</b><span>Window bays and anything at ground level</span></div>
+      <div class="shot"><b>Right wing</b><span>Same, plus the corner return if it's visible</span></div>
+      <div class="shot"><b>Dusk or night shot</b><span>So we can see how the current lighting falls</span></div>
+      <div class="shot"><b>Signage and monument</b><span>Any sign at the street or on the building</span></div>
+      <div class="shot"><b>Lobby, from inside</b><span>The chandelier and where the tree could go</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer><span>
+<section style="background:var(--green);color:var(--ivory);padding:56px 24px;text-align:center">
+  <div style="max-width:640px;margin:0 auto">
+    <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:600">Approve the look</div>
+    <h2 style="font-family:Cormorant,serif;font-size:34px;font-weight:500;margin:10px 0 14px;color:var(--ivory)">Sign by November 18, and it&rsquo;s up before Thanksgiving.</h2>
+    <p style="font-size:15px;line-height:1.6;color:rgba(251,248,241,.85);margin-bottom:8px">One 15-minute walkthrough at your office is all it takes. I&rsquo;ll bring the tiered packages, the timeline and the pricing &mdash; the entrance stays open, and the install happens after hours.</p>
+    <p style="font-size:15px;line-height:1.6;color:rgba(251,248,241,.85);margin-bottom:24px">Survey this week. Install November 19&ndash;21. Maintenance, the January changeover and full removal are all included.</p>
+    <div style="font-family:Cormorant,serif;font-size:20px;color:var(--ivory)">Sharla Brown &middot; Create4Me &middot; Columbia, SC</div>
+    <div style="font-size:14px;letter-spacing:.06em;color:var(--brass);margin-top:6px">Call or text (803) 602-4574 &middot; create4uent.github.io/sharla-portfolio</div>
+  </div>
+</section>
+
+Evergreen &amp; Brass · Holiday Exterior Concept</span><span>Dimensions are estimates until the site survey</span></footer>
+</div>
+
+<script>
+  const photo=document.getElementById('photo');
+  document.querySelectorAll('#mode button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#mode button').forEach(x=>x.classList.toggle('on',x===b));
+    photo.classList.toggle('dusk',b.dataset.m==='dusk');
+  });
+  document.querySelectorAll('#pins button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#pins button').forEach(x=>x.classList.toggle('on',x===b));
+    photo.classList.toggle('hidepins',b.dataset.p==='0');
+  });
+  const cmp=document.getElementById('compare'),bw=document.getElementById('beforeWrap'),hd=document.getElementById('handle');
+  let drag=false;
+  function setPos(x){const r=cmp.getBoundingClientRect();let p=Math.min(100,Math.max(0,(x-r.left)/r.width*100));bw.style.clipPath=`inset(0 ${100-p}% 0 0)`;hd.style.left=p+'%';}
+  cmp.addEventListener('pointerdown',e=>{drag=true;cmp.setPointerCapture(e.pointerId);setPos(e.clientX)});
+  cmp.addEventListener('pointermove',e=>{if(drag)setPos(e.clientX)});
+  cmp.addEventListener('pointerup',()=>drag=false);
+  document.querySelectorAll('#renMode button').forEach(b=>b.onclick=()=>{
+    document.querySelectorAll('#renMode button').forEach(x=>x.classList.toggle('on',x===b));
+    const R=window.__resources||{};const k=b.dataset.r==='day'?'renderDay':'renderDusk';document.getElementById('afterImg').src=R[k]||('assets/render-'+b.dataset.r+'.png');
+  });
+  function hl(k){
+    document.querySelectorAll('.pin').forEach(p=>p.classList.toggle('on',p.dataset.k===k));
+    document.querySelectorAll('#legend li').forEach(l=>l.classList.toggle('on',l.dataset.k===k));
+  }
+  document.querySelectorAll('.pin,#legend li').forEach(el=>{
+    el.addEventListener('mouseenter',()=>hl(el.dataset.k));
+    el.addEventListener('mouseleave',()=>hl(null));
+    el.addEventListener('click',()=>{
+      const s=document.getElementById('s'+el.dataset.k);
+      window.scrollTo({top:s.getBoundingClientRect().top+scrollY-40,behavior:'smooth'});
+      s.classList.add('flash');setTimeout(()=>s.classList.remove('flash'),1400);
+    });
+  });
+</script>
+<script>
+  (function(){
+    var btns=document.querySelectorAll('#renMode button');
+    var img=document.getElementById('afterImg');
+    if(!btns.length||!img) return;
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      btns.forEach(function(x){x.classList.toggle('on',x===b)});
+      img.src = b.dataset.r==='dusk' ? 'assets/sr-dusk.jpg' : 'assets/sr-after.jpg';
+    });});
+  })();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
